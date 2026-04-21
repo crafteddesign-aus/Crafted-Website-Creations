@@ -52,12 +52,12 @@ export default function App() {
           >
             <div
               style={{
-                width: 210,
-                height: 76,
+                width: 147,
+                height: 50,
                 overflow: "hidden",
-                backgroundImage: "url('/logo-brand.png')",
-                backgroundSize: "630px auto",
-                backgroundPosition: "-210px -175px",
+                backgroundImage: "url('/logo-brand-v2.png')",
+                backgroundSize: "768px auto",
+                backgroundPosition: "-18px -355px",
                 backgroundRepeat: "no-repeat",
               }}
             />
@@ -462,12 +462,12 @@ export default function App() {
           <div className="flex flex-col items-start gap-2">
             <div
               style={{
-                width: 165,
-                height: 60,
+                width: 118,
+                height: 40,
                 overflow: "hidden",
-                backgroundImage: "url('/logo-brand.png')",
-                backgroundSize: "495px auto",
-                backgroundPosition: "-165px -122px",
+                backgroundImage: "url('/logo-brand-v2.png')",
+                backgroundSize: "614px auto",
+                backgroundPosition: "-14px -284px",
                 backgroundRepeat: "no-repeat",
               }}
             />
