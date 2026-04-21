@@ -107,79 +107,34 @@ export default function App() {
 
       <main id="top">
         {/* HERO */}
-        <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-          <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#523200]/20 rounded-full blur-[100px] -translate-y-1/2 -translate-x-1/3 pointer-events-none" />
-          
-          <div className="container-custom grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-16 items-center relative z-10">
-            <FadeIn>
-              <p className="text-primary uppercase tracking-[0.16em] text-xs font-bold mb-4">Boutique web design for local business</p>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                Websites <span className="text-primary">crafted</span><br />for local business.
+        <section className="section-shell relative overflow-hidden" style={{ padding: "144px 20px 90px" }}>
+          <div
+            className="absolute pointer-events-none"
+            style={{ right: -120, top: -40, width: 420, height: 420, background: "radial-gradient(circle, rgba(255,106,0,0.13) 0%, transparent 70%)", filter: "blur(18px)" }}
+          />
+          <div className="container-custom relative z-10">
+            <FadeIn className="max-w-[760px]">
+              <p className="section-eyebrow">Boutique web design for local business</p>
+              <h1
+                className="font-serif"
+                style={{ fontSize: "clamp(3rem, 8vw, 6.2rem)", lineHeight: 0.98, letterSpacing: "-0.05em", color: "#fff", margin: "0 0 22px" }}
+              >
+                Websites{" "}
+                <span style={{ color: "var(--accent)", textShadow: "0 0 24px rgba(255,106,0,0.22)" }}>crafted</span>
+                <br />for local business.
               </h1>
-              <p className="text-lg md:text-xl text-muted max-w-[600px] mb-10 leading-relaxed">
-                Crafted Designs builds clean, modern websites for trades, service businesses, and owner-operated brands that want a professional online presence without the bulk of a large agency.
+              <p className="section-copy max-w-[720px]" style={{ marginBottom: 34 }}>
+                Crafted Designs builds clean, modern websites for service businesses,
+                trades, and owner-operated brands that want a stronger online presence
+                without the bulk of a large agency.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <button 
-                  onClick={() => scrollTo("contact")}
-                  className="rounded-full bg-primary text-[#0D0D0D] px-8 py-4 font-bold hover:bg-primary/90 transition-all shadow-[0_8px_30px_rgba(255,140,0,0.2)] hover:-translate-y-0.5 text-center"
-                >
+              <div className="flex flex-wrap gap-4">
+                <button onClick={() => scrollTo("contact")} className="btn-primary cursor-pointer">
                   Request a Quote
                 </button>
-                <button 
-                  onClick={() => scrollTo("work")}
-                  className="rounded-full bg-transparent border border-border text-foreground px-8 py-4 font-bold hover:border-primary hover:text-primary transition-all text-center"
-                >
+                <button onClick={() => scrollTo("work")} className="btn-secondary cursor-pointer">
                   View My Work
                 </button>
-              </div>
-
-              <div className="flex flex-wrap gap-3">
-                {["Tailored one-on-one service", "Clean premium design", "Fast, simple launch process"].map((pill, i) => (
-                  <span key={i} className="rounded-full border border-border bg-[#141414]/80 text-muted px-4 py-2 text-sm">
-                    {pill}
-                  </span>
-                ))}
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={0.2}>
-              <div className="bg-gradient-to-b from-[#141414] to-[#0F0F0F] border border-border p-6 rounded-[28px] shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
-                <div className="bg-white/5 border border-white/5 p-5 rounded-[22px] mb-4">
-                  <p className="text-primary text-xs tracking-widest font-bold uppercase mb-3">Current Project</p>
-                  <div className="rounded-2xl overflow-hidden border border-border bg-[#101010]">
-                    <div className="flex gap-1.5 p-3 border-b border-border bg-[#171717]">
-                      <div className="w-2.5 h-2.5 rounded-full bg-[#404040]" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-[#404040]" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-[#404040]" />
-                    </div>
-                    <div className="p-6 bg-gradient-to-br from-primary/10 to-transparent h-[230px]">
-                      <span className="inline-block border border-primary/25 text-primary px-3 py-1.5 rounded-full text-xs mb-4">Business Website</span>
-                      <h4 className="font-serif text-3xl text-foreground mb-2">NQ Excavations</h4>
-                      <p className="text-sm text-muted mb-4 max-w-[200px]">Custom layout focused on services, imagery, trust, and clean enquiries.</p>
-                      <div className="space-y-2 opacity-50">
-                        <div className="h-2 bg-[#252525] rounded-full w-[88%]" />
-                        <div className="h-2 bg-[#252525] rounded-full w-[76%]" />
-                        <div className="h-2 bg-[#252525] rounded-full w-[64%]" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-3 gap-4">
-                  {[
-                    { stat: "1:1", text: "Direct service from start to finish" },
-                    { stat: "Mobile", text: "Built to look strong on phone and desktop" },
-                    { stat: "Simple", text: "Clear process, clear pricing, no clutter" }
-                  ].map((s, i) => (
-                    <div key={i} className="bg-white/5 border border-white/5 p-4 rounded-[18px]">
-                      <strong className="block text-xl text-foreground mb-1">{s.stat}</strong>
-                      <p className="text-xs text-muted leading-tight">{s.text}</p>
-                    </div>
-                  ))}
-                </div>
               </div>
             </FadeIn>
           </div>

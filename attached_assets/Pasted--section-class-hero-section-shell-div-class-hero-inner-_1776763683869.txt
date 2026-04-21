@@ -1,0 +1,100 @@
+<section class="hero section-shell">
+  <div class="hero__inner">
+    <div class="hero__content">
+      <p class="section-eyebrow">Boutique web design for local business</p>
+
+      <h1 class="hero__title">
+        Websites <span>crafted</span><br />
+        for local business.
+      </h1>
+
+      <p class="hero__copy">
+        Crafted Designs builds clean, modern websites for service businesses,
+        trades, and owner-operated brands that want a stronger online presence
+        without the bulk of a large agency.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#contact" class="btn-primary">Request a Quote</a>
+        <a href="#work" class="btn-secondary">View My Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 64px 20px 90px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero__content {
+    max-width: 760px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero__title {
+    font-size: clamp(3rem, 8vw, 6.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+    margin: 0 0 22px;
+    color: #fff;
+  }
+
+  .hero__title span {
+    color: var(--accent);
+    text-shadow: 0 0 24px rgba(255, 106, 0, 0.22);
+  }
+
+  .hero__copy {
+    max-width: 720px;
+    color: var(--muted);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin: 0 0 34px;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    top: -40px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(255,106,0,0.13) 0%, transparent 70%);
+    filter: blur(18px);
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 44px 20px 70px;
+    }
+
+    .hero__copy {
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .hero__actions {
+      flex-direction: column;
+    }
+
+    .hero__actions a {
+      width: 100%;
+    }
+  }
+</style>
