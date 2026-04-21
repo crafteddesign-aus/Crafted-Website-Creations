@@ -107,36 +107,111 @@ export default function App() {
 
       <main id="top">
         {/* HERO */}
-        <section className="section-shell relative overflow-hidden" style={{ padding: "144px 20px 90px" }}>
-          <div
-            className="absolute pointer-events-none"
-            style={{ right: -120, top: -40, width: 420, height: 420, background: "radial-gradient(circle, rgba(255,106,0,0.13) 0%, transparent 70%)", filter: "blur(18px)" }}
-          />
-          <div className="container-custom relative z-10">
-            <FadeIn className="max-w-[760px]">
-              <p className="section-eyebrow">Boutique web design for local business</p>
-              <h1
-                className="font-serif"
-                style={{ fontSize: "clamp(3rem, 8vw, 6.2rem)", lineHeight: 0.98, letterSpacing: "-0.05em", color: "#fff", margin: "0 0 22px" }}
-              >
-                Websites{" "}
-                <span style={{ color: "var(--accent)", textShadow: "0 0 24px rgba(255,106,0,0.22)" }}>crafted</span>
-                <br />for local business.
-              </h1>
-              <p className="section-copy max-w-[720px]" style={{ marginBottom: 34 }}>
-                Crafted Designs builds clean, modern websites for service businesses,
-                trades, and owner-operated brands that want a stronger online presence
-                without the bulk of a large agency.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <button onClick={() => scrollTo("contact")} className="btn-primary cursor-pointer">
-                  Request a Quote
-                </button>
-                <button onClick={() => scrollTo("work")} className="btn-secondary cursor-pointer">
-                  View My Work
-                </button>
-              </div>
-            </FadeIn>
+        <section
+          className="section-shell relative overflow-hidden"
+          style={{
+            padding: "calc(8.5rem + 78px) 0 6.5rem",
+            background: `
+              radial-gradient(circle at 85% 12%, rgba(255,140,0,0.20), transparent 22%),
+              radial-gradient(circle at 15% 55%, rgba(82,50,0,0.32), transparent 28%),
+              linear-gradient(180deg, rgba(13,13,13,1) 0%, rgba(10,10,10,1) 100%)
+            `,
+          }}
+        >
+          <div className="container-custom">
+            <div className="grid lg:grid-cols-[1.15fr_0.85fr] items-center gap-12">
+
+              {/* LEFT — copy */}
+              <FadeIn className="max-w-[760px]">
+                <p className="section-eyebrow">Boutique web design for local business</p>
+                <h1
+                  className="font-serif"
+                  style={{ fontSize: "clamp(3.2rem, 8vw, 6.8rem)", lineHeight: 1.02, letterSpacing: "0.01em", fontWeight: 700, marginBottom: "1.2rem", color: "#fff" }}
+                >
+                  Digital presence,{" "}
+                  <span style={{ color: "var(--accent)", textShadow: "0 0 24px rgba(255,140,0,0.22)" }}>crafted</span>{" "}
+                  with intent.
+                </h1>
+                <p className="section-copy" style={{ maxWidth: 680, fontSize: "1.15rem" }}>
+                  Crafted Designs builds refined websites for trades, service businesses, and owner-operated brands that want to look polished, professional, and properly represented online.
+                </p>
+                <div className="flex flex-wrap gap-4 mt-8">
+                  <button onClick={() => scrollTo("contact")} className="btn-primary cursor-pointer">Request a Quote</button>
+                  <button onClick={() => scrollTo("work")} className="btn-secondary cursor-pointer">View My Work</button>
+                </div>
+                <div className="flex flex-wrap gap-3 mt-8">
+                  {["Tailored one-on-one service", "Premium dark editorial style", "Built for trades and local business"].map((pill, i) => (
+                    <span
+                      key={i}
+                      className="rounded-full text-muted text-[0.92rem]"
+                      style={{ border: "1px solid rgba(255,255,255,0.08)", background: "rgba(20,20,20,0.9)", padding: "0.75rem 1rem", boxShadow: "0 8px 24px rgba(0,0,0,0.18)" }}
+                    >
+                      {pill}
+                    </span>
+                  ))}
+                </div>
+              </FadeIn>
+
+              {/* RIGHT — hero card */}
+              <FadeIn delay={0.2}>
+                <div
+                  className="rounded-[28px] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+                  style={{ background: "linear-gradient(180deg, rgba(20,20,20,0.96) 0%, rgba(15,15,15,0.98) 100%)", border: "1px solid rgba(255,255,255,0.08)" }}
+                >
+                  {/* Panel 1 — mock window */}
+                  <div
+                    className="rounded-[22px] p-5 mb-4"
+                    style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%)", border: "1px solid rgba(255,255,255,0.06)" }}
+                  >
+                    <span className="block text-primary text-[0.78rem] tracking-[0.12em] uppercase font-bold mb-[0.65rem]">Featured concept</span>
+                    <div className="rounded-[18px] overflow-hidden border border-border bg-[#101010]">
+                      <div className="flex gap-[0.4rem] px-4 py-3 border-b border-border bg-[#171717]">
+                        <span className="block w-[10px] h-[10px] rounded-full bg-[#404040]" />
+                        <span className="block w-[10px] h-[10px] rounded-full bg-[#404040]" />
+                        <span className="block w-[10px] h-[10px] rounded-full bg-[#404040]" />
+                      </div>
+                      <div
+                        className="p-6 min-h-[220px]"
+                        style={{ background: "linear-gradient(160deg, rgba(255,140,0,0.14), transparent 30%), linear-gradient(180deg, rgba(18,18,18,1) 0%, rgba(14,14,14,1) 100%)" }}
+                      >
+                        <span className="inline-block border border-primary/25 text-primary px-3 py-[0.45rem] rounded-full text-[0.8rem] mb-4">Crafted project preview</span>
+                        <h4 className="font-serif text-[2.2rem] text-foreground mb-3">Crafted for clarity</h4>
+                        <p className="text-sm text-muted">Thoughtful layouts, strong typography, sharp contrast, and clean enquiry pathways.</p>
+                        <div className="grid gap-[0.6rem] mt-4">
+                          <span className="block h-[10px] rounded-full bg-[#252525] w-[88%]" />
+                          <span className="block h-[10px] rounded-full bg-[#252525] w-[76%]" />
+                          <span className="block h-[10px] rounded-full bg-[#252525] w-[64%]" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Panel 2 — studio approach */}
+                  <div
+                    className="rounded-[22px] p-5"
+                    style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%)", border: "1px solid rgba(255,255,255,0.06)" }}
+                  >
+                    <span className="block text-primary text-[0.78rem] tracking-[0.12em] uppercase font-bold mb-[0.65rem]">Studio approach</span>
+                    <p className="text-foreground mb-4" style={{ fontSize: "1.02rem" }}>
+                      A simple process, premium presentation, and a website built around the way your business actually works.
+                    </p>
+                    <div className="grid grid-cols-3 gap-4">
+                      {[
+                        { stat: "Premium", text: "Dark, polished visual identity" },
+                        { stat: "Tailored", text: "Built around your actual business" },
+                        { stat: "Direct",  text: "One point of contact throughout" },
+                      ].map((s, i) => (
+                        <div key={i} className="bg-white/[0.02] border border-white/[0.05] rounded-[18px] p-4">
+                          <strong className="block text-foreground text-[1.4rem] mb-1">{s.stat}</strong>
+                          <p className="text-xs text-muted leading-tight">{s.text}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+
+            </div>
           </div>
         </section>
 
