@@ -22,7 +22,7 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **Type**: React + Vite, frontend-only (no backend)
 - **Preview path**: `/` (root)
 - **Purpose**: Single-page marketing website for "Crafted Designs" — a boutique web design business targeting local Australian trades and service businesses
-- **Design**: Dark premium theme (#0D0D0D bg, #FF8C00 amber accent), Cormorant Garamond headings + Nunito Sans body, framer-motion animations
+- **Design**: Warm Ember dark theme (#100D09 bg, #1A1510 panels, #3a2e1e borders, #F0EBE3 text, #BDA98A muted, #FF8C00 amber accent), Cormorant Garamond headings + Nunito Sans body, framer-motion animations
 - **Sections**: Hero, Services, Built For, Process, Portfolio, Testimonial, Pricing, Contact, Footer
 - **Status**: Contact form is UI-only (no email delivery yet)
 

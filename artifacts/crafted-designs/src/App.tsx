@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-// Reusable animated section component
 function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) {
   return (
     <motion.div
@@ -41,7 +40,7 @@ export default function App() {
       {/* HEADER */}
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-[#0D0D0D]/80 backdrop-blur-md border-b border-border py-4" : "bg-transparent py-6"
+          isScrolled ? "bg-[#100D09]/80 backdrop-blur-md border-b border-border py-4" : "bg-transparent py-6"
         }`}
       >
         <div className="container-custom flex items-center justify-between">
@@ -62,21 +61,21 @@ export default function App() {
               }}
             />
           </button>
-          
+
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
             <button onClick={() => scrollTo("services")} className="hover:text-foreground transition-colors">Services</button>
             <button onClick={() => scrollTo("process")} className="hover:text-foreground transition-colors">Process</button>
             <button onClick={() => scrollTo("work")} className="hover:text-foreground transition-colors">Work</button>
             <button onClick={() => scrollTo("pricing")} className="hover:text-foreground transition-colors">Pricing</button>
-            <button 
+            <button
               onClick={() => scrollTo("contact")}
-              className="ml-4 rounded-full bg-primary text-[#0D0D0D] px-6 py-2.5 font-bold hover:bg-primary/90 transition-colors shadow-[0_4px_14px_rgba(255,140,0,0.2)]"
+              className="ml-4 rounded-full bg-primary text-[#100D09] px-6 py-2.5 font-bold hover:bg-primary/90 transition-colors shadow-[0_4px_14px_rgba(255,140,0,0.25)]"
             >
               Get a Quote
             </button>
           </nav>
 
-          <button 
+          <button
             className="md:hidden text-foreground p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
@@ -90,14 +89,14 @@ export default function App() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-[#141414] border-b border-border py-4 px-6 flex flex-col gap-4 shadow-xl">
+          <div className="md:hidden absolute top-full left-0 w-full bg-[#1A1510] border-b border-border py-4 px-6 flex flex-col gap-4 shadow-xl">
             <button onClick={() => scrollTo("services")} className="text-left text-muted hover:text-foreground py-2">Services</button>
             <button onClick={() => scrollTo("process")} className="text-left text-muted hover:text-foreground py-2">Process</button>
             <button onClick={() => scrollTo("work")} className="text-left text-muted hover:text-foreground py-2">Work</button>
             <button onClick={() => scrollTo("pricing")} className="text-left text-muted hover:text-foreground py-2">Pricing</button>
-            <button 
+            <button
               onClick={() => scrollTo("contact")}
-              className="w-full text-center rounded-full bg-primary text-[#0D0D0D] px-6 py-3 font-bold mt-2"
+              className="w-full text-center rounded-full bg-primary text-[#100D09] px-6 py-3 font-bold mt-2"
             >
               Get a Quote
             </button>
@@ -112,9 +111,9 @@ export default function App() {
           style={{
             padding: "calc(8.5rem + 78px) 0 6.5rem",
             background: `
-              radial-gradient(circle at 85% 12%, rgba(255,140,0,0.20), transparent 22%),
-              radial-gradient(circle at 15% 55%, rgba(82,50,0,0.32), transparent 28%),
-              linear-gradient(180deg, rgba(13,13,13,1) 0%, rgba(10,10,10,1) 100%)
+              radial-gradient(circle at 85% 12%, rgba(255,140,0,0.22), transparent 22%),
+              radial-gradient(circle at 15% 55%, rgba(120,60,0,0.35), transparent 28%),
+              linear-gradient(180deg, rgba(16,13,9,1) 0%, rgba(14,11,8,1) 100%)
             `,
           }}
         >
@@ -126,10 +125,10 @@ export default function App() {
                 <p className="section-eyebrow">Boutique web design for local business</p>
                 <h1
                   className="font-serif"
-                  style={{ fontSize: "clamp(3.2rem, 8vw, 6.8rem)", lineHeight: 1.02, letterSpacing: "0.01em", fontWeight: 700, marginBottom: "1.2rem", color: "#fff" }}
+                  style={{ fontSize: "clamp(3.2rem, 8vw, 6.8rem)", lineHeight: 1.02, letterSpacing: "0.01em", fontWeight: 700, marginBottom: "1.2rem", color: "#F0EBE3" }}
                 >
                   Digital presence,{" "}
-                  <span style={{ color: "var(--accent)", textShadow: "0 0 24px rgba(255,140,0,0.22)" }}>crafted</span>{" "}
+                  <span style={{ color: "var(--accent)", textShadow: "0 0 28px rgba(255,140,0,0.28)" }}>crafted</span>{" "}
                   with intent.
                 </h1>
                 <p className="section-copy" style={{ maxWidth: 680, fontSize: "1.15rem" }}>
@@ -144,7 +143,7 @@ export default function App() {
                     <span
                       key={i}
                       className="rounded-full text-muted text-[0.92rem]"
-                      style={{ border: "1px solid rgba(255,255,255,0.08)", background: "rgba(20,20,20,0.9)", padding: "0.75rem 1rem", boxShadow: "0 8px 24px rgba(0,0,0,0.18)" }}
+                      style={{ border: "1px solid rgba(110,80,40,0.35)", background: "rgba(26,21,16,0.9)", padding: "0.75rem 1rem", boxShadow: "0 8px 24px rgba(0,0,0,0.22)" }}
                     >
                       {pill}
                     </span>
@@ -155,32 +154,32 @@ export default function App() {
               {/* RIGHT — hero card */}
               <FadeIn delay={0.2}>
                 <div
-                  className="rounded-[28px] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
-                  style={{ background: "linear-gradient(180deg, rgba(20,20,20,0.96) 0%, rgba(15,15,15,0.98) 100%)", border: "1px solid rgba(255,255,255,0.08)" }}
+                  className="rounded-[28px] p-6 shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
+                  style={{ background: "linear-gradient(180deg, rgba(26,21,16,0.97) 0%, rgba(18,14,10,0.99) 100%)", border: "1px solid rgba(110,80,40,0.28)" }}
                 >
                   {/* Panel 1 — mock window */}
                   <div
                     className="rounded-[22px] p-5 mb-4"
-                    style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%)", border: "1px solid rgba(255,255,255,0.06)" }}
+                    style={{ background: "linear-gradient(180deg, rgba(255,200,150,0.03) 0%, rgba(255,200,150,0.015) 100%)", border: "1px solid rgba(110,80,40,0.2)" }}
                   >
                     <span className="block text-primary text-[0.78rem] tracking-[0.12em] uppercase font-bold mb-[0.65rem]">Featured concept</span>
-                    <div className="rounded-[18px] overflow-hidden border border-border bg-[#101010]">
-                      <div className="flex gap-[0.4rem] px-4 py-3 border-b border-border bg-[#171717]">
-                        <span className="block w-[10px] h-[10px] rounded-full bg-[#404040]" />
-                        <span className="block w-[10px] h-[10px] rounded-full bg-[#404040]" />
-                        <span className="block w-[10px] h-[10px] rounded-full bg-[#404040]" />
+                    <div className="rounded-[18px] overflow-hidden" style={{ border: "1px solid #3a2e1e", background: "#120E0A" }}>
+                      <div className="flex gap-[0.4rem] px-4 py-3" style={{ borderBottom: "1px solid #3a2e1e", background: "#1E1810" }}>
+                        <span className="block w-[10px] h-[10px] rounded-full bg-[#5a4020]" />
+                        <span className="block w-[10px] h-[10px] rounded-full bg-[#5a4020]" />
+                        <span className="block w-[10px] h-[10px] rounded-full bg-[#5a4020]" />
                       </div>
                       <div
                         className="p-6 min-h-[220px]"
-                        style={{ background: "linear-gradient(160deg, rgba(255,140,0,0.14), transparent 30%), linear-gradient(180deg, rgba(18,18,18,1) 0%, rgba(14,14,14,1) 100%)" }}
+                        style={{ background: "linear-gradient(160deg, rgba(255,140,0,0.16), transparent 30%), linear-gradient(180deg, rgba(20,16,11,1) 0%, rgba(16,12,8,1) 100%)" }}
                       >
                         <span className="inline-block border border-primary/25 text-primary px-3 py-[0.45rem] rounded-full text-[0.8rem] mb-4">Crafted project preview</span>
                         <h4 className="font-serif text-[2.2rem] text-foreground mb-3">Crafted for clarity</h4>
                         <p className="text-sm text-muted">Thoughtful layouts, strong typography, sharp contrast, and clean enquiry pathways.</p>
                         <div className="grid gap-[0.6rem] mt-4">
-                          <span className="block h-[10px] rounded-full bg-[#252525] w-[88%]" />
-                          <span className="block h-[10px] rounded-full bg-[#252525] w-[76%]" />
-                          <span className="block h-[10px] rounded-full bg-[#252525] w-[64%]" />
+                          <span className="block h-[10px] rounded-full w-[88%]" style={{ background: "#2e2214" }} />
+                          <span className="block h-[10px] rounded-full w-[76%]" style={{ background: "#2e2214" }} />
+                          <span className="block h-[10px] rounded-full w-[64%]" style={{ background: "#2e2214" }} />
                         </div>
                       </div>
                     </div>
@@ -189,7 +188,7 @@ export default function App() {
                   {/* Panel 2 — studio approach */}
                   <div
                     className="rounded-[22px] p-5"
-                    style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.015) 100%)", border: "1px solid rgba(255,255,255,0.06)" }}
+                    style={{ background: "linear-gradient(180deg, rgba(255,200,150,0.03) 0%, rgba(255,200,150,0.015) 100%)", border: "1px solid rgba(110,80,40,0.2)" }}
                   >
                     <span className="block text-primary text-[0.78rem] tracking-[0.12em] uppercase font-bold mb-[0.65rem]">Studio approach</span>
                     <p className="text-foreground mb-4" style={{ fontSize: "1.02rem" }}>
@@ -201,7 +200,7 @@ export default function App() {
                         { stat: "Tailored", text: "Built around your actual business" },
                         { stat: "Direct",  text: "One point of contact throughout" },
                       ].map((s, i) => (
-                        <div key={i} className="bg-white/[0.02] border border-white/[0.05] rounded-[18px] p-4">
+                        <div key={i} className="rounded-[18px] p-4" style={{ background: "rgba(255,200,150,0.02)", border: "1px solid rgba(110,80,40,0.15)" }}>
                           <strong className="block text-foreground text-[1.4rem] mb-1">{s.stat}</strong>
                           <p className="text-xs text-muted leading-tight">{s.text}</p>
                         </div>
@@ -216,7 +215,7 @@ export default function App() {
         </section>
 
         {/* SERVICES */}
-        <section id="services" className="section-padding bg-gradient-to-b from-[#141414] to-[#0D0D0D]">
+        <section id="services" className="section-padding bg-gradient-to-b from-[#140F0B] to-[#100D09]">
           <div className="container-custom">
             <FadeIn className="max-w-[760px] mb-12">
               <p className="text-primary uppercase tracking-[0.16em] text-xs font-bold mb-3">Services</p>
@@ -228,7 +227,7 @@ export default function App() {
 
             <div className="grid md:grid-cols-3 gap-6">
               <FadeIn delay={0.1}>
-                <div className="bg-[#141414] border border-border p-8 rounded-[18px] card-hover h-full">
+                <div className="bg-[#1A1510] border border-border p-8 rounded-[18px] card-hover h-full">
                   <h3 className="text-2xl font-semibold mb-3 text-foreground">Website Design</h3>
                   <p className="mb-5 text-muted">Custom landing pages and small business websites with a clean, premium look.</p>
                   <ul className="space-y-3">
@@ -239,7 +238,7 @@ export default function App() {
                 </div>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <div className="bg-[#141414] border border-border p-8 rounded-[18px] card-hover h-full">
+                <div className="bg-[#1A1510] border border-border p-8 rounded-[18px] card-hover h-full">
                   <h3 className="text-2xl font-semibold mb-3 text-foreground">Business Content Setup</h3>
                   <p className="mb-5 text-muted">Clear presentation of services, galleries, reviews, and business information.</p>
                   <ul className="space-y-3">
@@ -250,7 +249,7 @@ export default function App() {
                 </div>
               </FadeIn>
               <FadeIn delay={0.3}>
-                <div className="bg-[#141414] border border-border p-8 rounded-[18px] card-hover h-full">
+                <div className="bg-[#1A1510] border border-border p-8 rounded-[18px] card-hover h-full">
                   <h3 className="text-2xl font-semibold mb-3 text-foreground">Launch & Support</h3>
                   <p className="mb-5 text-muted">Help with the practical side of getting your site live and keeping it updated.</p>
                   <ul className="space-y-3">
@@ -291,7 +290,7 @@ export default function App() {
                 },
               ].map((card, i) => (
                 <FadeIn key={i} delay={i * 0.1}>
-                  <div className="bg-[#141414] border border-border rounded-[20px] p-8 card-hover h-full">
+                  <div className="bg-[#1A1510] border border-border rounded-[20px] p-8 card-hover h-full">
                     <h3 className="text-xl font-semibold mb-3 text-foreground">{card.title}</h3>
                     <p className="text-muted text-base leading-relaxed">{card.desc}</p>
                   </div>
@@ -302,7 +301,7 @@ export default function App() {
         </section>
 
         {/* PROCESS */}
-        <section id="process" className="section-padding bg-gradient-to-b from-[#141414] to-[#0D0D0D]">
+        <section id="process" className="section-padding bg-gradient-to-b from-[#140F0B] to-[#100D09]">
           <div className="container-custom">
             <FadeIn className="max-w-[760px] mb-12">
               <p className="text-primary uppercase tracking-[0.16em] text-xs font-bold mb-3">Process</p>
@@ -321,7 +320,7 @@ export default function App() {
                 { title: "Launch", text: "The site goes live and begins working for your business." }
               ].map((step, i) => (
                 <FadeIn key={i} delay={i * 0.1}>
-                  <div className="bg-[#141414] border border-border p-6 rounded-[18px] h-full relative group card-hover">
+                  <div className="bg-[#1A1510] border border-border p-6 rounded-[18px] h-full relative group card-hover">
                     <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold mb-5">
                       {i + 1}
                     </div>
@@ -343,20 +342,20 @@ export default function App() {
             </FadeIn>
 
             <FadeIn>
-              <div className="grid md:grid-cols-2 rounded-[24px] overflow-hidden border border-border bg-[#141414]">
-                <div className="bg-gradient-to-br from-primary/20 via-[#191919] to-[#111111] p-8 md:p-12 border-b md:border-b-0 md:border-r border-border flex items-end min-h-[320px] md:min-h-[400px]">
+              <div className="grid md:grid-cols-2 rounded-[24px] overflow-hidden border border-border bg-[#1A1510]">
+                <div className="bg-gradient-to-br from-primary/20 via-[#1E1610] to-[#110E09] p-8 md:p-12 border-b md:border-b-0 md:border-r border-border flex items-end min-h-[320px] md:min-h-[400px]">
                    <div className="w-full max-w-[300px]">
-                      <div className="bg-[#101010] border border-border rounded-xl overflow-hidden shadow-2xl">
-                         <div className="flex gap-1.5 p-3 border-b border-border bg-[#171717]">
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#404040]" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#404040]" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#404040]" />
+                      <div className="rounded-xl overflow-hidden shadow-2xl" style={{ background: "#120E0A", border: "1px solid #3a2e1e" }}>
+                         <div className="flex gap-1.5 p-3" style={{ borderBottom: "1px solid #3a2e1e", background: "#1E1810" }}>
+                            <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
+                            <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
+                            <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
                           </div>
-                          <div className="p-6 bg-[#0a0a0a]">
-                             <div className="h-8 w-2/3 bg-[#202020] rounded-md mb-4"></div>
-                             <div className="h-4 w-full bg-[#1a1a1a] rounded-sm mb-2"></div>
-                             <div className="h-4 w-4/5 bg-[#1a1a1a] rounded-sm mb-6"></div>
-                             <div className="h-24 w-full bg-[#202020] rounded-lg"></div>
+                          <div className="p-6" style={{ background: "#0F0C08" }}>
+                             <div className="h-8 w-2/3 rounded-md mb-4" style={{ background: "#2a1E10" }}></div>
+                             <div className="h-4 w-full rounded-sm mb-2" style={{ background: "#221A0F" }}></div>
+                             <div className="h-4 w-4/5 rounded-sm mb-6" style={{ background: "#221A0F" }}></div>
+                             <div className="h-24 w-full rounded-lg" style={{ background: "#2a1E10" }}></div>
                           </div>
                       </div>
                    </div>
@@ -364,8 +363,8 @@ export default function App() {
                 <div className="p-8 md:p-12 flex flex-col justify-center">
                   <h3 className="text-3xl font-semibold mb-4 text-foreground">Designed around a real local business</h3>
                   <p className="text-muted mb-8 leading-relaxed">
-                    This recent project required a clean, professional website for an excavation business. 
-                    The focus was on strong visuals, clear service sections, and simple contact pathways 
+                    This recent project required a clean, professional website for an excavation business.
+                    The focus was on strong visuals, clear service sections, and simple contact pathways
                     to ensure potential clients could understand the offering and get in touch quickly.
                   </p>
                   <div>
@@ -383,7 +382,7 @@ export default function App() {
         <section className="py-12 md:py-20">
           <div className="container-custom">
             <FadeIn>
-              <div className="bg-gradient-to-b from-[#141414] to-[#0D0D0D] border border-border rounded-[24px] p-8 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.35)] max-w-4xl mx-auto text-center">
+              <div className="bg-gradient-to-b from-[#140F0B] to-[#100D09] border border-border rounded-[24px] p-8 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.4)] max-w-4xl mx-auto text-center">
                 <p className="text-xl md:text-3xl font-serif text-foreground leading-relaxed mb-6">
                   "Super easy to work with and nailed exactly what I was after. The site looks clean, professional, and actually represents the business properly."
                 </p>
@@ -396,7 +395,7 @@ export default function App() {
         </section>
 
         {/* PRICING */}
-        <section id="pricing" className="section-padding bg-gradient-to-b from-[#0D0D0D] to-[#141414]">
+        <section id="pricing" className="section-padding bg-gradient-to-b from-[#100D09] to-[#140F0B]">
           <div className="container-custom">
             <FadeIn className="text-center mb-12">
               <p className="text-primary uppercase tracking-[0.16em] text-xs font-bold mb-3">Pricing</p>
@@ -405,7 +404,7 @@ export default function App() {
 
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <FadeIn delay={0.1}>
-                <div className="bg-[#141414] border border-border rounded-[24px] p-8 md:p-10 card-hover h-full">
+                <div className="bg-[#1A1510] border border-border rounded-[24px] p-8 md:p-10 card-hover h-full">
                   <h3 className="text-xl font-sans font-semibold text-muted mb-2">Landing pages</h3>
                   <div className="font-serif text-5xl text-foreground mb-6">From $500+</div>
                   <p className="text-muted mb-6">One-page sites with clear messaging, visuals, and contact details.</p>
@@ -413,11 +412,11 @@ export default function App() {
                 </div>
               </FadeIn>
               <FadeIn delay={0.2}>
-                <div className="bg-[#141414] border border-border rounded-[24px] p-8 md:p-10 card-hover h-full">
+                <div className="bg-[#1A1510] border border-border rounded-[24px] p-8 md:p-10 card-hover h-full">
                   <h3 className="text-xl font-sans font-semibold text-muted mb-2">Small business websites</h3>
                   <div className="font-serif text-5xl text-foreground mb-6">Quoted to suit</div>
                   <p className="text-muted mb-6">Pricing depends on content, pages, galleries, reviews, and forms.</p>
-                  <button onClick={() => scrollTo("contact")} className="w-full rounded-full bg-primary text-[#0D0D0D] py-3 font-bold hover:bg-primary/90 transition-all">Discuss Your Needs</button>
+                  <button onClick={() => scrollTo("contact")} className="w-full rounded-full bg-primary text-[#100D09] py-3 font-bold hover:bg-primary/90 transition-all">Discuss Your Needs</button>
                 </div>
               </FadeIn>
             </div>
@@ -426,11 +425,11 @@ export default function App() {
 
         {/* CONTACT */}
         <section id="contact" className="section-padding relative">
-           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,140,0,0.05),transparent_40%)] pointer-events-none" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,140,0,0.07),transparent_40%)] pointer-events-none" />
           <div className="container-custom">
             <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 lg:gap-12 relative z-10">
               <FadeIn>
-                <div className="bg-[#141414] border border-border rounded-[24px] p-8 md:p-10 h-full">
+                <div className="bg-[#1A1510] border border-border rounded-[24px] p-8 md:p-10 h-full">
                   <p className="text-primary uppercase tracking-[0.16em] text-xs font-bold mb-3">Contact</p>
                   <h2 className="text-4xl md:text-5xl font-semibold mb-4">Let's build your website</h2>
                   <p className="text-muted text-lg mb-8">
@@ -439,7 +438,7 @@ export default function App() {
 
                   <div className="space-y-4">
                     {["Name: Placeholder", "Email: placeholder@example.com", "Phone: 0400 000 000"].map((info, i) => (
-                      <div key={i} className="p-4 border border-white/5 rounded-2xl bg-white/5 text-muted">
+                      <div key={i} className="p-4 rounded-2xl text-muted" style={{ border: "1px solid rgba(110,80,40,0.2)", background: "rgba(255,200,150,0.03)" }}>
                         {info}
                       </div>
                     ))}
@@ -448,24 +447,24 @@ export default function App() {
               </FadeIn>
 
               <FadeIn delay={0.2}>
-                <form className="bg-[#141414] border border-border rounded-[24px] p-8 md:p-10 flex flex-col gap-5 h-full" onSubmit={(e) => e.preventDefault()}>
+                <form className="bg-[#1A1510] border border-border rounded-[24px] p-8 md:p-10 flex flex-col gap-5 h-full" onSubmit={(e) => e.preventDefault()}>
                   <label className="flex flex-col gap-2 text-sm font-bold text-foreground">
                     Name
-                    <input type="text" className="bg-[#101010] border border-border rounded-[14px] px-4 py-3 font-normal text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Your name" />
+                    <input type="text" className="border border-border rounded-[14px] px-4 py-3 font-normal text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" style={{ background: "#120E0A" }} placeholder="Your name" />
                   </label>
                   <label className="flex flex-col gap-2 text-sm font-bold text-foreground">
                     Email
-                    <input type="email" className="bg-[#101010] border border-border rounded-[14px] px-4 py-3 font-normal text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Your email address" />
+                    <input type="email" className="border border-border rounded-[14px] px-4 py-3 font-normal text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" style={{ background: "#120E0A" }} placeholder="Your email address" />
                   </label>
                   <label className="flex flex-col gap-2 text-sm font-bold text-foreground">
                     Phone
-                    <input type="tel" className="bg-[#101010] border border-border rounded-[14px] px-4 py-3 font-normal text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Your phone number" />
+                    <input type="tel" className="border border-border rounded-[14px] px-4 py-3 font-normal text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" style={{ background: "#120E0A" }} placeholder="Your phone number" />
                   </label>
                   <label className="flex flex-col gap-2 text-sm font-bold text-foreground">
                     Message
-                    <textarea className="bg-[#101010] border border-border rounded-[14px] px-4 py-3 font-normal text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all min-h-[160px] resize-y" placeholder="Tell me about your business and what you need..."></textarea>
+                    <textarea className="border border-border rounded-[14px] px-4 py-3 font-normal text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all min-h-[160px] resize-y" style={{ background: "#120E0A" }} placeholder="Tell me about your business and what you need..."></textarea>
                   </label>
-                  <button type="submit" className="rounded-full bg-primary text-[#0D0D0D] px-6 py-4 font-bold hover:bg-primary/90 transition-all mt-2">
+                  <button type="submit" className="rounded-full bg-primary text-[#100D09] px-6 py-4 font-bold hover:bg-primary/90 transition-all mt-2">
                     Request a Quote
                   </button>
                 </form>
