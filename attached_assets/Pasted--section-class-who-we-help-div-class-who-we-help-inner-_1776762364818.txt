@@ -1,0 +1,117 @@
+<section class="who-we-help">
+  <div class="who-we-help__inner">
+    <p class="who-we-help__eyebrow">No templates. No shortcuts.</p>
+    <h2 class="who-we-help__title">Who We Work With</h2>
+    <p class="who-we-help__intro">
+      We build websites for businesses that are ready to grow, stand out, and win more work.
+    </p>
+
+    <div class="who-we-help__grid">
+      <div class="who-we-help__card">
+        <h3>Service-Based Businesses</h3>
+        <p>
+          Tradies, contractors, and local services looking for a clean, professional online presence.
+        </p>
+      </div>
+
+      <div class="who-we-help__card">
+        <h3>Growing Brands</h3>
+        <p>
+          Businesses ready to move past DIY websites and step into something more polished.
+        </p>
+      </div>
+
+      <div class="who-we-help__card">
+        <h3>Local Companies</h3>
+        <p>
+          Owner-operated businesses that want to be found, trusted, and chosen online.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .who-we-help {
+    background: #0d0d0d;
+    padding: 80px 20px;
+  }
+
+  .who-we-help__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .who-we-help__eyebrow {
+    color: #ff6a00;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .who-we-help__title {
+    color: #fafafa;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.1;
+    margin: 0 0 18px;
+  }
+
+  .who-we-help__intro {
+    color: #a6a6a6;
+    font-size: 1.05rem;
+    max-width: 760px;
+    margin: 0 auto 50px;
+    line-height: 1.7;
+  }
+
+  .who-we-help__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .who-we-help__card {
+    background: #141414;
+    border: 1px solid #333333;
+    border-radius: 20px;
+    padding: 32px 26px;
+    text-align: left;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .who-we-help__card:hover {
+    transform: translateY(-6px);
+    border-color: #ff6a00;
+    box-shadow: 0 12px 30px rgba(255, 106, 0, 0.15);
+  }
+
+  .who-we-help__card h3 {
+    color: #fafafa;
+    font-size: 1.25rem;
+    margin: 0 0 14px;
+  }
+
+  .who-we-help__card p {
+    color: #a6a6a6;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  @media (max-width: 900px) {
+    .who-we-help__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .who-we-help {
+      padding: 60px 20px;
+    }
+
+    .who-we-help__card {
+      padding: 28px 22px;
+    }
+  }
+</style>

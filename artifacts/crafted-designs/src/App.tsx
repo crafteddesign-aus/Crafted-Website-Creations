@@ -234,50 +234,39 @@ export default function App() {
           </div>
         </section>
 
-        {/* BUILT FOR */}
+        {/* WHO WE WORK WITH */}
         <section className="section-padding">
           <div className="container-custom">
-            <FadeIn className="max-w-[760px] mb-12">
-              <p className="text-primary uppercase tracking-[0.16em] text-xs font-bold mb-3">Built for</p>
-              <h2 className="text-4xl md:text-5xl mb-4 font-semibold">Local businesses that want to look the part online</h2>
-              <p className="text-lg text-muted">
-                Crafted Designs is a strong fit for service-based businesses that want a professional website without overcomplicating the process.
+            <FadeIn className="text-center mb-12">
+              <p className="text-primary uppercase tracking-[0.16em] text-xs font-bold mb-3">No templates. No shortcuts.</p>
+              <h2 className="text-4xl md:text-5xl mb-5 font-semibold">Who We Work With</h2>
+              <p className="text-lg text-muted max-w-[760px] mx-auto leading-relaxed">
+                We build websites for businesses that are ready to grow, stand out, and win more work.
               </p>
             </FadeIn>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <FadeIn delay={0.1}>
-                <div className="bg-[#141414] border border-border p-8 rounded-[18px] card-hover h-full">
-                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Ideal for</h3>
-                  <ul className="space-y-3">
-                    {[
-                      "Trades and contractors",
-                      "Excavation and earthworks businesses",
-                      "Flooring and window furnishing businesses",
-                      "Owner-operated local services",
-                      "Small businesses needing a stronger online presence"
-                    ].map((li, i) => (
-                      <li key={i} className="flex gap-3 text-muted text-sm"><span className="text-primary">•</span>{li}</li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeIn>
-              <FadeIn delay={0.2}>
-                <div className="bg-[#141414] border border-border p-8 rounded-[18px] card-hover h-full">
-                  <h3 className="text-2xl font-semibold mb-4 text-foreground">Why it works</h3>
-                  <ul className="space-y-3">
-                    {[
-                      "Personal one-on-one service",
-                      "No bloated agency process",
-                      "Designed around your actual business",
-                      "Clear communication and straightforward pricing",
-                      "A polished result that reflects your work properly"
-                    ].map((li, i) => (
-                      <li key={i} className="flex gap-3 text-muted text-sm"><span className="text-primary">•</span>{li}</li>
-                    ))}
-                  </ul>
-                </div>
-              </FadeIn>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Service-Based Businesses",
+                  desc: "Tradies, contractors, and local services looking for a clean, professional online presence.",
+                },
+                {
+                  title: "Growing Brands",
+                  desc: "Businesses ready to move past DIY websites and step into something more polished.",
+                },
+                {
+                  title: "Local Companies",
+                  desc: "Owner-operated businesses that want to be found, trusted, and chosen online.",
+                },
+              ].map((card, i) => (
+                <FadeIn key={i} delay={i * 0.1}>
+                  <div className="bg-[#141414] border border-border rounded-[20px] p-8 card-hover h-full">
+                    <h3 className="text-xl font-semibold mb-3 text-foreground">{card.title}</h3>
+                    <p className="text-muted text-base leading-relaxed">{card.desc}</p>
+                  </div>
+                </FadeIn>
+              ))}
             </div>
           </div>
         </section>
