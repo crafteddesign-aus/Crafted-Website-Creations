@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Link } from "wouter";
+import { motion } from "framer-motion";
 
 // Reusable animated section component
 function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) {
