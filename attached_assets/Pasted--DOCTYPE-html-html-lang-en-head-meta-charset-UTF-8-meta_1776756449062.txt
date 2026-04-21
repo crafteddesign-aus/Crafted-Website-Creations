@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crafted Designs | Websites Crafted for Local Business</title>
+  <meta
+    name="description"
+    content="Crafted Designs builds clean, modern websites for local businesses, trades, and service-based operators."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --background: #0D0D0D;
+      --panel: #141414;
+      --border: #333333;
+      --text: #FAFAFA;
+      --muted: #A6A6A6;
+      --primary: #FF8C00;
+      --primary-dark: #d97706;
+      --accent: #523200;
+      --max-width: 1180px;
+      --radius: 18px;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 5.5rem 0;
+    }
+
+    .section-alt {
+      background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(13,13,13,1) 100%);
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1.02;
+      letter-spacing: 0.01em;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 8vw, 6.8rem);
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+
+    h2 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      margin-bottom: 0.85rem;
+    }
+
+    p.lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .accent {
+      color: var(--primary);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: rgba(13, 13, 13, 0.86);
+      border-bottom: 1px solid rgba(51, 51, 51, 0.9);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .brand .accent {
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 48px;
+      padding: 0.9rem 1.35rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-weight: 700;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #0D0D0D;
+      border-color: var(--primary);
+      box-shadow: 0 8px 30px rgba(255, 140, 0, 0.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 7rem 0 6rem;
+      background:
+        radial-gradient(circle at top right, rgba(255, 140, 0, 0.16), transparent 26%),
+        radial-gradient(circle at left center, rgba(82, 50, 0, 0.28), transparent 24%),
+        var(--background);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .hero-points {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .pill {
+      border: 1px solid var(--border);
+      background: rgba(20, 20, 20, 0.85);
+      color: var(--muted);
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(15,15,15,1) 100%);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 22px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-panel:last-child {
+      margin-bottom: 0;
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 0.65rem;
+      color: var(--primary);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .mock-window {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #101010;
+    }
+
+    .mock-topbar {
+      display: flex;
+      gap: 0.4rem;
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: #171717;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #404040;
+    }
+
+    .mock-body {
+      padding: 1.4rem;
+      min-height: 230px;
+      background:
+        linear-gradient(160deg, rgba(255,140,0,0.12), transparent 30%),
+        #101010;
+    }
+
+    .mock-badge {
+      display: inline-block;
+      border: 1px solid rgba(255,140,0,0.25);
+      color: var(--primary);
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .mock-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .mock-lines {
+      display: grid;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .mock-lines span {
+      display: block;
+      height: 10px;
+      border-radius: 999px;
+      background: #252525;
+    }
+
+    .mock-lines span:nth-child(1) { width: 88%; }
+    .mock-lines span:nth-child(2) { width: 76%; }
+    .mock-lines span:nth-child(3) { width: 64%; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.4rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .section-head {
+      display: grid;
+      gap: 0.8rem;
+      margin-bottom: 2.25rem;
+      max-width: 760px;
+    }
+
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 140, 0, 0.35);
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 0.8rem;
+    }
+
+    .card ul li::before {
+      content: "•";
+      color: var(--primary);
+      margin-right: 0.6rem;
+    }
+
+    .process {
+      counter-reset: step;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
+
+    .step {
+      position: relative;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      min-height: 220px;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 140, 0, 0.12);
+      border: 1px solid rgba(255, 140, 0, 0.22);
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .portfolio-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+    }
+
+    .portfolio-visual {
+      min-height: 320px;
+      background:
+        linear-gradient(140deg, rgba(255,140,0,0.2), transparent 38%),
+        linear-gradient(180deg, #191919, #111111);
+      border-right: 1px solid var(--border);
+      padding: 1.75rem;
+      display: flex;
+      align-items: end;
+    }
+
+    .portfolio-copy {
+      padding: 2rem;
+      display: grid;
+      align-content: center;
+      gap: 1rem;
+    }
+
+    .quote {
+      background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(13,13,13,1) 100%);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .quote p {
+      color: var(--text);
+      font-size: 1.15rem;
+      max-width: 820px;
+    }
+
+    .quote-footer {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+    }
+
+    .pricing {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .price-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2rem;
+    }
+
+    .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      color: var(--text);
+      margin: 0.5rem 0 0.75rem;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1.25rem;
+    }
+
+    .contact-panel,
+    .contact-form {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-item {
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    label {
+      display: grid;
+      gap: 0.45rem;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      background: #101010;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 0.95rem 1rem;
+      color: var(--text);
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.12);
+    }
+
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 0 2.5rem;
+      color: var(--muted);
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .contact-wrap,
+      .portfolio-card,
+      .pricing,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .portfolio-visual {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .section {
+        padding: 4.4rem 0;
+      }
+
+      .nav {
+        min-height: auto;
+        padding: 1rem 0;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 0.9rem 1rem;
+      }
+
+      .hero {
+        padding-top: 5rem;
+      }
+
+      .stats,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">Craft<span class="accent">ed</span> Designs</a>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#work">Work</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="btn btn-primary">Get a Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Boutique web design for local business</div>
+          <h1>Websites <span class="accent">crafted</span> for local business.</h1>
+          <p class="lead">
+            Crafted Designs builds clean, modern websites for trades, service businesses,
+            and owner-operated brands that want a professional online presence without the bulk of a large agency.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Request a Quote</a>
+            <a href="#work" class="btn btn-secondary">View My Work</a>
+          </div>
+
+          <div class="hero-points">
+            <span class="pill">Tailored one-on-one service</span>
+            <span class="pill">Clean premium design</span>
+            <span class="pill">Fast, simple launch process</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-panel">
+            <span class="label">Current project</span>
+            <div class="mock-window">
+              <div class="mock-topbar">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <div class="mock-body">
+                <span class="mock-badge">Business Website</span>
+                <div class="mock-title">NQ Excavations</div>
+                <p>Custom layout focused on services, imagery, trust, and clean enquiries.</p>
+                <div class="mock-lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>1:1</strong>
+              <p>Direct service from start to finish</p>
+            </div>
+            <div class="stat">
+              <strong>Mobile</strong>
+              <p>Built to look strong on phone and desktop</p>
+            </div>
+            <div class="stat">
+              <strong>Simple</strong>
+              <p>Clear process, clear pricing, no clutter</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="services">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Services</div>
+          <h2>What I offer</h2>
+          <p class="lead">
+            Simple, effective websites built around your business needs — designed to present your work properly and make it easy for customers to get in touch.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Website Design</h3>
+            <p>Custom landing pages and small business websites with a clean, premium look.</p>
+            <ul>
+              <li>Single-page and brochure-style websites</li>
+              <li>Tailored layout and copy structure</li>
+              <li>Modern mobile-friendly design</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Business Content Setup</h3>
+            <p>Clear presentation of services, galleries, reviews, and business information.</p>
+            <ul>
+              <li>Service sections and visual hierarchy</li>
+              <li>Image and gallery presentation</li>
+              <li>Google reviews integration</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Launch & Support</h3>
+            <p>Help with the practical side of getting your site live and keeping it updated.</p>
+            <ul>
+              <li>Contact forms and enquiry setup</li>
+              <li>Basic updates and refinements</li>
+              <li>Guidance on domains and launch</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="audience">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Built for</div>
+          <h2>Local businesses that want to look the part online</h2>
+          <p class="lead">
+            Crafted Designs is a strong fit for service-based businesses that want a professional website without overcomplicating the process.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Ideal for</h3>
+            <ul>
+              <li>Trades and contractors</li>
+              <li>Excavation and earthworks businesses</li>
+              <li>Flooring and window furnishing businesses</li>
+              <li>Owner-operated local services</li>
+              <li>Small businesses needing a stronger online presence</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Why it works</h3>
+            <ul>
+              <li>Personal one-on-one service</li>
+              <li>No bloated agency process</li>
+              <li>Designed around your actual business</li>
+              <li>Clear communication and straightforward pricing</li>
+              <li>A polished result that reflects your work properly</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="process">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Process</div>
+          <h2>How it works</h2>
+          <p class="lead">
+            The goal is to keep the process easy: gather what is needed, build the site properly, refine it together, and launch with confidence.
+          </p>
+        </div>
+
+        <div class="process">
+          <article class="step">
+            <h3>Initial chat</h3>
+            <p>You tell me about your business, what you offer, and the type of website you want.</p>
+          </article>
+
+          <article class="step">
+            <h3>Content & setup</h3>
+            <p>You send through your photos, services, contact details, and anything else the site needs.</p>
+          </article>
+
+          <article class="step">
+            <h3>Build phase</h3>
+            <p>I design and build a clean, tailored layout around your business and branding.</p>
+          </article>
+
+          <article class="step">
+            <h3>Review & refine</h3>
+            <p>You review the site, request any changes, and approve the final direction.</p>
+          </article>
+
+          <article class="step">
+            <h3>Launch</h3>
+            <p>Your website goes live and is ready to represent your business properly online.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Recent work</div>
+          <h2>Current project</h2>
+          <p class="lead">
+            Your portfolio can grow over time. Even one clean project is enough to begin building trust when it is presented well.
+          </p>
+        </div>
+
+        <article class="portfolio-card">
+          <div class="portfolio-visual">
+            <div>
+              <span class="label">In progress</span>
+              <h3 style="font-size: 2.7rem; margin-bottom: 0.6rem;">NQ Excavations</h3>
+              <p>A custom business website focused on services, visuals, trust, and local lead generation.</p>
+            </div>
+          </div>
+          <div class="portfolio-copy">
+            <h3>Designed around a real local business</h3>
+            <p>
+              This project is being built as a clean, professional website for an excavation business, with strong visual presentation, service sections, contact pathways, and room for gallery content and customer trust elements.
+            </p>
+            <p>
+              As more projects are completed, this section can expand into a full portfolio showcase.
+            </p>
+            <div>
+              <a href="#contact" class="btn btn-secondary">Ask About Your Project</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="testimonial">
+      <div class="container">
+        <div class="quote">
+          <div class="eyebrow">Client feedback</div>
+          <p>
+            “Super easy to work with and nailed exactly what I was after. The site looks clean, professional, and actually represents the business properly.”
+          </p>
+          <div class="quote-footer">Client testimonial placeholder</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Pricing</div>
+          <h2>Simple pricing guidance</h2>
+          <p class="lead">
+            Every website is tailored, but a general guide helps set expectations and keeps the process transparent.
+          </p>
+        </div>
+
+        <div class="pricing">
+          <article class="price-card">
+            <div class="eyebrow">Starting point</div>
+            <h3>Landing pages</h3>
+            <div class="price">From $500+</div>
+            <p>
+              Ideal for businesses wanting a strong one-page website with clear messaging, visuals, contact details, and a polished look.
+            </p>
+          </article>
+
+          <article class="price-card">
+            <div class="eyebrow">Custom scope</div>
+            <h3>Small business websites</h3>
+            <div class="price">Quoted to suit</div>
+            <p>
+              Pricing depends on content, number of sections or pages, galleries, reviews, forms, and any ongoing support or edits required.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+      <div class="container contact-wrap">
+        <div class="contact-panel">
+          <div class="eyebrow">Get in touch</div>
+          <h2>Let’s build your website</h2>
+          <p class="lead">
+            If you are ready to get your business online properly, send through a few details and I will get back to you.
+          </p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <strong>Name</strong>
+              <p>Your business or contact name</p>
+            </div>
+            <div class="contact-item">
+              <strong>Email</strong>
+              <p>your@email.com</p>
+            </div>
+            <div class="contact-item">
+              <strong>Phone</strong>
+              <p>Replace with your phone number</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form>
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="Your email" />
+            </label>
+            <label>
+              Phone
+              <input type="tel" name="phone" placeholder="Your phone number" />
+            </label>
+            <label>
+              Message
+              <textarea name="message" placeholder="Tell me a little about your business and what you need."></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary">Request a Quote</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p><strong style="color: var(--text);">Crafted Designs</strong> — Custom websites for local business.</p>
+      <p>Built with a premium dark palette and tailored approach.</p>
+    </div>
+  </footer>
+</body>
+</html>
