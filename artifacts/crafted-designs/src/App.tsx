@@ -45,8 +45,22 @@ export default function App() {
         }`}
       >
         <div className="container-custom flex items-center justify-between">
-          <button onClick={() => scrollTo("top")} className="text-2xl font-serif tracking-widest uppercase hover:opacity-80 transition-opacity">
-            Craft<span className="text-primary font-bold">ed</span> Designs
+          <button
+            onClick={() => scrollTo("top")}
+            className="hover:opacity-90 transition-opacity flex-shrink-0"
+            aria-label="Crafted Designs — home"
+          >
+            <div
+              style={{
+                width: 210,
+                height: 76,
+                overflow: "hidden",
+                backgroundImage: "url('/logo-brand.png')",
+                backgroundSize: "630px auto",
+                backgroundPosition: "-210px -175px",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
           </button>
           
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
@@ -445,9 +459,19 @@ export default function App() {
       {/* FOOTER */}
       <footer className="border-t border-border py-8 text-muted text-sm bg-background">
         <div className="container-custom flex flex-col md:flex-row items-center justify-between gap-4">
-          <div>
-            <span className="font-serif text-lg text-foreground uppercase tracking-widest block mb-1">Crafted Designs</span>
-            Custom websites for local business.
+          <div className="flex flex-col items-start gap-2">
+            <div
+              style={{
+                width: 165,
+                height: 60,
+                overflow: "hidden",
+                backgroundImage: "url('/logo-brand.png')",
+                backgroundSize: "495px auto",
+                backgroundPosition: "-165px -122px",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
+            <span className="text-muted">Custom websites for local business.</span>
           </div>
           <div className="flex items-center gap-6">
             <a href="#top" onClick={(e) => { e.preventDefault(); scrollTo("top"); }} className="hover:text-foreground transition-colors">Back to top</a>
