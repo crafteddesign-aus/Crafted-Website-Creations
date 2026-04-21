@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--text);
+  --color-border: var(--border-color);
+  --color-input: var(--border-color);
+  --color-ring: var(--primary);
+
+  --color-card: var(--panel);
+  --color-card-foreground: var(--text);
+  --color-card-border: var(--border-color);
+
+  --color-popover: var(--panel);
+  --color-popover-foreground: var(--text);
+  --color-popover-border: var(--border-color);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--background);
+  --color-primary-border: var(--primary);
+
+  --color-secondary: var(--panel);
+  --color-secondary-foreground: var(--text);
+  --color-secondary-border: var(--border-color);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted);
+  --color-muted-border: var(--border-color);
+
+  --color-accent: var(--primary);
+  --color-accent-foreground: var(--background);
+  --color-accent-border: var(--primary);
+
+  --color-destructive: #ff4a4a;
+  --color-destructive-foreground: var(--text);
+  --color-destructive-border: #ff4a4a;
+
+  --font-sans: 'Nunito Sans', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+}
+
+:root {
+  --background: #0D0D0D;
+  --panel: #141414;
+  --border-color: #333333;
+  --text: #FAFAFA;
+  --muted: #A6A6A6;
+  --primary: #FF8C00;
+  --max-width: 1180px;
+  --radius: 18px;
+}
+
+.dark {
+  --background: #0D0D0D;
+  --panel: #141414;
+  --border-color: #333333;
+  --text: #FAFAFA;
+  --muted: #A6A6A6;
+  --primary: #FF8C00;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+  }
+
+  p {
+    @apply text-muted font-sans;
+  }
+}
+
+.section-padding {
+  @apply py-20 md:py-28;
+}
+
+.container-custom {
+  width: min(calc(100% - 2rem), var(--max-width));
+  margin: 0 auto;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_8px_30px_rgba(255,140,0,0.1)];
+}

@@ -16,6 +16,16 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Artifacts
+
+### Crafted Designs (`artifacts/crafted-designs`)
+- **Type**: React + Vite, frontend-only (no backend)
+- **Preview path**: `/` (root)
+- **Purpose**: Single-page marketing website for "Crafted Designs" — a boutique web design business targeting local Australian trades and service businesses
+- **Design**: Dark premium theme (#0D0D0D bg, #FF8C00 amber accent), Cormorant Garamond headings + Nunito Sans body, framer-motion animations
+- **Sections**: Hero, Services, Built For, Process, Portfolio, Testimonial, Pricing, Contact, Footer
+- **Status**: Contact form is UI-only (no email delivery yet)
+
 ## Key Commands
 
 - `pnpm run typecheck` — full typecheck across all packages

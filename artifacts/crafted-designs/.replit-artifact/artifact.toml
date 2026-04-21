@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Crafted Designs"
+version = "1.0.0"
+id = "artifacts/crafted-designs"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19273
+
+[services.development]
+run = "pnpm --filter @workspace/crafted-designs run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/crafted-designs", "run", "build" ]
+publicDir = "artifacts/crafted-designs/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19273"
+BASE_PATH = "/"
