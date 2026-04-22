@@ -343,22 +343,22 @@ export default function App() {
 
             <FadeIn>
               <div className="grid md:grid-cols-2 rounded-[24px] overflow-hidden border border-border bg-[#1A1510]">
-                <div className="bg-gradient-to-br from-primary/20 via-[#1E1610] to-[#110E09] p-8 md:p-12 border-b md:border-b-0 md:border-r border-border flex items-end min-h-[320px] md:min-h-[400px]">
-                   <div className="w-full max-w-[300px]">
-                      <div className="rounded-xl overflow-hidden shadow-2xl" style={{ background: "#120E0A", border: "1px solid #3a2e1e" }}>
-                         <div className="flex gap-1.5 p-3" style={{ borderBottom: "1px solid #3a2e1e", background: "#1E1810" }}>
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
-                            <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
-                          </div>
-                          <div className="p-6" style={{ background: "#0F0C08" }}>
-                             <div className="h-8 w-2/3 rounded-md mb-4" style={{ background: "#2a1E10" }}></div>
-                             <div className="h-4 w-full rounded-sm mb-2" style={{ background: "#221A0F" }}></div>
-                             <div className="h-4 w-4/5 rounded-sm mb-6" style={{ background: "#221A0F" }}></div>
-                             <div className="h-24 w-full rounded-lg" style={{ background: "#2a1E10" }}></div>
-                          </div>
-                      </div>
-                   </div>
+                <div className="relative border-b md:border-b-0 md:border-r border-border overflow-hidden min-h-[320px] md:min-h-[400px]" style={{ background: "#0F0C08" }}>
+                  {/* Browser chrome */}
+                  <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border" style={{ background: "#1A1510" }}>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
+                    <div className="ml-3 flex-1 rounded-full px-3 py-1 text-[0.7rem] text-muted" style={{ background: "#120E0A", border: "1px solid #3a2e1e" }}>
+                      northqldexcavation.com.au
+                    </div>
+                  </div>
+                  <img
+                    src="/excavation-project.png"
+                    alt="North QLD Excavation — project screenshot"
+                    className="w-full h-full object-cover object-top"
+                    style={{ display: "block" }}
+                  />
                 </div>
                 <div className="p-8 md:p-12 flex flex-col justify-center">
                   <h3 className="text-3xl font-semibold mb-4 text-foreground">Designed around a real local business</h3>
