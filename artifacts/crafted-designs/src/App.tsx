@@ -338,43 +338,80 @@ export default function App() {
           <div className="container-custom">
             <FadeIn className="mb-12">
               <p className="text-primary uppercase tracking-[0.16em] text-xs font-bold mb-3">Portfolio</p>
-              <h2 className="text-4xl md:text-5xl font-semibold">Current project</h2>
+              <h2 className="text-4xl md:text-5xl font-semibold">Current projects</h2>
             </FadeIn>
 
-            <FadeIn>
-              <div className="grid md:grid-cols-2 rounded-[24px] overflow-hidden border border-border bg-[#1A1510]">
-                <div className="relative border-b md:border-b-0 md:border-r border-border overflow-hidden min-h-[320px] md:min-h-[400px]" style={{ background: "#0F0C08" }}>
-                  {/* Browser chrome */}
-                  <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border" style={{ background: "#1A1510" }}>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
-                    <div className="ml-3 flex-1 rounded-full px-3 py-1 text-[0.7rem] text-muted" style={{ background: "#120E0A", border: "1px solid #3a2e1e" }}>
-                      northqldexcavation.com.au
+            <div className="flex flex-col gap-6">
+              <FadeIn>
+                <div className="grid md:grid-cols-2 rounded-[24px] overflow-hidden border border-border bg-[#1A1510]">
+                  <div className="relative border-b md:border-b-0 md:border-r border-border overflow-hidden min-h-[320px] md:min-h-[400px]" style={{ background: "#0F0C08" }}>
+                    {/* Browser chrome */}
+                    <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border" style={{ background: "#1A1510" }}>
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
+                      <div className="ml-3 flex-1 rounded-full px-3 py-1 text-[0.7rem] text-muted" style={{ background: "#120E0A", border: "1px solid #3a2e1e" }}>
+                        northqldexcavation.com.au
+                      </div>
+                    </div>
+                    <img
+                      src="/excavation-project.png"
+                      alt="North QLD Excavation — project screenshot"
+                      className="w-full h-full object-cover object-top"
+                      style={{ display: "block" }}
+                    />
+                  </div>
+                  <div className="p-8 md:p-12 flex flex-col justify-center">
+                    <h3 className="text-3xl font-semibold mb-4 text-foreground">Designed around a real local business</h3>
+                    <p className="text-muted mb-8 leading-relaxed">
+                      This recent project required a clean, professional website for an excavation business.
+                      The focus was on strong visuals, clear service sections, and simple contact pathways
+                      to ensure potential clients could understand the offering and get in touch quickly.
+                    </p>
+                    <div>
+                      <button onClick={() => scrollTo("contact")} className="rounded-full border border-border bg-transparent text-foreground px-6 py-3 font-bold hover:border-primary hover:text-primary transition-all">
+                        Ask About Your Project
+                      </button>
                     </div>
                   </div>
-                  <img
-                    src="/excavation-project.png"
-                    alt="North QLD Excavation — project screenshot"
-                    className="w-full h-full object-cover object-top"
-                    style={{ display: "block" }}
-                  />
                 </div>
-                <div className="p-8 md:p-12 flex flex-col justify-center">
-                  <h3 className="text-3xl font-semibold mb-4 text-foreground">Designed around a real local business</h3>
-                  <p className="text-muted mb-8 leading-relaxed">
-                    This recent project required a clean, professional website for an excavation business.
-                    The focus was on strong visuals, clear service sections, and simple contact pathways
-                    to ensure potential clients could understand the offering and get in touch quickly.
-                  </p>
-                  <div>
-                    <button onClick={() => scrollTo("contact")} className="rounded-full border border-border bg-transparent text-foreground px-6 py-3 font-bold hover:border-primary hover:text-primary transition-all">
-                      Ask About Your Project
-                    </button>
+              </FadeIn>
+
+              <FadeIn>
+                <div className="grid md:grid-cols-2 rounded-[24px] overflow-hidden border border-border bg-[#1A1510]">
+                  <div className="relative border-b md:border-b-0 md:border-r border-border overflow-hidden min-h-[320px] md:min-h-[400px]" style={{ background: "#0F0C08" }}>
+                    {/* Browser chrome */}
+                    <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border" style={{ background: "#1A1510" }}>
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
+                      <div className="ml-3 flex-1 rounded-full px-3 py-1 text-[0.7rem] text-muted" style={{ background: "#120E0A", border: "1px solid #3a2e1e" }}>
+                        nqbgsheds.com.au
+                      </div>
+                    </div>
+                    <img
+                      src="/sheds-project.png"
+                      alt="NQBG Sheds — project screenshot"
+                      className="w-full h-full object-cover object-top"
+                      style={{ display: "block" }}
+                    />
+                  </div>
+                  <div className="p-8 md:p-12 flex flex-col justify-center">
+                    <h3 className="text-3xl font-semibold mb-4 text-foreground">Built for a trade business ready to grow</h3>
+                    <p className="text-muted mb-8 leading-relaxed">
+                      NQBG Sheds needed a site that matched the scale and professionalism of their shed solutions.
+                      The result is a clear, confident presence — built around their services, coverage area,
+                      and making it easy for customers to request a quote.
+                    </p>
+                    <div>
+                      <button onClick={() => scrollTo("contact")} className="rounded-full border border-border bg-transparent text-foreground px-6 py-3 font-bold hover:border-primary hover:text-primary transition-all">
+                        Ask About Your Project
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
           </div>
         </section>
 
