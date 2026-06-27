@@ -341,10 +341,10 @@ export default function App() {
               <h2 className="text-4xl md:text-5xl font-semibold">Current projects</h2>
             </FadeIn>
 
-            <div className="flex flex-col gap-6">
+            <div className="grid gap-6 md:grid-cols-2">
               <FadeIn>
-                <div className="grid md:grid-cols-2 rounded-[24px] overflow-hidden border border-border bg-[#1A1510]">
-                  <div className="relative border-b md:border-b-0 md:border-r border-border overflow-hidden min-h-[320px] md:min-h-[400px]" style={{ background: "#0F0C08" }}>
+                <div className="flex flex-col rounded-[24px] overflow-hidden border border-border bg-[#1A1510] h-full">
+                  <div className="relative border-b border-border overflow-hidden min-h-[240px]" style={{ background: "#0F0C08" }}>
                     {/* Browser chrome */}
                     <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border" style={{ background: "#1A1510" }}>
                       <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
@@ -361,15 +361,14 @@ export default function App() {
                       style={{ display: "block" }}
                     />
                   </div>
-                  <div className="p-8 md:p-12 flex flex-col justify-center">
-                    <h3 className="text-3xl font-semibold mb-4 text-foreground">Designed around a real local business</h3>
-                    <p className="text-muted mb-8 leading-relaxed">
-                      This recent project required a clean, professional website for an excavation business.
-                      The focus was on strong visuals, clear service sections, and simple contact pathways
-                      to ensure potential clients could understand the offering and get in touch quickly.
+                  <div className="p-8 flex flex-col justify-center flex-1">
+                    <h3 className="text-2xl font-semibold mb-3 text-foreground">Designed around a real local business</h3>
+                    <p className="text-muted mb-6 leading-relaxed text-sm">
+                      A clean, professional website for an excavation business — strong visuals, clear service sections,
+                      and simple contact pathways so potential clients can understand the offering and get in touch quickly.
                     </p>
                     <div>
-                      <button onClick={() => scrollTo("contact")} className="rounded-full border border-border bg-transparent text-foreground px-6 py-3 font-bold hover:border-primary hover:text-primary transition-all">
+                      <button onClick={() => scrollTo("contact")} className="rounded-full border border-border bg-transparent text-foreground px-5 py-2.5 text-sm font-bold hover:border-primary hover:text-primary transition-all">
                         Ask About Your Project
                       </button>
                     </div>
@@ -378,8 +377,8 @@ export default function App() {
               </FadeIn>
 
               <FadeIn>
-                <div className="grid md:grid-cols-2 rounded-[24px] overflow-hidden border border-border bg-[#1A1510]">
-                  <div className="relative border-b md:border-b-0 md:border-r border-border overflow-hidden min-h-[320px] md:min-h-[400px]" style={{ background: "#0F0C08" }}>
+                <div className="flex flex-col rounded-[24px] overflow-hidden border border-border bg-[#1A1510] h-full">
+                  <div className="relative border-b border-border overflow-hidden min-h-[240px]" style={{ background: "#0F0C08" }}>
                     {/* Browser chrome */}
                     <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border" style={{ background: "#1A1510" }}>
                       <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
@@ -396,15 +395,14 @@ export default function App() {
                       style={{ display: "block" }}
                     />
                   </div>
-                  <div className="p-8 md:p-12 flex flex-col justify-center">
-                    <h3 className="text-3xl font-semibold mb-4 text-foreground">Built for a trade business ready to grow</h3>
-                    <p className="text-muted mb-8 leading-relaxed">
-                      NQBG Sheds needed a site that matched the scale and professionalism of their shed solutions.
-                      The result is a clear, confident presence — built around their services, coverage area,
-                      and making it easy for customers to request a quote.
+                  <div className="p-8 flex flex-col justify-center flex-1">
+                    <h3 className="text-2xl font-semibold mb-3 text-foreground">Built for a trade business ready to grow</h3>
+                    <p className="text-muted mb-6 leading-relaxed text-sm">
+                      NQBG Sheds needed a site that matched the scale and professionalism of their shed solutions —
+                      a confident presence built around their services, coverage area, and a clear path to quote.
                     </p>
                     <div>
-                      <button onClick={() => scrollTo("contact")} className="rounded-full border border-border bg-transparent text-foreground px-6 py-3 font-bold hover:border-primary hover:text-primary transition-all">
+                      <button onClick={() => scrollTo("contact")} className="rounded-full border border-border bg-transparent text-foreground px-5 py-2.5 text-sm font-bold hover:border-primary hover:text-primary transition-all">
                         Ask About Your Project
                       </button>
                     </div>
