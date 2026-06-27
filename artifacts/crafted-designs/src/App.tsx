@@ -351,7 +351,7 @@ export default function App() {
                       <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
                       <div className="w-2.5 h-2.5 rounded-full bg-[#5a4020]" />
                       <div className="ml-3 flex-1 rounded-full px-3 py-1 text-[0.7rem] text-muted" style={{ background: "#120E0A", border: "1px solid #3a2e1e" }}>
-                        northqldexcavation.com.au
+                        nqexcavations.com.au
                       </div>
                     </div>
                     <img
