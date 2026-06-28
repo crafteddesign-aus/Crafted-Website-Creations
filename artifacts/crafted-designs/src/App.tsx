@@ -338,7 +338,7 @@ export default function App() {
                         background: "#0D0D0D", border: "1px solid rgba(255,255,255,0.08)",
                         padding: "0.25rem 0.75rem", fontSize: "0.68rem", color: "var(--muted)",
                       }}>
-                        nqbgsheds.com.au
+                        www.nqbgsheds.com.au
                       </div>
                     </div>
                     <div style={{ overflow: "hidden", maxHeight: 300 }}>
@@ -511,7 +511,7 @@ export default function App() {
                       background: "#0D0D0D", border: "1px solid rgba(255,255,255,0.07)",
                       padding: "0.25rem 0.75rem", fontSize: "0.68rem", color: "var(--muted)",
                     }}>
-                      nqbgsheds.com.au
+                      www.nqbgsheds.com.au
                     </div>
                   </div>
                   <div style={{ overflow: "hidden", flex: 1 }}>
@@ -551,7 +551,7 @@ export default function App() {
                     A bold, professional website created for a Whitsundays shed builder, designed to showcase their projects, services and service areas.
                   </p>
                   <a
-                    href="https://nqbgsheds.com.au"
+                    href="https://www.nqbgsheds.com.au"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-ghost"
