@@ -1,0 +1,282 @@
+Please rebuild the mobile phone mockup. It still looks like a small rounded website card rather than a genuine modern smartphone.
+
+Do not simply stretch the existing phone container. Reconstruct both the physical phone frame and the website displayed inside it.
+
+## 1. Correct the phone proportions
+
+The current phone is too wide and too short.
+
+Use a realistic modern portrait phone ratio close to 9:19.5.
+
+Recommended desktop dimensions:
+
+* Width: 240px to 255px
+* Height: 490px to 520px
+* Border radius: 36px to 42px
+
+Use CSS `aspect-ratio` where practical:
+
+```css
+aspect-ratio: 9 / 19.5;
+```
+
+The phone must look clearly taller than it is wide.
+
+Do not allow its height to be determined only by the content inside it.
+
+## 2. Create a more realistic physical phone frame
+
+Build an outer device shell with:
+
+* Dark charcoal or black finish
+* Approximately 8px to 11px outer frame thickness
+* Large rounded corners
+* Thin orange edge highlight
+* Soft dark shadow underneath
+* Small warm-orange ambient glow behind the device
+* `overflow: hidden`
+
+Suggested structure:
+
+```html
+<div class="phone-device">
+  <div class="phone-screen">
+    <!-- mobile website -->
+  </div>
+</div>
+```
+
+The outer device should feel thicker and more physical than the website screen.
+
+## 3. Add an obvious top phone area
+
+Inside the device, include a realistic status area.
+
+Add:
+
+* Time on the left, for example `9:41`
+* Signal bars
+* Wi-Fi icon
+* Battery icon
+* A small centred speaker or camera cutout
+
+The camera/speaker area should be visible enough to help sell the phone shape.
+
+Use proper CSS or Lucide icons where appropriate.
+
+Do not use emoji icons.
+
+## 4. Add a bottom home indicator
+
+Add a small horizontal home indicator at the bottom of the phone:
+
+* Width around 75px to 90px
+* Height around 4px
+* Rounded pill shape
+* Light grey or muted white
+* Positioned above the bottom edge
+* Centred horizontally
+
+This must remain visible and separate from the website content.
+
+## 5. Rebuild the website inside as a true mobile layout
+
+The content inside the phone must not be a scaled-down desktop website.
+
+Create a genuine mobile layout with its own structure.
+
+The mobile website should contain:
+
+### Mobile navigation
+
+At the top:
+
+* Small fictional logo on the left
+* Hamburger menu on the right
+* Clean dark header
+* Approximately 48px to 56px high
+
+Use the fictional Whitsundays brand consistently.
+
+Suggested fictional name:
+
+“CORAL & SHORE CO.”
+
+### Mobile hero image
+
+Use the same Whitsundays image as the desktop preview, but crop it independently for portrait.
+
+Use:
+
+```css
+object-fit: cover;
+object-position: center;
+```
+
+Adjust `object-position` so the coastline and water remain visible.
+
+The hero image should occupy approximately the upper 45% to 52% of the usable screen.
+
+### Mobile hero text
+
+Layer the following HTML text over the image:
+
+Small label:
+
+“IMAGINE YOUR BUSINESS HERE”
+
+Heading:
+
+“Your Website Here”
+
+Supporting text:
+
+“Showcase what makes your business special in the Whitsundays.”
+
+Button:
+
+“EXPLORE”
+
+or:
+
+“BOOK NOW”
+
+The heading should wrap naturally over two or three lines.
+
+Do not shrink the desktop typography until it becomes unreadable.
+
+Suggested phone typography:
+
+* Small label: 7px to 9px
+* Heading: 25px to 30px
+* Supporting text: 9px to 11px
+* Button text: 9px to 10px
+
+## 6. Show content continuing below the hero
+
+The phone must demonstrate that it contains a full scrolling mobile webpage.
+
+Below the mobile hero, include a separate dark teal or near-black section.
+
+Add three very small feature items, either:
+
+* Stacked vertically
+
+or:
+
+* In a compact three-column row
+
+Suggested labels:
+
+* Local Expertise
+* Island Tours
+* Eco Travel
+
+Include simple icons and very short supporting text.
+
+This lower section should look deliberately designed for mobile rather than copied directly from the desktop preview.
+
+## 7. Improve scale and position beside the desktop mockup
+
+Position the phone so it overlaps the desktop mockup on the lower-right side.
+
+Recommended placement:
+
+* Phone overlaps approximately 15% to 22% of the desktop mockup width
+* Bottom of phone extends slightly below the desktop browser
+* Right edge remains inside the hero container
+* Phone should be visually prominent but should not cover the words “Your Website Here” on the desktop mockup
+
+Increase the phone size enough that the mobile layout is clearly readable.
+
+Do not reduce it merely to keep it inside the desktop frame.
+
+Allow the phone to sit partially outside the browser mockup while remaining inside the overall hero section.
+
+## 8. Separate the desktop and phone screen designs
+
+The desktop and mobile screens should use:
+
+* The same fictional brand
+* The same general colours
+* The same Whitsundays imagery
+* The same main message
+
+However, they must use different responsive layouts.
+
+The phone should not be created by:
+
+* Screenshotting the desktop mockup
+* Scaling down the desktop HTML
+* Using CSS transform scale on the desktop layout
+* Cropping the whole desktop browser image
+
+Build a dedicated mobile-preview component.
+
+Suggested component structure:
+
+```jsx
+<DesktopWebsitePreview />
+<MobileWebsitePreview />
+```
+
+## 9. Keep the phone content contained correctly
+
+Ensure:
+
+```css
+.phone-device {
+  position: absolute;
+  width: clamp(220px, 17vw, 255px);
+  aspect-ratio: 9 / 19.5;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.phone-screen {
+  position: absolute;
+  inset: 9px;
+  border-radius: 31px;
+  overflow: hidden;
+}
+```
+
+Adjust these measurements to suit the project, but keep the tall portrait ratio.
+
+Do not set a short fixed height such as 260px or 320px.
+
+## 10. Mobile behaviour for the main Crafted Designs page
+
+When the Crafted Designs website itself is viewed on a phone:
+
+* Reduce the device mockup sizes
+* Stack the preview beneath the main hero content
+* Keep the phone overlapping the desktop preview slightly
+* Do not let it overflow the page
+* Keep enough height to retain the portrait phone appearance
+* Do not hide the phone unless absolutely necessary
+
+## 11. Final visual target
+
+The finished phone should immediately read as:
+
+* A real modern smartphone
+* Tall portrait orientation
+* Separate physical device shell
+* Dedicated responsive mobile website
+* Clear status bar and home indicator
+* Properly cropped portrait image
+* Legible mobile text
+* A realistic continuation of the fictional website
+
+The current design looks like a compressed website card. Replace it with a dedicated tall smartphone mockup using a genuine mobile layout.
+
+Before finishing, test that:
+
+1. The device is visibly taller than it is wide.
+2. The phone dimensions remain consistent when content changes.
+3. The screen is inset inside a physical outer frame.
+4. The mobile page is not a scaled desktop preview.
+5. The top status area and bottom home indicator are visible.
+6. The phone remains fully contained within the hero at common desktop widths.
+7. There is no horizontal page overflow.

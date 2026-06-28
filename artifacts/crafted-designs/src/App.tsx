@@ -365,145 +365,182 @@ function DesktopMockup() {
 }
 
 /* ─────────────────────────────────────────
-   Mobile mockup
+   Mobile mockup — true portrait smartphone
 ───────────────────────────────────────── */
 function PhoneMockup() {
   return (
     <div
       className="phone-rise"
       style={{
+        /* Outer device shell */
         position: "absolute",
-        bottom: "-1rem",
-        right: "0.5rem",
-        width: "38%",
+        bottom: "-2rem",
+        right: "2rem",
+        width: "clamp(185px, 15vw, 215px)",
+        aspectRatio: "9 / 19.5",
         zIndex: 3,
-        background: "#111111",
-        borderRadius: 34,
-        border: "1.5px solid rgba(255,255,255,0.12)",
-        boxShadow:
-          "0 0 0 3px rgba(255,138,0,0.15), 0 36px 90px rgba(0,0,0,0.88), inset 0 1px 0 rgba(255,255,255,0.08)",
-        padding: "10px 6px 8px",
+        /* Physical frame */
+        background: "#0d0d0d",
+        borderRadius: 40,
+        border: "1.5px solid rgba(255,138,0,0.3)",
+        boxShadow: [
+          "0 0 55px rgba(255,138,0,0.10)",
+          "0 44px 110px rgba(0,0,0,0.94)",
+          "inset 0 1px 0 rgba(255,255,255,0.08)",
+        ].join(", "),
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      {/* Dynamic island / notch */}
-      <div
-        style={{
-          width: 54,
-          height: 14,
-          background: "#111111",
+
+      {/* ── Top bezel — camera pill ──────────────────────── */}
+      <div style={{
+        flexShrink: 0,
+        height: 24,
+        background: "#0d0d0d",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}>
+        <div style={{
+          width: 60,
+          height: 13,
           borderRadius: 999,
-          margin: "0 auto 5px",
+          background: "#1a1a1a",
+          border: "1px solid rgba(255,255,255,0.06)",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center",
-          gap: 5,
-        }}
-      >
-        <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#1e1e1e", border: "1px solid rgba(255,255,255,0.08)" }} />
-        <div style={{ width: 20, height: 5, borderRadius: 999, background: "#1e1e1e", border: "1px solid rgba(255,255,255,0.08)" }} />
+          justifyContent: "flex-end",
+          paddingRight: 4,
+        }}>
+          <div style={{
+            width: 8,
+            height: 8,
+            borderRadius: "50%",
+            background: "#222",
+            border: "1px solid rgba(255,255,255,0.06)",
+            boxShadow: "inset 0 0 3px rgba(0,0,0,0.9)",
+          }} />
+        </div>
       </div>
 
-      {/* Screen */}
-      <div style={{ borderRadius: 26, overflow: "hidden", background: "#08111a" }}>
+      {/* ── Screen — inset 9px left/right ────────────────── */}
+      <div style={{
+        flex: 1,
+        marginLeft: 9,
+        marginRight: 9,
+        borderRadius: 31,
+        overflow: "hidden",
+        background: "#060d14",
+        display: "flex",
+        flexDirection: "column",
+        minHeight: 0,
+      }}>
 
         {/* Status bar */}
         <div style={{
-          background: "#08111a",
+          flexShrink: 0,
+          background: "#060d14",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "3px 10px 2px",
+          padding: "5px 12px 3px",
         }}>
           <span style={{
             fontFamily: "'Manrope', sans-serif",
             fontWeight: 700,
-            fontSize: "0.42rem",
-            color: "rgba(255,255,255,0.82)",
+            fontSize: 9,
+            color: "rgba(255,255,255,0.85)",
+            letterSpacing: "-0.01em",
           }}>9:41</span>
-          <div style={{ display: "flex", gap: "2.5px", alignItems: "flex-end" }}>
-            {[2, 3, 4.5, 6].map((h, i) => (
+          <div style={{ display: "flex", alignItems: "flex-end", gap: 2.5 }}>
+            {/* Signal bars */}
+            {[3, 5, 7, 9].map((h, i) => (
               <div key={i} style={{
-                width: 2,
+                width: 2.5,
                 height: h,
-                background: i > 1 ? "rgba(255,255,255,0.82)" : "rgba(255,255,255,0.35)",
                 borderRadius: 1,
+                background: i < 3 ? "rgba(255,255,255,0.82)" : "rgba(255,255,255,0.28)",
               }} />
             ))}
+            {/* WiFi arcs */}
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" aria-hidden="true" style={{ marginLeft: 3, marginBottom: 1 }}>
+              <circle cx="6" cy="9" r="1.4" fill="rgba(255,255,255,0.85)"/>
+              <path d="M3 6.5A4.2 4.2 0 0 1 9 6.5" stroke="rgba(255,255,255,0.85)" strokeWidth="1.3" strokeLinecap="round" fill="none"/>
+              <path d="M.5 4A7.5 7.5 0 0 1 11.5 4" stroke="rgba(255,255,255,0.38)" strokeWidth="1.3" strokeLinecap="round" fill="none"/>
+            </svg>
+            {/* Battery */}
             <div style={{
-              width: 13,
-              height: 6.5,
-              border: "1px solid rgba(255,255,255,0.55)",
-              borderRadius: 2,
-              padding: "1px",
-              marginLeft: 3,
+              marginLeft: 2,
+              width: 17,
+              height: 8,
+              border: "1px solid rgba(255,255,255,0.52)",
+              borderRadius: 2.5,
+              padding: "1.5px",
               display: "flex",
-              alignItems: "center",
               position: "relative",
             }}>
-              <div style={{ width: "70%", height: "100%", background: "rgba(255,255,255,0.72)", borderRadius: 1 }} />
+              <div style={{ width: "76%", height: "100%", background: "rgba(255,255,255,0.78)", borderRadius: 1 }} />
               <div style={{
                 position: "absolute",
-                right: -3,
+                right: -4,
                 top: "50%",
                 transform: "translateY(-50%)",
-                width: 2,
-                height: 4,
-                background: "rgba(255,255,255,0.45)",
-                borderRadius: "0 1px 1px 0",
+                width: 3,
+                height: 5,
+                background: "rgba(255,255,255,0.38)",
+                borderRadius: "0 2px 2px 0",
               }} />
             </div>
           </div>
         </div>
 
-        {/* Mobile nav header */}
+        {/* Mobile nav bar */}
         <div style={{
-          background: "rgba(5,12,18,0.97)",
+          flexShrink: 0,
+          background: "rgba(4,10,16,0.98)",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          padding: "6px 10px",
+          padding: "9px 13px",
           borderBottom: "1px solid rgba(255,255,255,0.07)",
         }}>
-          {/* Logo mark + name */}
-          <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
             <div style={{
-              width: 15,
-              height: 15,
-              borderRadius: 5,
-              background: "rgba(255,138,0,0.15)",
-              border: "1px solid rgba(255,138,0,0.45)",
+              width: 19,
+              height: 19,
+              borderRadius: 6,
+              background: "rgba(255,138,0,0.14)",
+              border: "1px solid rgba(255,138,0,0.52)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               flexShrink: 0,
             }}>
-              <div style={{
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
-                border: "1.5px solid #FF8A00",
-              }} />
+              <div style={{ width: 8, height: 8, borderRadius: "50%", border: "1.5px solid #FF8A00" }} />
             </div>
             <span style={{
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 800,
-              fontSize: "0.48rem",
+              fontSize: 8.5,
               color: "#F7F7F5",
-              letterSpacing: "0.01em",
+              letterSpacing: "0.04em",
+              whiteSpace: "nowrap",
             }}>
               CORAL & SHORE CO.
             </span>
           </div>
-          {/* Hamburger menu */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "2.5px" }}>
-            <div style={{ width: 14, height: 1.5, background: "rgba(255,255,255,0.75)", borderRadius: 1 }} />
-            <div style={{ width: 10, height: 1.5, background: "rgba(255,255,255,0.75)", borderRadius: 1 }} />
-            <div style={{ width: 14, height: 1.5, background: "rgba(255,255,255,0.75)", borderRadius: 1 }} />
+          {/* Hamburger */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 3.5, cursor: "default" }}>
+            <div style={{ width: 17, height: 2, background: "rgba(255,255,255,0.8)", borderRadius: 1 }} />
+            <div style={{ width: 12, height: 2, background: "rgba(255,255,255,0.8)", borderRadius: 1 }} />
+            <div style={{ width: 17, height: 2, background: "rgba(255,255,255,0.8)", borderRadius: 1 }} />
           </div>
         </div>
 
-        {/* Hero image with overlay */}
-        <div style={{ position: "relative" }}>
+        {/* Hero image with text overlay */}
+        <div style={{ flexShrink: 0, position: "relative" }}>
           <img
             src="/whitsundays-hero.jpg"
             alt=""
@@ -513,110 +550,146 @@ function PhoneMockup() {
               width: "100%",
               display: "block",
               objectFit: "cover",
-              objectPosition: "center 42%",
-              height: 148,
+              objectPosition: "center 35%",
+              height: 175,
             }}
           />
-          {/* Dark overlay — stronger at bottom for text legibility */}
+          {/* Gradient overlay */}
           <div style={{
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(to bottom, rgba(5,12,18,0.42) 0%, rgba(5,12,18,0.08) 25%, rgba(5,12,18,0.9) 100%)",
+              "linear-gradient(to bottom, rgba(4,10,16,0.5) 0%, rgba(4,10,16,0.04) 28%, rgba(4,10,16,0.93) 100%)",
           }} />
-          {/* Hero text content */}
+          {/* Text content */}
           <div style={{
             position: "absolute",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            padding: "0 10px 10px",
+            inset: 0,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-end",
+            padding: "0 13px 13px",
           }}>
             <p style={{
               fontFamily: "'Manrope', sans-serif",
+              fontWeight: 700,
+              fontSize: 7.5,
+              letterSpacing: "0.13em",
+              textTransform: "uppercase",
+              color: "#FF8A00",
+              marginBottom: 5,
+            }}>
+              IMAGINE YOUR BUSINESS HERE
+            </p>
+            <p style={{
+              fontFamily: "'Manrope', sans-serif",
               fontWeight: 800,
-              fontSize: "0.95rem",
+              fontSize: 27,
+              lineHeight: 1.08,
               color: "#fff",
-              lineHeight: 1.15,
-              marginBottom: 3,
-              letterSpacing: "-0.02em",
+              marginBottom: 7,
+              letterSpacing: "-0.025em",
             }}>
               Your Website<br />Here
             </p>
             <p style={{
               fontFamily: "'Nunito Sans', sans-serif",
-              fontSize: "0.41rem",
+              fontSize: 10,
               color: "rgba(255,255,255,0.7)",
-              lineHeight: 1.5,
-              marginBottom: 7,
+              lineHeight: 1.45,
+              marginBottom: 12,
             }}>
-              Showcase what makes your<br />business special in the Whitsundays.
+              Showcase what makes your business<br />special in the Whitsundays.
             </p>
             <button style={{
+              alignSelf: "flex-start",
               background: "#FF8A00",
               border: "none",
               borderRadius: 999,
-              padding: "4px 11px",
+              padding: "7px 17px",
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 700,
-              fontSize: "0.44rem",
+              fontSize: 10,
               color: "#080808",
               cursor: "default",
-              letterSpacing: "0.04em",
+              letterSpacing: "0.06em",
             }}>
               BOOK NOW
             </button>
           </div>
         </div>
 
-        {/* Feature strip */}
+        {/* Feature strip — fills remaining screen height */}
         <div style={{
-          background: "#0a111a",
+          flex: 1,
+          background: "#06101a",
           display: "flex",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
+          borderTop: "1px solid rgba(255,255,255,0.07)",
+          alignItems: "center",
+          padding: "10px 4px",
         }}>
-          {["Local Expertise", "Island Tours", "Eco Travel"].map((label, i) => (
+          {[
+            { label: "Local Expertise",  sub: "We know the islands" },
+            { label: "Island Tours",     sub: "Unforgettable trips"  },
+            { label: "Eco Travel",       sub: "Caring for paradise"  },
+          ].map((item, i) => (
             <div key={i} style={{
               flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
               textAlign: "center",
-              padding: "6px 2px 7px",
-              borderRight: i < 2 ? "1px solid rgba(255,255,255,0.05)" : "none",
+              padding: "0 4px",
+              borderRight: i < 2 ? "1px solid rgba(255,255,255,0.07)" : "none",
             }}>
               <div style={{
-                width: 13,
-                height: 13,
+                width: 24,
+                height: 24,
                 borderRadius: "50%",
                 background: "rgba(255,138,0,0.1)",
                 border: "1px solid rgba(255,138,0,0.32)",
-                margin: "0 auto 3px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                marginBottom: 5,
               }}>
-                <div style={{ width: 4, height: 4, borderRadius: "50%", background: "#FF8A00", opacity: 0.7 }} />
+                <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#FF8A00", opacity: 0.72 }} />
               </div>
               <p style={{
                 fontFamily: "'Manrope', sans-serif",
                 fontWeight: 700,
-                fontSize: "0.36rem",
-                color: "rgba(255,255,255,0.65)",
-                lineHeight: 1.25,
-              }}>
-                {label}
-              </p>
+                fontSize: 8,
+                color: "rgba(255,255,255,0.88)",
+                lineHeight: 1.2,
+                marginBottom: 2,
+              }}>{item.label}</p>
+              <p style={{
+                fontFamily: "'Nunito Sans', sans-serif",
+                fontSize: 7,
+                color: "rgba(255,255,255,0.4)",
+                lineHeight: 1.3,
+              }}>{item.sub}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Home indicator */}
+      {/* ── Bottom bezel — home indicator ───────────────── */}
       <div style={{
-        width: 38,
-        height: 3,
-        background: "rgba(255,255,255,0.2)",
-        borderRadius: 999,
-        margin: "6px auto 0",
-      }} />
+        flexShrink: 0,
+        height: 26,
+        background: "#0d0d0d",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}>
+        <div style={{
+          width: 82,
+          height: 4,
+          borderRadius: 999,
+          background: "rgba(255,255,255,0.22)",
+        }} />
+      </div>
     </div>
   );
 }
