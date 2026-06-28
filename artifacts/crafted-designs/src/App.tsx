@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 /* ─────────────────────────────────────────
    Shared animation helper
@@ -15,6 +15,14 @@ function FadeUp({
   className?: string;
   style?: React.CSSProperties;
 }) {
+  const reduceMotion = useReducedMotion();
+  if (reduceMotion) {
+    return (
+      <div className={className} style={style}>
+        {children}
+      </div>
+    );
+  }
   return (
     <motion.div
       initial={{ opacity: 0, y: 26 }}
@@ -37,6 +45,7 @@ const NAV_LINKS = [
   { label: "About", id: "about" },
   { label: "Services", id: "services" },
   { label: "Work", id: "work" },
+  { label: "Process", id: "process" },
   { label: "Contact", id: "contact" },
 ];
 
@@ -51,24 +60,16 @@ const MARQUEE_ITEMS = [
 
 const SERVICES = [
   {
-    num: "01",
     title: "Custom Website Design",
-    desc: "A fully tailored website built around your business — your services, your tone, your customers. No templates, no guesswork.",
+    desc: "A website built around your business — your services, your tone, your customers. No templates, no guesswork.",
   },
   {
-    num: "02",
     title: "Website Refreshes",
-    desc: "Already have a site that just isn't doing the job? I'll modernise the look, sharpen the content, and get it working properly.",
+    desc: "Already have a site that isn't doing the job? I'll modernise the look, sharpen the content and get it working properly.",
   },
   {
-    num: "03",
     title: "Hosting & Ongoing Support",
-    desc: "Fast, reliable hosting with ongoing support so your site stays live, current, and backed up — with one person to call.",
-  },
-  {
-    num: "04",
-    title: "Domain & Technical Setup",
-    desc: "Domain registration, DNS, email setup and everything technical handled for you — no jargon, no confusion.",
+    desc: "Reliable hosting plus domain, email and technical setup — so your site stays live, current and backed up, with one person to call.",
   },
 ];
 
@@ -76,23 +77,36 @@ const PROCESS_STEPS = [
   {
     num: "01",
     title: "Tell me about your business",
-    desc: "We have a straightforward conversation about what you do, who your customers are, and what you want your website to achieve.",
+    desc: "A straightforward chat about what you do, who your customers are and what the website needs to achieve.",
   },
   {
     num: "02",
     title: "Your first design is created",
-    desc: "I design a tailored layout built around your business — real content, real branding, nothing generic.",
+    desc: "I design a tailored layout around your business — real content, real branding, nothing generic.",
   },
   {
     num: "03",
-    title: "We refine the website",
+    title: "Refine the details",
     desc: "You review everything and request changes. We go back and forth until it's exactly right.",
   },
   {
     num: "04",
-    title: "Your website goes live",
-    desc: "Once approved, your site launches. I handle all the technical setup so you don't have to.",
+    title: "Launch and ongoing support",
+    desc: "Once approved, your site goes live. I handle the technical setup and stay on hand afterwards.",
   },
+];
+
+const CREDIBILITY = [
+  { title: "Tailored", sub: "Designed around your business" },
+  { title: "Local", sub: "Based in the Whitsundays" },
+  { title: "Direct", sub: "One person from start to finish" },
+];
+
+const WHY_FEATURES = [
+  { title: "Direct communication", desc: "Work with one person from the first conversation through to launch." },
+  { title: "Case-by-case pricing", desc: "Each website is quoted around its actual scope, without confusing packages or hidden extras." },
+  { title: "Plain-English guidance", desc: "Every step is explained clearly, without unnecessary technical language." },
+  { title: "Ongoing support", desc: "Hosting and practical assistance remain available after the website goes live." },
 ];
 
 /* ─────────────────────────────────────────
@@ -121,17 +135,48 @@ function IconHeadset() {
     </svg>
   );
 }
+function IconLayout() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M3 9h18M9 21V9" />
+    </svg>
+  );
+}
+function IconRefresh() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 12a9 9 0 1 1-2.64-6.36M21 3v5h-5" />
+    </svg>
+  );
+}
+function IconChat() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 9 9 0 0 1-4-1L3 20l1-4.5a8.5 8.5 0 0 1-1-4A8.38 8.38 0 0 1 11.5 3 8.38 8.38 0 0 1 21 11.5z" />
+    </svg>
+  );
+}
+function IconTag() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M20.59 13.41 12 22 2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+      <line x1="7" y1="7" x2="7.01" y2="7" />
+    </svg>
+  );
+}
+function IconBook() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+    </svg>
+  );
+}
 function IconArrowRight({ size = 16 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M3 8h10M9 4l4 4-4 4" />
-    </svg>
-  );
-}
-function IconCheck() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M3 7.5l3 3 6-6" />
     </svg>
   );
 }
@@ -264,7 +309,7 @@ function DesktopMockup() {
           <span style={{
             fontSize: "0.48rem",
             background: "#FF8A00",
-            color: "#080808",
+            color: "#090909",
             fontWeight: 700,
             padding: "0.2rem 0.5rem",
             borderRadius: 999,
@@ -524,7 +569,7 @@ function PhoneMockup() {
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 800,
               fontSize: 8.5,
-              color: "#F7F7F5",
+              color: "var(--text)",
               letterSpacing: "0.04em",
               whiteSpace: "nowrap",
             }}>
@@ -610,7 +655,7 @@ function PhoneMockup() {
               fontFamily: "'Manrope', sans-serif",
               fontWeight: 700,
               fontSize: 10,
-              color: "#080808",
+              color: "#090909",
               cursor: "default",
               letterSpacing: "0.06em",
             }}>
@@ -701,12 +746,14 @@ export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("top");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
       setIsScrolled(window.scrollY > 40);
+      setShowBackToTop(window.scrollY > 600);
       // Detect active section
-      const sections = ["contact", "about", "process", "services", "work", "top"];
+      const sections = ["contact", "about", "process", "work", "services", "top"];
       for (const id of sections) {
         const el = document.getElementById(id);
         if (el) {
@@ -748,9 +795,9 @@ export default function App() {
           display: "flex",
           alignItems: "center",
           transition: "height 0.3s ease, background 0.3s ease, border-color 0.3s ease",
-          background: isScrolled ? "rgba(8,8,8,0.88)" : "transparent",
+          background: isScrolled ? "rgba(9,9,9,0.85)" : "transparent",
           backdropFilter: isScrolled ? "blur(16px)" : "none",
-          borderBottom: isScrolled ? "1px solid rgba(255,255,255,0.07)" : "1px solid transparent",
+          borderBottom: isScrolled ? "1px solid var(--border-color)" : "1px solid transparent",
         }}
       >
         <div
@@ -769,14 +816,13 @@ export default function App() {
               padding: 0,
             }}
           >
-            <div
+            <img
+              src="/logo-mark.png"
+              alt="Crafted Designs"
               style={{
-                width: 148,
-                height: 50,
-                backgroundImage: "url('/logo-brand-v2.png')",
-                backgroundSize: "768px auto",
-                backgroundPosition: "-18px -355px",
-                backgroundRepeat: "no-repeat",
+                height: 34,
+                width: "auto",
+                display: "block",
               }}
             />
           </button>
@@ -811,7 +857,7 @@ export default function App() {
                     gap: "0.2rem",
                   }}
                   onMouseEnter={(e) => {
-                    if (!isActive) e.currentTarget.style.color = "#F7F7F5";
+                    if (!isActive) e.currentTarget.style.color = "var(--text)";
                   }}
                   onMouseLeave={(e) => {
                     if (!isActive) e.currentTarget.style.color = "var(--muted)";
@@ -1018,7 +1064,7 @@ export default function App() {
                     fontWeight: 800,
                     lineHeight: 0.98,
                     letterSpacing: "-0.03em",
-                    color: "#F7F7F5",
+                    color: "var(--text)",
                     marginBottom: "1.5rem",
                   }}
                 >
@@ -1131,7 +1177,7 @@ export default function App() {
                             fontFamily: "'Manrope', sans-serif",
                             fontWeight: 700,
                             fontSize: "0.9rem",
-                            color: "#F7F7F5",
+                            color: "var(--text)",
                             margin: 0,
                             marginBottom: "0.15rem",
                           }}
@@ -1213,73 +1259,56 @@ export default function App() {
         </div>
 
         {/* ══════════════════════════════════════
-            INTRODUCTION
+            CREDIBILITY STRIP
         ══════════════════════════════════════ */}
-        <section style={{ background: "var(--light-bg)", padding: "6rem 0" }}>
+        <section style={{ borderBottom: "1px solid var(--border-color)" }}>
           <div className="container-custom">
-            <div
-              style={{ display: "grid", gap: "4rem", alignItems: "center" }}
-              className="lg:grid-cols-2"
-            >
-              <FadeUp>
-                <p className="eyebrow" style={{ color: "#FF8A00" }}>What we do</p>
-                <h2
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontSize: "clamp(2.2rem, 4.5vw, 3.6rem)",
-                    fontWeight: 800,
-                    lineHeight: 1.1,
-                    color: "var(--light-text)",
-                    marginBottom: "1.4rem",
-                    letterSpacing: "-0.03em",
-                  }}
-                >
-                  More than a good-looking website.
-                </h2>
-                <p
-                  style={{
-                    fontSize: "1.08rem",
-                    lineHeight: 1.8,
-                    color: "#555",
-                    maxWidth: 480,
-                  }}
-                >
-                  Your website should make your business look credible, explain what you do clearly and make it easy for customers to contact you. Crafted Designs builds professional websites with a clear purpose — not templates filled with unnecessary clutter.
-                </p>
-              </FadeUp>
-              <FadeUp delay={0.15}>
-                <div
-                  style={{
-                    background: "var(--light-text)",
-                    borderRadius: 24,
-                    padding: "3rem",
-                    position: "relative",
-                    overflow: "hidden",
-                  }}
-                >
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: -20,
-                      right: -20,
-                      width: 120,
-                      height: 120,
-                      background: "var(--primary)",
-                      borderRadius: "50%",
-                      opacity: 0.12,
-                    }}
-                  />
-                  <p
+            <div className="cred-strip" style={{ padding: "2.5rem 0" }}>
+              {CREDIBILITY.map((item, i) => (
+                <FadeUp key={item.title} delay={i * 0.08} className="cred-item">
+                  <h3
                     style={{
                       fontFamily: "'Manrope', sans-serif",
                       fontWeight: 800,
-                      fontSize: "clamp(1.6rem, 3.5vw, 2.6rem)",
-                      lineHeight: 1.2,
-                      color: "#FAFAFA",
-                      letterSpacing: "-0.02em",
+                      fontSize: "1.3rem",
+                      color: "var(--text)",
+                      letterSpacing: "-0.01em",
+                      marginBottom: "0.35rem",
                     }}
                   >
-                    Built to turn visitors into{" "}
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: "0.95rem", color: "var(--muted)", margin: 0, lineHeight: 1.5 }}>
+                    {item.sub}
+                  </p>
+                </FadeUp>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════
+            EDITORIAL STATEMENT
+        ══════════════════════════════════════ */}
+        <section className="section-pad">
+          <div className="container-custom">
+            <div className="editorial-grid">
+              <FadeUp>
+                <p className="eyebrow" style={{ marginBottom: 0 }}>Built differently</p>
+              </FadeUp>
+              <div style={{ maxWidth: 820 }}>
+                <FadeUp>
+                  <h2
+                    style={{
+                      fontFamily: "'Manrope', sans-serif",
+                      fontSize: "clamp(2rem, 4.4vw, 3.4rem)",
+                      fontWeight: 800,
+                      lineHeight: 1.12,
+                      letterSpacing: "-0.03em",
+                      color: "var(--text)",
+                    }}
+                  >
+                    A considered website should make your business feel{" "}
                     <em
                       style={{
                         fontFamily: "'Cormorant Garamond', serif",
@@ -1287,65 +1316,111 @@ export default function App() {
                         color: "var(--primary)",
                       }}
                     >
-                      enquiries.
-                    </em>
-                  </p>
-                  <div
+                      established
+                    </em>{" "}
+                    before the first conversation begins.
+                  </h2>
+                </FadeUp>
+                <FadeUp delay={0.1}>
+                  <p
                     style={{
-                      display: "flex",
-                      gap: "2rem",
-                      marginTop: "2.5rem",
-                      flexWrap: "wrap",
+                      marginTop: "1.75rem",
+                      maxWidth: 600,
+                      fontSize: "1.08rem",
+                      lineHeight: 1.8,
+                      color: "var(--muted)",
                     }}
                   >
-                    {[
-                      ["100%", "Tailored design"],
-                      ["Local", "Whitsundays based"],
-                      ["Direct", "One person throughout"],
-                    ].map(([stat, label]) => (
-                      <div key={label}>
-                        <div
-                          style={{
-                            fontFamily: "'Manrope', sans-serif",
-                            fontWeight: 800,
-                            fontSize: "1.5rem",
-                            color: "var(--primary)",
-                          }}
-                        >
-                          {stat}
-                        </div>
-                        <div
-                          style={{
-                            fontSize: "0.82rem",
-                            color: "rgba(250,250,250,0.55)",
-                            marginTop: "0.2rem",
-                          }}
-                        >
-                          {label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </FadeUp>
+                    Crafted Designs combines clear communication, tailored design and practical ongoing support — so the process stays straightforward and the finished site genuinely represents the people behind the business.
+                  </p>
+                </FadeUp>
+              </div>
             </div>
           </div>
         </section>
 
         {/* ══════════════════════════════════════
-            FEATURED WORK
+            SERVICES
+        ══════════════════════════════════════ */}
+        <section
+          id="services"
+          className="section-pad"
+          style={{
+            background: "var(--panel)",
+            borderTop: "1px solid var(--border-color)",
+          }}
+        >
+          <div className="container-custom">
+            <FadeUp style={{ marginBottom: "3.5rem", maxWidth: 640 }}>
+              <p className="eyebrow">Services</p>
+              <h2
+                style={{
+                  fontFamily: "'Manrope', sans-serif",
+                  fontSize: "clamp(2.2rem, 4.5vw, 3.6rem)",
+                  fontWeight: 800,
+                  letterSpacing: "-0.03em",
+                  color: "var(--text)",
+                  lineHeight: 1.1,
+                }}
+              >
+                Everything your business needs to get online — and stay there.
+              </h2>
+            </FadeUp>
+
+            <div style={{ display: "grid", gap: "1.25rem" }} className="md:grid-cols-3">
+              {SERVICES.map((s, i) => {
+                const Icon = [IconLayout, IconRefresh, IconHeadset][i];
+                return (
+                  <FadeUp key={s.title} delay={i * 0.08}>
+                    <div className="card-base service-card">
+                      <div className="service-icon">
+                        <Icon />
+                      </div>
+                      <h3
+                        style={{
+                          fontFamily: "'Manrope', sans-serif",
+                          fontWeight: 700,
+                          fontSize: "1.25rem",
+                          color: "var(--text)",
+                          letterSpacing: "-0.01em",
+                          marginBottom: "0.75rem",
+                        }}
+                      >
+                        {s.title}
+                      </h3>
+                      <p style={{ fontSize: "0.97rem", lineHeight: 1.7, color: "var(--muted)", margin: 0 }}>
+                        {s.desc}
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => scrollTo("contact")}
+                        className="service-learn"
+                      >
+                        Learn more
+                        <span className="service-arrow"><IconArrowRight size={14} /></span>
+                      </button>
+                    </div>
+                  </FadeUp>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════
+            SELECTED WORK
         ══════════════════════════════════════ */}
         <section id="work" className="section-pad">
           <div className="container-custom">
-            <FadeUp style={{ marginBottom: "4rem" }}>
-              <p className="eyebrow">Portfolio</p>
+            <FadeUp style={{ marginBottom: "3.5rem" }}>
+              <p className="eyebrow">Selected work</p>
               <h2
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontSize: "clamp(2.4rem, 5vw, 4rem)",
                   fontWeight: 800,
                   letterSpacing: "-0.03em",
-                  color: "#F7F7F5",
+                  color: "var(--text)",
                 }}
               >
                 Recent websites,{" "}
@@ -1363,47 +1438,11 @@ export default function App() {
 
             {/* Project 1 — NQBG Sheds */}
             <FadeUp style={{ marginBottom: "2rem" }}>
-              <div
-                style={{
-                  background: "var(--panel)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: 28,
-                  overflow: "hidden",
-                  display: "grid",
-                }}
-                className="lg:grid-cols-2"
-              >
-                <div
-                  style={{
-                    background: "#0a0a0a",
-                    position: "relative",
-                    minHeight: 340,
-                    overflow: "hidden",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.4rem",
-                      padding: "0.7rem 1rem",
-                      borderBottom: "1px solid rgba(255,255,255,0.07)",
-                      background: "#111",
-                    }}
-                  >
+              <div className="card-base lg:grid-cols-2" style={{ overflow: "hidden", display: "grid", borderRadius: 24 }}>
+                <div style={{ background: "#0a0a0a", position: "relative", minHeight: 320, overflow: "hidden" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", padding: "0.7rem 1rem", borderBottom: "1px solid var(--border-color)", background: "#111111" }}>
                     <BrowserDots />
-                    <div
-                      style={{
-                        marginLeft: "0.75rem",
-                        flex: 1,
-                        borderRadius: 999,
-                        background: "#0D0D0D",
-                        border: "1px solid rgba(255,255,255,0.07)",
-                        padding: "0.25rem 0.75rem",
-                        fontSize: "0.68rem",
-                        color: "var(--muted)",
-                      }}
-                    >
+                    <div style={{ marginLeft: "0.75rem", flex: 1, borderRadius: 999, background: "var(--panel-alt)", border: "1px solid var(--border-color)", padding: "0.25rem 0.75rem", fontSize: "0.68rem", color: "var(--muted)" }}>
                       www.nqbgsheds.com.au
                     </div>
                   </div>
@@ -1411,72 +1450,26 @@ export default function App() {
                     src="/sheds-project.png"
                     alt="NQBG Sheds website design"
                     className="img-zoom"
-                    style={{
-                      width: "100%",
-                      display: "block",
-                      objectFit: "cover",
-                      objectPosition: "top",
-                      minHeight: 300,
-                    }}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ width: "100%", display: "block", objectFit: "cover", objectPosition: "top", minHeight: 280 }}
                   />
                 </div>
-                <div className="p-10 flex flex-col justify-center">
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: "0.5rem",
-                      flexWrap: "wrap",
-                      marginBottom: "1.5rem",
-                    }}
-                  >
+                <div className="p-8 sm:p-10 flex flex-col justify-center">
+                  <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
                     {["Construction", "Whitsundays", "Web Design", "Hosting"].map((tag) => (
-                      <span
-                        key={tag}
-                        style={{
-                          fontSize: "0.72rem",
-                          fontWeight: 700,
-                          letterSpacing: "0.1em",
-                          textTransform: "uppercase",
-                          padding: "0.3rem 0.75rem",
-                          borderRadius: 999,
-                          border: "1px solid rgba(255,138,0,0.3)",
-                          color: "var(--primary)",
-                          background: "rgba(255,138,0,0.06)",
-                        }}
-                      >
+                      <span key={tag} style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", padding: "0.3rem 0.75rem", borderRadius: 999, border: "1px solid rgba(255,138,0,0.3)", color: "var(--primary)", background: "rgba(255,138,0,0.06)" }}>
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <h3
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
-                      fontWeight: 800,
-                      letterSpacing: "-0.02em",
-                      color: "#F7F7F5",
-                      marginBottom: "1rem",
-                    }}
-                  >
+                  <h3 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(1.7rem, 3vw, 2.4rem)", fontWeight: 800, letterSpacing: "-0.02em", color: "var(--text)", marginBottom: "1rem" }}>
                     NQBG Sheds
                   </h3>
-                  <p
-                    style={{
-                      fontSize: "1.02rem",
-                      lineHeight: 1.75,
-                      color: "var(--muted)",
-                      marginBottom: "2rem",
-                    }}
-                  >
-                    A bold, professional website for a Whitsundays shed builder — designed to showcase projects, services and coverage areas.
+                  <p style={{ fontSize: "1.02rem", lineHeight: 1.75, color: "var(--muted)", marginBottom: "2rem" }}>
+                    A bold, professional website for a Whitsundays shed builder — built to showcase projects, services and coverage areas, and to make enquiries simple.
                   </p>
-                  <a
-                    href="https://www.nqbgsheds.com.au"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-ghost"
-                    style={{ width: "fit-content" }}
-                  >
+                  <a href="https://www.nqbgsheds.com.au" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ width: "fit-content" }}>
                     View Project
                     <span className="btn-arrow"><IconArrowRight /></span>
                   </a>
@@ -1486,123 +1479,40 @@ export default function App() {
 
             {/* Project 2 — NQ Excavations */}
             <FadeUp>
-              <div
-                style={{
-                  background: "var(--panel)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: 28,
-                  overflow: "hidden",
-                  display: "grid",
-                }}
-                className="lg:grid-cols-2"
-              >
-                <div className="p-10 flex flex-col justify-center order-2 lg:order-1">
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: "0.5rem",
-                      flexWrap: "wrap",
-                      marginBottom: "1.5rem",
-                    }}
-                  >
-                    {["Excavation", "North Queensland", "Web Design", "Hosting"].map((tag) => (
-                      <span
-                        key={tag}
-                        style={{
-                          fontSize: "0.72rem",
-                          fontWeight: 700,
-                          letterSpacing: "0.1em",
-                          textTransform: "uppercase",
-                          padding: "0.3rem 0.75rem",
-                          borderRadius: 999,
-                          border: "1px solid rgba(255,138,0,0.3)",
-                          color: "var(--primary)",
-                          background: "rgba(255,138,0,0.06)",
-                        }}
-                      >
+              <div className="card-base lg:grid-cols-2" style={{ overflow: "hidden", display: "grid", borderRadius: 24 }}>
+                <div className="p-8 sm:p-10 flex flex-col justify-center order-2 lg:order-1">
+                  <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
+                    {["Earthworks", "North QLD", "Web Design", "Refresh"].map((tag) => (
+                      <span key={tag} style={{ fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", padding: "0.3rem 0.75rem", borderRadius: 999, border: "1px solid rgba(255,138,0,0.3)", color: "var(--primary)", background: "rgba(255,138,0,0.06)" }}>
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <h3
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
-                      fontWeight: 800,
-                      letterSpacing: "-0.02em",
-                      color: "#F7F7F5",
-                      marginBottom: "1rem",
-                    }}
-                  >
+                  <h3 style={{ fontFamily: "'Manrope', sans-serif", fontSize: "clamp(1.7rem, 3vw, 2.4rem)", fontWeight: 800, letterSpacing: "-0.02em", color: "var(--text)", marginBottom: "1rem" }}>
                     NQ Excavations
                   </h3>
-                  <p
-                    style={{
-                      fontSize: "1.02rem",
-                      lineHeight: 1.75,
-                      color: "var(--muted)",
-                      marginBottom: "2rem",
-                    }}
-                  >
-                    A clean, confident website for a North Queensland excavation specialist — strong first impressions, clear service sections, and simple pathways to enquire.
+                  <p style={{ fontSize: "1.02rem", lineHeight: 1.75, color: "var(--muted)", marginBottom: "2rem" }}>
+                    A clean, hard-working website for a North Queensland earthworks contractor — clear services, strong imagery and an easy way to get in touch.
                   </p>
-                  <a
-                    href="https://nqexcavations.com.au"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-ghost"
-                    style={{ width: "fit-content" }}
-                  >
+                  <a href="https://www.nqexcavations.com.au" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ width: "fit-content" }}>
                     View Project
                     <span className="btn-arrow"><IconArrowRight /></span>
                   </a>
                 </div>
-                <div
-                  style={{
-                    background: "#0a0a0a",
-                    position: "relative",
-                    minHeight: 340,
-                    overflow: "hidden",
-                  }}
-                  className="order-1 lg:order-2"
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.4rem",
-                      padding: "0.7rem 1rem",
-                      borderBottom: "1px solid rgba(255,255,255,0.07)",
-                      background: "#111",
-                    }}
-                  >
+                <div style={{ background: "#0a0a0a", position: "relative", minHeight: 320, overflow: "hidden" }} className="order-1 lg:order-2">
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", padding: "0.7rem 1rem", borderBottom: "1px solid var(--border-color)", background: "#111111" }}>
                     <BrowserDots />
-                    <div
-                      style={{
-                        marginLeft: "0.75rem",
-                        flex: 1,
-                        borderRadius: 999,
-                        background: "#0D0D0D",
-                        border: "1px solid rgba(255,255,255,0.07)",
-                        padding: "0.25rem 0.75rem",
-                        fontSize: "0.68rem",
-                        color: "var(--muted)",
-                      }}
-                    >
-                      nqexcavations.com.au
+                    <div style={{ marginLeft: "0.75rem", flex: 1, borderRadius: 999, background: "var(--panel-alt)", border: "1px solid var(--border-color)", padding: "0.25rem 0.75rem", fontSize: "0.68rem", color: "var(--muted)" }}>
+                      www.nqexcavations.com.au
                     </div>
                   </div>
                   <img
                     src="/excavation-project.png"
                     alt="NQ Excavations website design"
                     className="img-zoom"
-                    style={{
-                      width: "100%",
-                      display: "block",
-                      objectFit: "cover",
-                      objectPosition: "top",
-                      minHeight: 300,
-                    }}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ width: "100%", display: "block", objectFit: "cover", objectPosition: "top", minHeight: 280 }}
                   />
                 </div>
               </div>
@@ -1611,97 +1521,94 @@ export default function App() {
         </section>
 
         {/* ══════════════════════════════════════
-            SERVICES
+            PROCESS
         ══════════════════════════════════════ */}
         <section
-          id="services"
+          id="process"
           className="section-pad"
           style={{
             background: "var(--panel)",
-            borderTop: "1px solid rgba(255,255,255,0.06)",
+            borderTop: "1px solid var(--border-color)",
           }}
         >
           <div className="container-custom">
-            <FadeUp style={{ marginBottom: "4rem", maxWidth: 640 }}>
-              <p className="eyebrow">Services</p>
+            <FadeUp style={{ marginBottom: "3.5rem", maxWidth: 600 }}>
+              <p className="eyebrow">Process</p>
               <h2
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontSize: "clamp(2.2rem, 4.5vw, 3.6rem)",
                   fontWeight: 800,
                   letterSpacing: "-0.03em",
-                  color: "#F7F7F5",
-                  lineHeight: 1.1,
+                  color: "var(--text)",
                 }}
               >
-                Everything needed to build a stronger online presence.
+                Simple steps, proper results.
               </h2>
             </FadeUp>
 
-            <div style={{ display: "grid", gap: "1.25rem" }} className="md:grid-cols-2">
-              {SERVICES.map((s, i) => (
-                <FadeUp key={s.num} delay={i * 0.08}>
-                  <div
-                    className="card-base"
-                    style={{
-                      padding: "2.2rem 2.4rem",
-                      height: "100%",
-                      background: "#0D0D0D",
-                    }}
-                  >
-                    <div
-                      style={{
-                        fontFamily: "'Manrope', sans-serif",
-                        fontWeight: 800,
-                        fontSize: "0.78rem",
-                        letterSpacing: "0.12em",
-                        color: "var(--primary)",
-                        marginBottom: "1rem",
-                      }}
-                    >
-                      {s.num}
-                    </div>
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "flex-start",
-                        marginBottom: "0.875rem",
-                      }}
-                    >
+            {/* Desktop — horizontal timeline */}
+            <div className="process-desktop">
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "2.5rem" }}>
+                {PROCESS_STEPS.map((step, i) => (
+                  <FadeUp key={step.num} delay={i * 0.1}>
+                    <div>
+                      <div className="proc-num">{step.num}</div>
+                      <div
+                        className={`proc-track${
+                          i < PROCESS_STEPS.length - 1 ? " proc-track--link" : ""
+                        }`}
+                      >
+                        <span className="proc-dot" />
+                      </div>
                       <h3
                         style={{
                           fontFamily: "'Manrope', sans-serif",
                           fontWeight: 700,
-                          fontSize: "1.25rem",
-                          color: "#F7F7F5",
-                          flex: 1,
-                          marginRight: "1rem",
+                          fontSize: "1.05rem",
+                          color: "var(--text)",
+                          marginBottom: "0.6rem",
                           letterSpacing: "-0.01em",
                         }}
                       >
-                        {s.title}
+                        {step.title}
                       </h3>
-                      <div
-                        className="service-arrow"
+                      <p style={{ fontSize: "0.9rem", color: "var(--muted)", lineHeight: 1.65, margin: 0 }}>
+                        {step.desc}
+                      </p>
+                    </div>
+                  </FadeUp>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile — vertical timeline */}
+            <div className="process-mobile">
+              {PROCESS_STEPS.map((step, i) => (
+                <FadeUp key={step.num} delay={i * 0.08}>
+                  <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "1.25rem" }}>
+                    <div className="proc-rail">
+                      <span className="proc-badge">{step.num}</span>
+                      {i < PROCESS_STEPS.length - 1 && <span className="proc-line" />}
+                    </div>
+                    <div style={{ paddingBottom: i < PROCESS_STEPS.length - 1 ? "3rem" : 0 }}>
+                      <h3
                         style={{
-                          width: 36,
-                          height: 36,
-                          borderRadius: "50%",
-                          border: "1px solid rgba(255,255,255,0.1)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexShrink: 0,
-                          color: "var(--primary)",
+                          fontFamily: "'Manrope', sans-serif",
+                          fontWeight: 700,
+                          fontSize: "1.1rem",
+                          color: "var(--text)",
+                          marginTop: "0.5rem",
+                          marginBottom: "0.5rem",
+                          letterSpacing: "-0.01em",
                         }}
                       >
-                        <IconArrowRight />
-                      </div>
+                        {step.title}
+                      </h3>
+                      <p style={{ fontSize: "0.95rem", color: "var(--muted)", lineHeight: 1.65, margin: 0 }}>
+                        {step.desc}
+                      </p>
                     </div>
-                    <p style={{ fontSize: "0.97rem", lineHeight: 1.7, color: "var(--muted)" }}>
-                      {s.desc}
-                    </p>
                   </div>
                 </FadeUp>
               ))}
@@ -1714,204 +1621,65 @@ export default function App() {
         ══════════════════════════════════════ */}
         <section className="section-pad">
           <div className="container-custom">
-            <div
-              style={{ display: "grid", gap: "4rem", alignItems: "start" }}
-              className="lg:grid-cols-2"
-            >
-              <FadeUp>
-                <p className="eyebrow">Why us</p>
-                <h2
-                  style={{
-                    fontFamily: "'Manrope', sans-serif",
-                    fontSize: "clamp(2rem, 4vw, 3.2rem)",
-                    fontWeight: 800,
-                    letterSpacing: "-0.03em",
-                    color: "#F7F7F5",
-                    lineHeight: 1.1,
-                    marginBottom: "1.4rem",
-                  }}
-                >
-                  Agency-quality design. Personal local service.
-                </h2>
-                <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "var(--muted)" }}>
-                  You will not be passed between salespeople, designers and account managers. You deal directly with the person designing and building your website — from the first conversation to launch and ongoing support.
-                </p>
-              </FadeUp>
-              <FadeUp delay={0.15}>
-                <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-                  {[
-                    { n: "01", title: "Direct communication", desc: "One person, one conversation. No handoffs, no confusion." },
-                    { n: "02", title: "Clear case-by-case pricing", desc: "Quoted to suit your project — no locked-in packages or hidden fees." },
-                    { n: "03", title: "No confusing technical language", desc: "Everything explained in plain English, every step of the way." },
-                    { n: "04", title: "Continued hosting and support", desc: "Your site stays looked after long after it goes live." },
-                  ].map((item, i) => (
-                    <div
-                      key={item.n}
-                      style={{
-                        display: "flex",
-                        gap: "1.5rem",
-                        alignItems: "flex-start",
-                        padding: "1.75rem 0",
-                        borderBottom: i < 3 ? "1px solid rgba(255,255,255,0.06)" : "none",
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontFamily: "'Manrope', sans-serif",
-                          fontWeight: 800,
-                          fontSize: "0.78rem",
-                          letterSpacing: "0.1em",
-                          color: "var(--primary)",
-                          flexShrink: 0,
-                          paddingTop: 2,
-                        }}
-                      >
-                        {item.n}
-                      </span>
-                      <div>
-                        <div
-                          style={{
-                            fontFamily: "'Manrope', sans-serif",
-                            fontWeight: 700,
-                            fontSize: "1rem",
-                            color: "#F7F7F5",
-                            marginBottom: "0.35rem",
-                          }}
-                        >
-                          {item.title}
-                        </div>
-                        <p style={{ fontSize: "0.92rem", color: "var(--muted)", lineHeight: 1.65, margin: 0 }}>
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </FadeUp>
-            </div>
-          </div>
-        </section>
-
-        {/* ══════════════════════════════════════
-            PROCESS
-        ══════════════════════════════════════ */}
-        <section
-          id="process"
-          className="section-pad"
-          style={{
-            background: "var(--panel)",
-            borderTop: "1px solid rgba(255,255,255,0.06)",
-          }}
-        >
-          <div className="container-custom">
-            <FadeUp style={{ marginBottom: "4rem", maxWidth: 600 }}>
-              <p className="eyebrow">Process</p>
+            <FadeUp style={{ marginBottom: "3.5rem", maxWidth: 620 }}>
+              <p className="eyebrow">Why us</p>
               <h2
                 style={{
                   fontFamily: "'Manrope', sans-serif",
-                  fontSize: "clamp(2.2rem, 4.5vw, 3.6rem)",
+                  fontSize: "clamp(2rem, 4vw, 3.2rem)",
                   fontWeight: 800,
                   letterSpacing: "-0.03em",
-                  color: "#F7F7F5",
+                  color: "var(--text)",
+                  lineHeight: 1.1,
+                  marginBottom: "1.4rem",
                 }}
               >
-                Simple steps, proper results.
+                Agency-quality design. Personal local service.
               </h2>
+              <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "var(--muted)", margin: 0 }}>
+                You deal directly with the person designing and building your website — from the first conversation through to launch and ongoing support.
+              </p>
             </FadeUp>
 
-            <div style={{ display: "grid", gap: 0 }} className="md:grid-cols-4">
-              {PROCESS_STEPS.map((step, i) => (
-                <FadeUp key={step.num} delay={i * 0.1}>
-                  <div
-                    style={{
-                      padding: "2rem 1.75rem",
-                      borderTop: "1px solid rgba(255,255,255,0.06)",
-                      borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.06)" : "none",
-                    }}
-                    className={i > 0 ? "md:border-t-0 md:border-l" : "md:border-t"}
-                  >
-                    <div
-                      style={{
-                        fontFamily: "'Manrope', sans-serif",
-                        fontWeight: 800,
-                        fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
-                        color: "rgba(255,138,0,0.15)",
-                        lineHeight: 1,
-                        marginBottom: "1rem",
-                        letterSpacing: "-0.04em",
-                      }}
-                    >
-                      {step.num}
+            <div className="feature-grid">
+              {WHY_FEATURES.map((item, i) => {
+                const Icon = [IconChat, IconTag, IconBook, IconHeadset][i];
+                return (
+                  <FadeUp key={item.title} delay={i * 0.08}>
+                    <div>
+                      <div className="feature-mark">
+                        <Icon />
+                      </div>
+                      <h3
+                        style={{
+                          fontFamily: "'Manrope', sans-serif",
+                          fontWeight: 700,
+                          fontSize: "1.15rem",
+                          color: "var(--text)",
+                          marginBottom: "0.5rem",
+                          letterSpacing: "-0.01em",
+                        }}
+                      >
+                        {item.title}
+                      </h3>
+                      <p style={{ fontSize: "0.97rem", color: "var(--muted)", lineHeight: 1.7, margin: 0, maxWidth: 420 }}>
+                        {item.desc}
+                      </p>
                     </div>
-                    <h3
-                      style={{
-                        fontFamily: "'Manrope', sans-serif",
-                        fontWeight: 700,
-                        fontSize: "1.05rem",
-                        color: "#F7F7F5",
-                        marginBottom: "0.75rem",
-                        letterSpacing: "-0.01em",
-                      }}
-                    >
-                      {step.title}
-                    </h3>
-                    <p
-                      style={{
-                        fontSize: "0.9rem",
-                        color: "var(--muted)",
-                        lineHeight: 1.65,
-                        margin: 0,
-                      }}
-                    >
-                      {step.desc}
-                    </p>
-                  </div>
-                </FadeUp>
-              ))}
+                  </FadeUp>
+                );
+              })}
             </div>
           </div>
         </section>
 
         {/* ══════════════════════════════════════
-            ABOUT
+            ABOUT — LIGHT SECTION
         ══════════════════════════════════════ */}
-        <section id="about" style={{ background: "var(--light-bg)", padding: "6rem 0" }}>
+        <section id="about" style={{ background: "var(--light-bg)", padding: "clamp(5rem, 9vw, 7rem) 0" }}>
           <div className="container-custom">
-            <div
-              style={{ display: "grid", gap: "4rem", alignItems: "center" }}
-              className="lg:grid-cols-2"
-            >
+            <div style={{ display: "grid", gap: "3rem", alignItems: "start" }} className="lg:grid-cols-2">
               <FadeUp>
-                <div
-                  style={{
-                    aspectRatio: "4/5",
-                    background: "linear-gradient(135deg, #e8e4de, #d4cec6)",
-                    borderRadius: 24,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    overflow: "hidden",
-                    boxShadow: "0 24px 60px rgba(0,0,0,0.12)",
-                  }}
-                >
-                  <div style={{ textAlign: "center", color: "#999" }}>
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                      <circle cx="12" cy="8" r="4" />
-                      <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-                    </svg>
-                    <p
-                      style={{
-                        fontSize: "0.85rem",
-                        marginTop: "0.5rem",
-                        fontFamily: "'Nunito Sans', sans-serif",
-                      }}
-                    >
-                      Owner photo
-                    </p>
-                  </div>
-                </div>
-              </FadeUp>
-              <FadeUp delay={0.15}>
                 <p className="eyebrow">About</p>
                 <h2
                   style={{
@@ -1920,30 +1688,17 @@ export default function App() {
                     fontWeight: 800,
                     letterSpacing: "-0.03em",
                     color: "var(--light-text)",
-                    lineHeight: 1.1,
-                    marginBottom: "1.4rem",
+                    lineHeight: 1.12,
                   }}
                 >
                   Web design without the agency runaround.
                 </h2>
-                <p
-                  style={{
-                    fontSize: "1.05rem",
-                    lineHeight: 1.8,
-                    color: "#555",
-                    marginBottom: "1.25rem",
-                  }}
-                >
+              </FadeUp>
+              <FadeUp delay={0.15}>
+                <p style={{ fontSize: "1.08rem", lineHeight: 1.8, color: "var(--light-muted)", marginTop: 0, marginBottom: "1.25rem" }}>
                   Crafted Designs was created to help local businesses get professional websites without confusing processes, inflated agency costs or being left to work everything out themselves.
                 </p>
-                <p
-                  style={{
-                    fontSize: "1.05rem",
-                    lineHeight: 1.8,
-                    color: "#555",
-                    marginBottom: "2.5rem",
-                  }}
-                >
+                <p style={{ fontSize: "1.08rem", lineHeight: 1.8, color: "var(--light-muted)", marginTop: 0, marginBottom: "2.25rem" }}>
                   I work directly with each client to understand the business, organise the content and create a website that feels right for the people it represents.
                 </p>
                 <button onClick={() => scrollTo("contact")} className="btn-primary">
@@ -1982,19 +1737,6 @@ export default function App() {
                     pointerEvents: "none",
                   }}
                 />
-                <div
-                  aria-hidden="true"
-                  style={{
-                    position: "absolute",
-                    bottom: -80,
-                    left: "30%",
-                    width: 200,
-                    height: 200,
-                    background: "rgba(255,255,255,0.05)",
-                    borderRadius: "50%",
-                    pointerEvents: "none",
-                  }}
-                />
                 <div style={{ position: "relative", zIndex: 1, maxWidth: 720 }}>
                   <h2
                     style={{
@@ -2002,7 +1744,7 @@ export default function App() {
                       fontSize: "clamp(2rem, 4.5vw, 3.4rem)",
                       fontWeight: 800,
                       letterSpacing: "-0.03em",
-                      color: "#080808",
+                      color: "#090909",
                       lineHeight: 1.1,
                       marginBottom: "1.25rem",
                     }}
@@ -2012,7 +1754,7 @@ export default function App() {
                   <p
                     style={{
                       fontSize: "1.08rem",
-                      color: "rgba(8,8,8,0.7)",
+                      color: "rgba(9,9,9,0.72)",
                       marginBottom: "2.5rem",
                       lineHeight: 1.7,
                     }}
@@ -2028,9 +1770,9 @@ export default function App() {
                         gap: "0.5rem",
                         height: 52,
                         padding: "0 28px",
-                        background: "#080808",
-                        color: "#F7F7F5",
-                        borderRadius: 999,
+                        background: "#090909",
+                        color: "var(--text)",
+                        borderRadius: 14,
                         border: "none",
                         cursor: "pointer",
                         fontFamily: "'Manrope', sans-serif",
@@ -2052,10 +1794,10 @@ export default function App() {
                         gap: "0.5rem",
                         height: 52,
                         padding: "0 28px",
-                        background: "rgba(8,8,8,0.12)",
-                        color: "#080808",
-                        borderRadius: 999,
-                        border: "1px solid rgba(8,8,8,0.2)",
+                        background: "rgba(9,9,9,0.10)",
+                        color: "#090909",
+                        borderRadius: 14,
+                        border: "1px solid rgba(9,9,9,0.22)",
                         fontFamily: "'Manrope', sans-serif",
                         fontWeight: 700,
                         fontSize: "0.95rem",
@@ -2082,14 +1824,11 @@ export default function App() {
           className="section-pad"
           style={{
             background: "var(--panel)",
-            borderTop: "1px solid rgba(255,255,255,0.06)",
+            borderTop: "1px solid var(--border-color)",
           }}
         >
           <div className="container-custom">
-            <div
-              style={{ display: "grid", gap: "3rem", alignItems: "start" }}
-              className="lg:grid-cols-2"
-            >
+            <div style={{ display: "grid", gap: "3rem", alignItems: "start" }} className="lg:grid-cols-2">
               <FadeUp>
                 <p className="eyebrow">Contact</p>
                 <h2
@@ -2098,7 +1837,7 @@ export default function App() {
                     fontSize: "clamp(2rem, 4vw, 3rem)",
                     fontWeight: 800,
                     letterSpacing: "-0.03em",
-                    color: "#F7F7F5",
+                    color: "var(--text)",
                     marginBottom: "1rem",
                   }}
                 >
@@ -2116,9 +1855,9 @@ export default function App() {
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                   {[
-                    { label: "Email", val: "hello@crafteddesigns.com.au" },
-                    { label: "Phone", val: "0421 448 692" },
-                    { label: "Area", val: "Whitsundays & North Queensland" },
+                    { label: "Email", val: "hello@crafteddesigns.com.au", href: "mailto:hello@crafteddesigns.com.au" },
+                    { label: "Phone", val: "0421 448 692", href: "tel:0421448692" },
+                    { label: "Area", val: "Whitsundays & North Queensland", href: null },
                   ].map((item) => (
                     <div
                       key={item.label}
@@ -2127,8 +1866,8 @@ export default function App() {
                         gap: "1rem",
                         alignItems: "center",
                         padding: "1rem 1.25rem",
-                        background: "#0D0D0D",
-                        border: "1px solid rgba(255,255,255,0.07)",
+                        background: "var(--elevated)",
+                        border: "1px solid var(--border-color)",
                         borderRadius: 14,
                       }}
                     >
@@ -2144,7 +1883,13 @@ export default function App() {
                       >
                         {item.label}
                       </span>
-                      <span style={{ color: "var(--muted)", fontSize: "0.95rem" }}>{item.val}</span>
+                      {item.href ? (
+                        <a href={item.href} style={{ color: "var(--muted)", fontSize: "0.95rem", textDecoration: "none" }}>
+                          {item.val}
+                        </a>
+                      ) : (
+                        <span style={{ color: "var(--muted)", fontSize: "0.95rem" }}>{item.val}</span>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -2154,76 +1899,76 @@ export default function App() {
                 <form
                   onSubmit={(e) => e.preventDefault()}
                   style={{
-                    background: "#0D0D0D",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    borderRadius: 24,
-                    padding: "2.5rem",
+                    background: "var(--elevated)",
+                    border: "1px solid var(--border-color)",
+                    borderRadius: 22,
+                    padding: "clamp(1.75rem, 4vw, 2.5rem)",
                     display: "flex",
                     flexDirection: "column",
                     gap: "1.25rem",
                   }}
                 >
                   {[
-                    { id: "name", label: "Name", type: "text", placeholder: "Your name" },
-                    { id: "email", label: "Email", type: "email", placeholder: "Your email address" },
-                    { id: "phone", label: "Phone", type: "tel", placeholder: "Your phone number" },
+                    { id: "name", label: "Name", type: "text", placeholder: "Your name", autoComplete: "name" },
+                    { id: "email", label: "Email", type: "email", placeholder: "Your email address", autoComplete: "email" },
+                    { id: "phone", label: "Phone", type: "tel", placeholder: "Your phone number", autoComplete: "tel" },
                   ].map((f) => (
-                    <label key={f.id} style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                    <label key={f.id} htmlFor={f.id} style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                       <span
                         style={{
                           fontFamily: "'Manrope', sans-serif",
                           fontWeight: 700,
                           fontSize: "0.85rem",
-                          color: "#F7F7F5",
+                          color: "var(--text)",
                         }}
                       >
                         {f.label}
                       </span>
                       <input
+                        id={f.id}
+                        name={f.id}
                         type={f.type}
                         placeholder={f.placeholder}
-                        autoComplete={f.id}
+                        autoComplete={f.autoComplete}
                         style={{
-                          background: "#151515",
-                          border: "1px solid rgba(255,255,255,0.09)",
+                          background: "var(--panel-alt)",
+                          border: "1px solid var(--border-color)",
                           borderRadius: 12,
                           padding: "0.875rem 1rem",
-                          color: "#F7F7F5",
+                          color: "var(--text)",
                           fontSize: "0.95rem",
                           fontFamily: "'Nunito Sans', sans-serif",
                           outline: "none",
                           transition: "border-color 0.2s",
                           minHeight: 48,
                         }}
-                        onFocus={(e) =>
-                          (e.currentTarget.style.borderColor = "var(--primary)")
-                        }
-                        onBlur={(e) =>
-                          (e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)")
-                        }
+                        onFocus={(e) => (e.currentTarget.style.borderColor = "var(--primary)")}
+                        onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border-color)")}
                       />
                     </label>
                   ))}
-                  <label style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  <label htmlFor="message" style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                     <span
                       style={{
                         fontFamily: "'Manrope', sans-serif",
                         fontWeight: 700,
                         fontSize: "0.85rem",
-                        color: "#F7F7F5",
+                        color: "var(--text)",
                       }}
                     >
                       Message
                     </span>
                     <textarea
+                      id="message"
+                      name="message"
                       placeholder="Tell me about your business and what you need..."
                       rows={4}
                       style={{
-                        background: "#151515",
-                        border: "1px solid rgba(255,255,255,0.09)",
+                        background: "var(--panel-alt)",
+                        border: "1px solid var(--border-color)",
                         borderRadius: 12,
                         padding: "0.875rem 1rem",
-                        color: "#F7F7F5",
+                        color: "var(--text)",
                         fontSize: "0.95rem",
                         fontFamily: "'Nunito Sans', sans-serif",
                         outline: "none",
@@ -2231,19 +1976,11 @@ export default function App() {
                         transition: "border-color 0.2s",
                         minHeight: 120,
                       }}
-                      onFocus={(e) =>
-                        (e.currentTarget.style.borderColor = "var(--primary)")
-                      }
-                      onBlur={(e) =>
-                        (e.currentTarget.style.borderColor = "rgba(255,255,255,0.09)")
-                      }
+                      onFocus={(e) => (e.currentTarget.style.borderColor = "var(--primary)")}
+                      onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border-color)")}
                     />
                   </label>
-                  <button
-                    type="submit"
-                    className="btn-primary"
-                    style={{ justifyContent: "center", width: "100%", marginTop: "0.5rem" }}
-                  >
+                  <button type="submit" className="btn-primary" style={{ justifyContent: "center", width: "100%", marginTop: "0.5rem" }}>
                     Send Message
                   </button>
                 </form>
@@ -2251,6 +1988,7 @@ export default function App() {
             </div>
           </div>
         </section>
+
       </main>
 
       {/* ══════════════════════════════════════
@@ -2279,17 +2017,12 @@ export default function App() {
                   marginBottom: "1rem",
                   display: "block",
                 }}
-                aria-label="Back to top"
+                aria-label="Crafted Designs — scroll to top"
               >
-                <div
-                  style={{
-                    width: 130,
-                    height: 44,
-                    backgroundImage: "url('/logo-brand-v2.png')",
-                    backgroundSize: "768px auto",
-                    backgroundPosition: "-18px -355px",
-                    backgroundRepeat: "no-repeat",
-                  }}
+                <img
+                  src="/logo-mark.png"
+                  alt="Crafted Designs"
+                  style={{ height: 40, width: "auto", display: "block" }}
                 />
               </button>
               <p
@@ -2333,7 +2066,7 @@ export default function App() {
                       textAlign: "left",
                       transition: "color 0.2s",
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#F7F7F5")}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text)")}
                     onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
                   >
                     {l.label}
@@ -2404,6 +2137,23 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Back to top */}
+      {showBackToTop && !mobileMenuOpen && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.2 }}
+          onClick={() => scrollTo("top")}
+          className="back-to-top"
+          aria-label="Back to top"
+        >
+          <span style={{ display: "flex", transform: "rotate(-90deg)" }}>
+            <IconArrowRight size={20} />
+          </span>
+        </motion.button>
+      )}
     </div>
   );
 }

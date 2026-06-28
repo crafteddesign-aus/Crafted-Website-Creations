@@ -1,0 +1,452 @@
+Please redesign and refine the existing Crafted Designs website at crafteddesign.au so it feels like a premium boutique web-design studio while preserving the current branding, content, working links, enquiry form and overall dark/orange identity.
+
+Do not rebuild the website from scratch. First inspect the existing components, styles and mobile breakpoints, then improve the current implementation cleanly and consistently.
+
+PRIMARY GOAL
+
+The website should feel:
+
+* premium and custom-designed
+* confident but approachable
+* modern without looking like a generic AI template
+* spacious and editorial
+* highly polished on mobile
+* appropriate for local trades, builders and service businesses
+* consistent with Crafted Designs’ black, charcoal, warm ivory and orange branding
+
+The current website contains too many repeated “01 / 02 / 03 / 04” treatments, bordered cards and similar stacked layouts. Reduce this repetition and introduce more variation between sections.
+
+IMPORTANT NUMBERING RULE
+
+Use large sequential numbering in ONE SECTION ONLY: the website process.
+
+The process may remain:
+
+01 — Discovery
+02 — First Design
+03 — Refine
+04 — Launch
+
+Remove numbered labels from:
+
+* service cards
+* benefits
+* “why work with me”
+* credibility points
+* statistics
+* all other sections
+
+Do not replace every number with another decorative label. Allow the remaining sections to feel quieter and cleaner.
+
+GLOBAL DESIGN SYSTEM
+
+Use the current Crafted Designs identity but refine it using:
+
+Background:
+
+* Primary black: #090909
+* Secondary charcoal: #111111
+* Elevated panel: #151515
+* Warm light section: #F2EFE8
+* Subtle dark border: rgba(255,255,255,0.09)
+
+Text:
+
+* Primary white: #F7F5F1
+* Secondary grey: #AAA7A2
+* Dark text on light sections: #151515
+* Muted dark text: #68645E
+
+Accent:
+
+* Crafted orange: retain the current brand orange
+* Use orange sparingly for buttons, small highlights, icons, hover states and important words
+* Do not use orange numbers repeatedly throughout the page
+
+Typography:
+
+* Keep a clean modern sans-serif for headings and body text
+* Add an elegant editorial serif or italic serif only for occasional highlighted words such as “enquiries”, “crafted” or “better”
+* Do not make entire headings serif
+* Use responsive clamp() sizing
+* Keep mobile headings strong but prevent awkward single-word wrapping
+
+Suggested sizing:
+
+* Hero heading: clamp(3rem, 7vw, 6.5rem)
+* Section headings: clamp(2.1rem, 4vw, 4rem)
+* Card headings: clamp(1.5rem, 2.4vw, 2.2rem)
+* Body text desktop: 18–20px
+* Body text mobile: 16–18px
+* Body line-height: 1.55–1.7
+
+LAYOUT AND SPACING
+
+Create a consistent maximum content width of approximately 1240px.
+
+Desktop section padding:
+
+* 110px to 150px vertically
+
+Mobile section padding:
+
+* 72px to 88px vertically
+* 22px to 24px horizontal padding
+
+Avoid squeezing text against card edges.
+
+Keep normal text line lengths around 55–68 characters.
+
+Use more empty space between major ideas. Do not try to fill every part of the screen with a border, card or decorative object.
+
+HEADER
+
+Refine the navigation header.
+
+* Make the header approximately 76–86px tall on mobile
+* Use a subtle dark translucent background with backdrop blur when scrolling
+* Add a fine bottom border
+* Keep it sticky without taking up too much screen space
+* Make the hamburger icon thinner and more refined
+* Give the logo more breathing room
+* The logo currently appears to sit inside a separate black rectangle
+* Search the project assets for a transparent PNG or SVG version and use it
+* Do not stretch, crop or distort the logo
+* Display the mobile logo at approximately 210–240px wide only if it fits cleanly; otherwise use a compact logo variation
+* Keep at least 18–22px spacing from the screen edges
+
+HERO SECTION
+
+Preserve the current Crafted Designs message and mobile website mock-up concept, but refine it substantially.
+
+The hero should contain:
+
+* a short eyebrow such as “Web design for local business”
+* one strong headline
+* one concise supporting paragraph
+* one primary CTA
+* one quieter secondary text link
+* the existing website/mobile visual, presented as a convincing real device or browser mock-up
+
+The website shown inside the mock-up must genuinely look like a mobile website:
+
+* use a tall phone-shaped viewport
+* use realistic mobile proportions
+* include a compact mobile navigation bar
+* display a proper Whitsundays-style sample website
+* use readable mobile text and image placement
+* prevent the preview from looking like a desktop screenshot placed inside a narrow rectangle
+* include a subtle phone frame, speaker/camera detail and realistic screen padding
+* ensure nothing overflows or becomes too small on mobile
+
+Keep the hero clean. Do not add excessive glowing shapes, gradients or floating badges.
+
+CREDIBILITY SECTION
+
+Replace the large black rounded statistics panel currently containing items such as:
+
+* 100% Tailored design
+* Local Whitsundays based
+* Direct One person throughout
+
+Create a slimmer premium credibility strip instead.
+
+Desktop:
+
+* three equal columns separated by fine vertical rules
+
+Mobile:
+
+* stacked rows or a horizontally scrollable strip
+* smaller height
+* no oversized card enclosing the entire section
+
+Suggested presentation:
+
+Tailored
+Designed around your business
+
+Local
+Based in the Whitsundays
+
+Direct
+One person from start to finish
+
+Do not number these items.
+
+SERVICES SECTION
+
+Keep the current services and meaning, including Custom Website Design and Website Refreshes, but remove the “01 / 02” numbering.
+
+Use three carefully designed service cards or rows:
+
+* Custom Website Design
+* Website Refreshes
+* Hosting & Ongoing Support
+
+Improve each service card:
+
+* smaller amount of copy
+* clear heading
+* subtle directional arrow
+* one small restrained icon or visual detail
+* optional “Learn more” interaction
+* hover lift of no more than 4px on desktop
+* subtle border colour transition
+* no aggressive glow
+* do not use identical oversized card heights if the content does not require it
+
+On mobile:
+
+* cards should be approximately 24–28px internal padding
+* reduce excessive blank areas
+* keep headings from breaking awkwardly
+* body copy should not run across many short lines
+* use a 20–24px corner radius
+* ensure arrow buttons do not crowd headings
+
+INTRODUCTION OR VALUE STATEMENT
+
+Add or refine one unboxed editorial text section between major card sections.
+
+Use a layout such as:
+
+Small label on the left:
+“Built differently”
+
+Large statement:
+“A considered website should make your business feel established before the first conversation begins.”
+
+Supporting paragraph:
+Explain that Crafted Designs combines clear communication, tailored design and practical support.
+
+This section should not use a border or card. Let typography and spacing create the premium appearance.
+
+PROCESS SECTION
+
+This is the only section that may use the large 01 / 02 / 03 / 04 treatment.
+
+Keep the existing process content but redesign the layout.
+
+Desktop:
+
+* use a horizontal or two-column timeline
+* each step should connect visually with a fine line
+* use restrained large faded numbers
+* reveal content gently as it enters the viewport
+
+Mobile:
+
+* use one clean vertical timeline
+* place the number in a narrow left column
+* place heading and description in the right column
+* add one continuous subtle vertical line
+* do not place each process step inside another large bordered box
+* remove unnecessary outlines surrounding the entire timeline
+* keep 48–64px space between steps
+
+Use the current process meaning:
+
+01 Tell me about your business
+02 Your first design is created
+03 Refine the details
+04 Launch and ongoing support
+
+Shorten descriptions where necessary, but preserve their meaning.
+
+WHY WORK WITH CRAFTED DESIGNS
+
+Remove the “01 / 02 / 03 / 04” labels from the section containing:
+
+* Direct communication
+* Clear case-by-case pricing
+* No confusing technical language
+* Continued hosting and support
+
+Replace them with a premium feature list.
+
+Desktop:
+
+* two-column grid
+* each feature has a small custom line icon or simple orange mark
+* heading and one concise sentence
+* generous whitespace
+* fine dividers only where needed
+
+Mobile:
+
+* one column
+* 28–36px between features
+* no large surrounding card
+* no numbered labels
+* no thick horizontal borders
+
+Use these refined descriptions:
+
+Direct communication
+Work with one person from the first conversation through to launch.
+
+Case-by-case pricing
+Each website is quoted around its actual scope, without confusing packages or hidden extras.
+
+Plain-English guidance
+Every step is explained clearly, without unnecessary technical language.
+
+Ongoing support
+Hosting and practical assistance remain available after the website goes live.
+
+LIGHT SECTION
+
+Keep at least one warm ivory section to break up the dark website, but make the transition feel intentional.
+
+Use the light section for either:
+
+* a selected project showcase
+* a strong client-focused statement
+* a final pre-CTA section
+
+Do not place a giant dark rounded rectangle inside the light section merely to repeat information already shown elsewhere.
+
+Use the contrast to showcase an actual website project, browser mock-up or concise statement.
+
+PROJECT SHOWCASE
+
+Where possible, add a premium selected-work section using real existing Crafted Designs projects.
+
+Each project preview should include:
+
+* large website screenshot or device mock-up
+* client/business name
+* business category
+* brief outcome-focused description
+* link to view the website where appropriate
+
+Use an alternating editorial layout rather than several identical small cards.
+
+Do not invent fake performance statistics or client testimonials.
+
+BUTTONS
+
+Primary button:
+
+* solid orange
+* dark text
+* medium rounded corners rather than a full pill
+* subtle hover movement
+* clear focus state
+
+Secondary button:
+
+* transparent or dark
+* fine grey border
+* white text
+* orange arrow or hover detail
+
+Mobile buttons:
+
+* minimum 48px height
+* large enough touch area
+* avoid making every button full width unless it improves the layout
+
+BACK-TO-TOP BUTTON
+
+Refine the white circular floating arrow.
+
+* reduce size to approximately 48–52px
+* position it 18–22px from the right and bottom
+* only display it after the user has scrolled a meaningful distance
+* use a subtle shadow
+* use a thin arrow icon
+* prevent it from covering cards, text or the mobile browser controls
+* hide it while the mobile menu is open
+
+ANIMATION
+
+Use restrained premium motion only:
+
+* headings and content fade upward 12–20px
+* duration around 500–700ms
+* gentle stagger for related cards
+* subtle image scale on hover
+* smooth menu transitions
+* respect prefers-reduced-motion
+
+Do not animate every individual line of text.
+Do not use bouncing, spinning or exaggerated parallax effects.
+
+MOBILE QUALITY CONTROL
+
+Audit the website at these widths:
+
+* 320px
+* 360px
+* 390px
+* 412px
+* 768px
+* 1024px
+* 1440px
+
+At mobile widths:
+
+* no horizontal overflow
+* no text clipping
+* no oversized blank card areas
+* no headings touching the screen edges
+* no content hidden under the sticky header
+* no floating controls covering content
+* no paragraphs with an excessive number of short lines
+* no desktop layout simply squeezed into a narrow column
+* keep a consistent 22–24px side gutter
+
+COPY
+
+Preserve the current voice: straightforward, personal and free of confusing technical language.
+
+Do not add generic agency phrases such as:
+
+* digital solutions
+* innovative experiences
+* cutting-edge technology
+* elevate your online presence
+* results-driven synergy
+
+Keep the writing grounded and suitable for local Australian businesses.
+
+TECHNICAL REQUIREMENTS
+
+* Preserve all current page routes
+* Preserve enquiry form functionality and Formspree integration
+* Preserve SEO metadata, improving it only where safe
+* Preserve contact information
+* Preserve external links
+* Preserve accessibility labels
+* Use semantic HTML
+* Add visible keyboard focus states
+* Maintain good colour contrast
+* Compress and lazy-load below-the-fold images
+* avoid layout shift
+* do not introduce unnecessary packages
+* reuse existing components where practical
+* remove dead or duplicate CSS after implementation
+* do not leave placeholder text or placeholder images
+* do not alter business information without instruction
+
+FINAL REVIEW
+
+After implementation, review the complete page rather than individual sections in isolation.
+
+The page should not look like a stack of repeated templates.
+
+It should have a deliberate rhythm:
+
+1. Strong hero
+2. Slim credibility strip
+3. Editorial introduction
+4. Premium services
+5. Selected work or visual showcase
+6. Numbered process
+7. Unnumbered benefits
+8. Strong final CTA
+9. Refined footer
+
+Before declaring the task complete, test the live mobile preview and confirm that all content is readable, aligned and free from horizontal overflow.

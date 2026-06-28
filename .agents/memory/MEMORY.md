@@ -1,0 +1,1 @@
+- [Below-fold SPA verification](screenshot-belowfold-spa.md) — app_preview screenshot can't scroll & hash anchors don't jump in an SPA; use the Playwright testing subagent for lower sections & overflow audits.
