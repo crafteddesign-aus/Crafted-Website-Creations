@@ -207,7 +207,7 @@ function DesktopMockup() {
           }}
         >
           <svg width="9" height="9" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="rgba(255,255,255,0.3)" strokeWidth="1.2"/><path d="M6 3v3l2 1" stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" strokeLinecap="round"/></svg>
-          whitsundaysescapes.com.au
+          coralandshore.com.au
         </div>
       </div>
 
@@ -215,8 +215,8 @@ function DesktopMockup() {
       <div style={{ position: "relative", overflow: "hidden" }}>
         {/* Hero image */}
         <img
-          src="/whitsundays-hero.png"
-          alt="Aerial view of the Whitsundays — clear turquoise water and tropical islands"
+          src="/whitsundays-hero.jpg"
+          alt="Aerial view of Whitehaven Beach and Hill Inlet, Whitsundays"
           loading="eager"
           width={900}
           height={506}
@@ -254,7 +254,7 @@ function DesktopMockup() {
             color: "#fff",
             textTransform: "uppercase",
           }}>
-            🌴 Whitsundays Escapes
+            🌊 Coral & Shore Co.
           </span>
           <div style={{ display: "flex", gap: "0.5rem" }}>
             {["Home", "Experiences", "Stay", "Plan Your Trip", "About"].map((t) => (
@@ -404,7 +404,7 @@ function PhoneMockup() {
       {/* Shared image */}
       <div style={{ position: "relative" }}>
         <img
-          src="/whitsundays-hero.png"
+          src="/whitsundays-hero.jpg"
           alt=""
           aria-hidden="true"
           loading="lazy"
