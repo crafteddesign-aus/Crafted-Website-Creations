@@ -55,21 +55,21 @@ const MARQUEE_ITEMS = [
   "DOMAIN SETUP",
   "WEBSITE HOSTING",
   "ENQUIRY FORMS",
-  "LOCAL SUPPORT",
+  "ONGOING SUPPORT",
 ];
 
 const SERVICES = [
   {
     title: "Custom Website Design",
-    desc: "A website built around your business — your services, your tone, your customers. No templates, no guesswork.",
+    desc: "A tailored website built around your business, brand, services and customers.",
   },
   {
     title: "Website Refreshes",
-    desc: "Already have a site that isn't doing the job? I'll modernise the look, sharpen the content and get it working properly.",
+    desc: "Modernise an existing website with clearer content, stronger presentation and improved mobile usability.",
   },
   {
     title: "Hosting & Ongoing Support",
-    desc: "Reliable hosting plus domain, email and technical setup — so your site stays live, current and backed up, with one person to call.",
+    desc: "Reliable hosting and practical assistance after your website goes live.",
   },
 ];
 
@@ -77,22 +77,22 @@ const PROCESS_STEPS = [
   {
     num: "01",
     title: "Tell me about your business",
-    desc: "A straightforward chat about what you do, who your customers are and what the website needs to achieve.",
+    desc: "We start with a straightforward conversation about your business, services, customers and what the website needs to achieve.",
   },
   {
     num: "02",
     title: "Your first design is created",
-    desc: "I design a tailored layout around your business — real content, real branding, nothing generic.",
+    desc: "I create an initial design using your real branding, content and business direction.",
   },
   {
     num: "03",
     title: "Refine the details",
-    desc: "You review everything and request changes. We go back and forth until it's exactly right.",
+    desc: "We review the design together and make the necessary adjustments before launch.",
   },
   {
     num: "04",
     title: "Launch and ongoing support",
-    desc: "Once approved, your site goes live. I handle the technical setup and stay on hand afterwards.",
+    desc: "Once everything is approved, your website is connected, tested and launched. Hosting and support can continue afterwards.",
   },
 ];
 
@@ -104,7 +104,7 @@ const CREDIBILITY = [
 
 const WHY_FEATURES = [
   { title: "Direct communication", desc: "Work with one person from the first conversation through to launch." },
-  { title: "Case-by-case pricing", desc: "Each website is quoted around its actual scope, without confusing packages or hidden extras." },
+  { title: "Case-by-case pricing", desc: "Your website is quoted around its actual scope, without confusing packages or unnecessary extras." },
   { title: "Plain-English guidance", desc: "Every step is explained clearly, without unnecessary technical language." },
   { title: "Ongoing support", desc: "Hosting and practical assistance remain available after the website goes live." },
 ];
@@ -966,9 +966,10 @@ export default function App() {
             position: "relative",
             minHeight: "clamp(760px, 90vh, 900px)",
             display: "flex",
-            alignItems: "center",
-            paddingTop: "clamp(7rem, 12vw, 10rem)",
-            paddingBottom: "clamp(5rem, 9vw, 7rem)",
+            alignItems: "flex-start",
+            paddingTop: "clamp(6rem, 14vw, 11rem)",
+            paddingBottom: "clamp(5rem, 9vw, 8rem)",
+            background: "#F3F0E9",
           }}
         >
           {/* Decorative layer — clipped independently so mockups can overflow */}
@@ -976,14 +977,13 @@ export default function App() {
             aria-hidden="true"
             style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}
           >
-            {/* Background orange glow */}
+            {/* Subtle warm accent */}
             <div
               style={{
                 position: "absolute",
                 inset: 0,
                 background:
-                  "radial-gradient(ellipse 48% 55% at 72% 38%, rgba(255,138,0,0.13), transparent 70%)," +
-                  "radial-gradient(ellipse 30% 40% at 65% 80%, rgba(255,138,0,0.06), transparent 70%)",
+                  "radial-gradient(ellipse 55% 45% at 70% 40%, rgba(255,138,0,0.05), transparent 65%)",
               }}
             />
             {/* Decorative "CRAFT" background text */}
@@ -996,7 +996,7 @@ export default function App() {
                 fontFamily: "'Manrope', sans-serif",
                 fontSize: "clamp(10rem, 24vw, 22rem)",
                 fontWeight: 800,
-                color: "rgba(255,255,255,0.016)",
+                color: "rgba(23,23,23,0.022)",
                 userSelect: "none",
                 whiteSpace: "nowrap",
                 letterSpacing: "-0.04em",
@@ -1048,7 +1048,7 @@ export default function App() {
                         color: "var(--primary)",
                       }}
                     >
-                      BOUTIQUE WEB DESIGN · WHITSUNDAYS
+                      CUSTOM WEBSITE DESIGN
                     </span>
                   </div>
                 </motion.div>
@@ -1060,12 +1060,12 @@ export default function App() {
                   transition={{ duration: 0.65, delay: 0.08, ease: [0.21, 0.47, 0.32, 0.98] }}
                   style={{
                     fontFamily: "'Manrope', sans-serif",
-                    fontSize: "clamp(3.6rem, 6.5vw, 6rem)",
+                    fontSize: "clamp(2.9rem, 8vw, 6rem)",
                     fontWeight: 800,
                     lineHeight: 0.98,
                     letterSpacing: "-0.03em",
-                    color: "var(--text)",
-                    marginBottom: "1.5rem",
+                    color: "#171717",
+                    marginBottom: "1.4rem",
                   }}
                 >
                   Websites{" "}
@@ -1080,9 +1080,7 @@ export default function App() {
                   >
                     crafted
                   </em>{" "}
-                  to grow
-                  <br />
-                  your business
+                  for your business
                   <span style={{ color: "var(--primary)" }}>.</span>
                 </motion.h1>
 
@@ -1092,21 +1090,40 @@ export default function App() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.16, ease: [0.21, 0.47, 0.32, 0.98] }}
                   style={{
-                    fontSize: "1.1rem",
+                    fontSize: "1.08rem",
                     lineHeight: 1.72,
-                    color: "var(--muted)",
+                    color: "#4A4641",
                     maxWidth: 500,
-                    marginBottom: "2.25rem",
+                    marginBottom: "1.1rem",
                   }}
                 >
-                  Premium, custom websites for Whitsundays businesses that want to look professional, build trust and generate more enquiries.
+                  Premium, custom websites designed to help your business look professional, build trust and generate more enquiries.
+                </motion.p>
+
+                {/* Location line */}
+                <motion.p
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.45rem",
+                    fontSize: "0.85rem",
+                    color: "#7A7470",
+                    marginBottom: "2rem",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--primary)", flexShrink: 0, display: "inline-block" }} />
+                  Based in the Whitsundays, creating websites for businesses across Australia.
                 </motion.p>
 
                 {/* CTA buttons */}
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.22, ease: [0.21, 0.47, 0.32, 0.98] }}
+                  transition={{ duration: 0.6, delay: 0.26, ease: [0.21, 0.47, 0.32, 0.98] }}
                   style={{ display: "flex", flexWrap: "wrap", gap: "0.875rem", marginBottom: "2.5rem" }}
                 >
                   <button onClick={() => scrollTo("contact")} className="btn-primary">
@@ -1115,7 +1132,7 @@ export default function App() {
                       <IconArrowRight />
                     </span>
                   </button>
-                  <button onClick={() => scrollTo("work")} className="btn-ghost">
+                  <button onClick={() => scrollTo("work")} className="btn-ghost" style={{ color: "#171717", borderColor: "rgba(23,23,23,0.28)", background: "transparent" }}>
                     View Our Work
                     <span className="btn-arrow">
                       <IconArrowRight />
@@ -1133,18 +1150,18 @@ export default function App() {
                   {[
                     {
                       icon: <IconStar />,
-                      title: "Custom-designed for your business",
-                      desc: "Unique designs tailored to your brand and goals.",
+                      title: "Designed around your business",
+                      desc: "A tailored website that reflects your brand, services and customers.",
                     },
                     {
                       icon: <IconMobile />,
-                      title: "Mobile-friendly and easy to use",
-                      desc: "A seamless experience across every screen size.",
+                      title: "Polished on every screen",
+                      desc: "A clear, easy-to-use experience across mobile, tablet and desktop.",
                     },
                     {
                       icon: <IconHeadset />,
-                      title: "Personal, local support",
-                      desc: "Direct help from design through to launch.",
+                      title: "Personal support",
+                      desc: "Direct help from the first conversation through to launch and beyond.",
                     },
                   ].map((item, i) => (
                     <div
@@ -1161,7 +1178,7 @@ export default function App() {
                           height: 36,
                           borderRadius: 10,
                           border: "1px solid rgba(255,138,0,0.45)",
-                          background: "rgba(255,138,0,0.06)",
+                          background: "rgba(255,138,0,0.09)",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -1177,7 +1194,7 @@ export default function App() {
                             fontFamily: "'Manrope', sans-serif",
                             fontWeight: 700,
                             fontSize: "0.9rem",
-                            color: "var(--text)",
+                            color: "#171717",
                             margin: 0,
                             marginBottom: "0.15rem",
                           }}
@@ -1187,7 +1204,7 @@ export default function App() {
                         <p
                           style={{
                             fontSize: "0.82rem",
-                            color: "var(--muted)",
+                            color: "#68645E",
                             margin: 0,
                             lineHeight: 1.5,
                           }}
@@ -1207,9 +1224,6 @@ export default function App() {
                 transition={{ duration: 0.75, delay: 0.14, ease: [0.21, 0.47, 0.32, 0.98] }}
                 style={{ position: "relative" }}
               >
-                {/* Orange glow behind mockups */}
-                <div className="mockup-glow" aria-hidden="true" />
-
                 {/* Floating wrapper */}
                 <div
                   className="float-gentle"
@@ -1261,9 +1275,9 @@ export default function App() {
         {/* ══════════════════════════════════════
             CREDIBILITY STRIP
         ══════════════════════════════════════ */}
-        <section style={{ borderBottom: "1px solid var(--border-color)" }}>
+        <section style={{ borderBottom: "1px solid rgba(23,23,23,0.10)", background: "var(--light-bg)" }}>
           <div className="container-custom">
-            <div className="cred-strip" style={{ padding: "2.5rem 0" }}>
+            <div className="cred-strip cred-light" style={{ padding: "2.5rem 0" }}>
               {CREDIBILITY.map((item, i) => (
                 <FadeUp key={item.title} delay={i * 0.08} className="cred-item">
                   <h3
@@ -1271,14 +1285,14 @@ export default function App() {
                       fontFamily: "'Manrope', sans-serif",
                       fontWeight: 800,
                       fontSize: "1.3rem",
-                      color: "var(--text)",
+                      color: "var(--light-text)",
                       letterSpacing: "-0.01em",
                       marginBottom: "0.35rem",
                     }}
                   >
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: "0.95rem", color: "var(--muted)", margin: 0, lineHeight: 1.5 }}>
+                  <p style={{ fontSize: "0.95rem", color: "var(--light-muted)", margin: 0, lineHeight: 1.5 }}>
                     {item.sub}
                   </p>
                 </FadeUp>
@@ -1346,8 +1360,8 @@ export default function App() {
           id="services"
           className="section-pad"
           style={{
-            background: "var(--panel)",
-            borderTop: "1px solid var(--border-color)",
+            background: "#F3F0E9",
+            borderTop: "1px solid rgba(23,23,23,0.07)",
           }}
         >
           <div className="container-custom">
@@ -1359,7 +1373,7 @@ export default function App() {
                   fontSize: "clamp(2.2rem, 4.5vw, 3.6rem)",
                   fontWeight: 800,
                   letterSpacing: "-0.03em",
-                  color: "var(--text)",
+                  color: "var(--light-text)",
                   lineHeight: 1.1,
                 }}
               >
@@ -1372,7 +1386,7 @@ export default function App() {
                 const Icon = [IconLayout, IconRefresh, IconHeadset][i];
                 return (
                   <FadeUp key={s.title} delay={i * 0.08}>
-                    <div className="card-base service-card">
+                    <div className="card-base service-card card-light">
                       <div className="service-icon">
                         <Icon />
                       </div>
@@ -1381,14 +1395,14 @@ export default function App() {
                           fontFamily: "'Manrope', sans-serif",
                           fontWeight: 700,
                           fontSize: "1.25rem",
-                          color: "var(--text)",
+                          color: "var(--light-text)",
                           letterSpacing: "-0.01em",
                           marginBottom: "0.75rem",
                         }}
                       >
                         {s.title}
                       </h3>
-                      <p style={{ fontSize: "0.97rem", lineHeight: 1.7, color: "var(--muted)", margin: 0 }}>
+                      <p style={{ fontSize: "0.97rem", lineHeight: 1.7, color: "var(--light-muted)", margin: 0 }}>
                         {s.desc}
                       </p>
                       <button
@@ -1421,9 +1435,10 @@ export default function App() {
                   fontWeight: 800,
                   letterSpacing: "-0.03em",
                   color: "var(--text)",
+                  marginBottom: "1.25rem",
                 }}
               >
-                Recent websites,{" "}
+                Real websites,{" "}
                 <em
                   style={{
                     fontFamily: "'Cormorant Garamond', serif",
@@ -1431,9 +1446,12 @@ export default function App() {
                     color: "var(--primary)",
                   }}
                 >
-                  carefully crafted.
+                  built for real businesses.
                 </em>
               </h2>
+              <p style={{ fontSize: "1.05rem", lineHeight: 1.78, color: "var(--muted)", maxWidth: 680, margin: 0 }}>
+                A selection of websites created to help real businesses present themselves more professionally and make it easier for customers to take the next step.
+              </p>
             </FadeUp>
 
             {/* Project 1 — NQBG Sheds */}
@@ -1467,7 +1485,7 @@ export default function App() {
                     NQBG Sheds
                   </h3>
                   <p style={{ fontSize: "1.02rem", lineHeight: 1.75, color: "var(--muted)", marginBottom: "2rem" }}>
-                    A bold, professional website for a Whitsundays shed builder — built to showcase projects, services and coverage areas, and to make enquiries simple.
+                    A modern website for a Whitsundays building business, designed to present its services clearly and make it straightforward for customers to get in touch.
                   </p>
                   <a href="https://www.nqbgsheds.com.au" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ width: "fit-content" }}>
                     View Project
@@ -1619,24 +1637,24 @@ export default function App() {
         {/* ══════════════════════════════════════
             WHY CRAFTED DESIGNS
         ══════════════════════════════════════ */}
-        <section className="section-pad">
+        <section className="section-pad" style={{ background: "var(--light-bg)" }}>
           <div className="container-custom">
             <FadeUp style={{ marginBottom: "3.5rem", maxWidth: 620 }}>
-              <p className="eyebrow">Why us</p>
+              <p className="eyebrow">Why work with us</p>
               <h2
                 style={{
                   fontFamily: "'Manrope', sans-serif",
                   fontSize: "clamp(2rem, 4vw, 3.2rem)",
                   fontWeight: 800,
                   letterSpacing: "-0.03em",
-                  color: "var(--text)",
+                  color: "var(--light-text)",
                   lineHeight: 1.1,
                   marginBottom: "1.4rem",
                 }}
               >
-                Agency-quality design. Personal local service.
+                Agency-quality design. Personal service.
               </h2>
-              <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "var(--muted)", margin: 0 }}>
+              <p style={{ fontSize: "1.05rem", lineHeight: 1.8, color: "var(--light-muted)", margin: 0 }}>
                 You deal directly with the person designing and building your website — from the first conversation through to launch and ongoing support.
               </p>
             </FadeUp>
@@ -1655,14 +1673,14 @@ export default function App() {
                           fontFamily: "'Manrope', sans-serif",
                           fontWeight: 700,
                           fontSize: "1.15rem",
-                          color: "var(--text)",
+                          color: "var(--light-text)",
                           marginBottom: "0.5rem",
                           letterSpacing: "-0.01em",
                         }}
                       >
                         {item.title}
                       </h3>
-                      <p style={{ fontSize: "0.97rem", color: "var(--muted)", lineHeight: 1.7, margin: 0, maxWidth: 420 }}>
+                      <p style={{ fontSize: "0.97rem", color: "var(--light-muted)", lineHeight: 1.7, margin: 0, maxWidth: 420 }}>
                         {item.desc}
                       </p>
                     </div>
@@ -1691,15 +1709,18 @@ export default function App() {
                     lineHeight: 1.12,
                   }}
                 >
-                  Web design without the agency runaround.
+                  A more personal way to build your website.
                 </h2>
               </FadeUp>
               <FadeUp delay={0.15}>
                 <p style={{ fontSize: "1.08rem", lineHeight: 1.8, color: "var(--light-muted)", marginTop: 0, marginBottom: "1.25rem" }}>
-                  Crafted Designs was created to help local businesses get professional websites without confusing processes, inflated agency costs or being left to work everything out themselves.
+                  Crafted Designs was created to give business owners a straightforward alternative to large agencies and generic website templates.
+                </p>
+                <p style={{ fontSize: "1.08rem", lineHeight: 1.8, color: "var(--light-muted)", marginTop: 0, marginBottom: "1.25rem" }}>
+                  You work directly with one person throughout the project, from the first conversation and initial design through to launch and ongoing support.
                 </p>
                 <p style={{ fontSize: "1.08rem", lineHeight: 1.8, color: "var(--light-muted)", marginTop: 0, marginBottom: "2.25rem" }}>
-                  I work directly with each client to understand the business, organise the content and create a website that feels right for the people it represents.
+                  Based in the Whitsundays, I work with businesses across Australia and keep every stage clear, practical and easy to understand.
                 </p>
                 <button onClick={() => scrollTo("contact")} className="btn-primary">
                   Start a Conversation
@@ -1749,7 +1770,7 @@ export default function App() {
                       marginBottom: "1.25rem",
                     }}
                   >
-                    Ready for a website that properly represents your business?
+                    Ready for a website that represents your business properly?
                   </h2>
                   <p
                     style={{
@@ -1759,7 +1780,7 @@ export default function App() {
                       lineHeight: 1.7,
                     }}
                   >
-                    Tell me about your business and what you would like your new website to achieve.
+                    Tell me about your business, what you need and where your current website may be falling short.
                   </p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
                     <button
@@ -1784,7 +1805,7 @@ export default function App() {
                       onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-2px)")}
                       onMouseLeave={(e) => (e.currentTarget.style.transform = "none")}
                     >
-                      Start a Project
+                      Start Your Website
                     </button>
                     <a
                       href="tel:0421448692"
@@ -1810,6 +1831,9 @@ export default function App() {
                       Call 0421 448 692
                     </a>
                   </div>
+                  <p style={{ fontSize: "0.83rem", color: "rgba(9,9,9,0.48)", marginTop: "1.5rem" }}>
+                    Based in the Whitsundays. Available to businesses across Australia.
+                  </p>
                 </div>
               </div>
             </FadeUp>
@@ -1841,7 +1865,7 @@ export default function App() {
                     marginBottom: "1rem",
                   }}
                 >
-                  Let's build your website
+                  Let's talk about your website.
                 </h2>
                 <p
                   style={{
@@ -1851,13 +1875,13 @@ export default function App() {
                     marginBottom: "2.5rem",
                   }}
                 >
-                  Send through a few details about your business and what you're looking for, and I'll get back to you with next steps.
+                  Send through a few details about your business and what you would like your website to achieve. I'll get back to you personally to discuss the next step.
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                   {[
                     { label: "Email", val: "hello@crafteddesigns.com.au", href: "mailto:hello@crafteddesigns.com.au" },
                     { label: "Phone", val: "0421 448 692", href: "tel:0421448692" },
-                    { label: "Area", val: "Whitsundays & North Queensland", href: null },
+                    { label: "Location", val: "Whitsundays based, Australia-wide.", href: null },
                   ].map((item) => (
                     <div
                       key={item.label}
@@ -2030,10 +2054,22 @@ export default function App() {
                   fontSize: "0.9rem",
                   color: "var(--muted)",
                   lineHeight: 1.7,
-                  maxWidth: 260,
+                  maxWidth: 280,
                 }}
               >
-                Premium websites for Whitsundays businesses. Designed with care. Backed by local support.
+                Custom websites for businesses that want to look professional, communicate clearly and generate more enquiries.
+              </p>
+              <p
+                style={{
+                  fontSize: "0.82rem",
+                  color: "var(--muted)",
+                  lineHeight: 1.6,
+                  maxWidth: 280,
+                  marginTop: "0.5rem",
+                  opacity: 0.7,
+                }}
+              >
+                Whitsundays based. Working Australia-wide.
               </p>
             </div>
             <div>
@@ -2092,7 +2128,7 @@ export default function App() {
                 {[
                   "hello@crafteddesigns.com.au",
                   "0421 448 692",
-                  "Whitsundays & North Queensland",
+                  "Whitsundays based, Australia-wide",
                 ].map((item) => (
                   <p key={item} style={{ fontSize: "0.92rem", color: "var(--muted)", margin: 0 }}>
                     {item}
