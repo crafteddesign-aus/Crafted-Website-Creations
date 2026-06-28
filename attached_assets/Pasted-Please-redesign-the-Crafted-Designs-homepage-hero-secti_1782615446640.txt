@@ -1,0 +1,586 @@
+Please redesign the Crafted Designs homepage hero section to closely follow the attached design concept.
+
+IMPORTANT:
+
+* Do not simply place the attached concept image on the page.
+* Rebuild the layout using proper HTML, React components and CSS.
+* Keep all text, buttons, mockup content and images editable.
+* Preserve the existing Crafted Designs logo.
+* Keep the existing website sections below the hero unless changes are specifically requested.
+* Do not copy Replit branding or another company’s website.
+* The finished design should be an original Crafted Designs layout with a refined, modern, premium software-style appearance.
+
+## OVERALL DESIGN DIRECTION
+
+Create a premium boutique web-design hero with:
+
+* Deep black and charcoal backgrounds
+* Warm orange accent lighting
+* Large, confident typography
+* Generous spacing
+* Rounded browser and device mockups
+* Subtle borders and shadows
+* Restrained animations
+* A polished desktop and mobile website preview
+* A sophisticated Whitsundays theme inside the preview
+
+The hero should feel:
+
+* Premium
+* Modern
+* Boutique
+* Professional
+* Locally relevant
+* Spacious
+* High-end
+* Conversion-focused
+
+Avoid making it feel:
+
+* Crowded
+* Overly flashy
+* Like a generic website template
+* Like a tourism website for Crafted Designs itself
+* Overloaded with animations or glowing effects
+
+## COLOUR PALETTE
+
+Use the following base colours:
+
+* Main page background: #080808
+* Secondary dark background: #0D0D0D
+* Elevated panels: #141414
+* Main white text: #F7F7F5
+* Secondary text: #A9A9A4
+* Orange accent: #FF8A00
+* Strong orange hover: #FF9C1A
+* Dark orange glow: rgba(255, 138, 0, 0.18)
+* Subtle white borders: rgba(255, 255, 255, 0.10)
+* Orange borders: rgba(255, 138, 0, 0.45)
+
+Use a soft radial orange glow behind the website mockup. Keep the rest of the background close to black.
+
+Do not cover the entire hero with a muddy brown gradient.
+
+## TYPOGRAPHY
+
+Use a clean, bold modern sans-serif such as:
+
+* Manrope
+* Sora
+* Plus Jakarta Sans
+
+Use Cormorant Garamond italic for the word “crafted” only.
+
+Suggested weights:
+
+* Main heading: 700 or 800
+* Navigation: 600
+* Body copy: 400 or 500
+* Small labels: 600
+
+Suggested desktop sizes:
+
+* Hero heading: clamp(3.8rem, 6vw, 6.3rem)
+* Supporting paragraph: 18px to 20px
+* Button text: 15px to 16px
+* Small strapline: 12px to 13px
+
+Use tight but readable heading line height around 0.96 to 1.02.
+
+## PAGE CONTAINER
+
+Use a maximum content width of approximately 1440px.
+
+Desktop horizontal padding:
+
+* 72px to 90px on large screens
+* 40px to 56px on medium screens
+
+Mobile horizontal padding:
+
+* 20px to 24px
+
+The page itself should remain full width.
+
+## HEADER
+
+Create a clean premium header above the hero.
+
+Left side:
+
+* Existing Crafted Designs logo
+* Ensure the logo remains crisp and is not stretched
+* Use a width of approximately 170px to 210px depending on the available logo proportions
+
+Right side navigation:
+
+* Home
+* About
+* Services
+* Work
+* Contact
+
+Add a bordered CTA button:
+
+“Request a Quote”
+
+Header design:
+
+* Height around 88px to 100px on desktop
+* Transparent or almost-black background initially
+* Subtle bottom border
+* Sticky when scrolling
+* On scroll, add a dark translucent background with backdrop blur
+* Keep navigation spacing generous
+* Active link should use orange text and a small orange indicator dot
+
+On mobile:
+
+* Keep the logo visible
+* Replace navigation with a polished hamburger menu
+* Open a full-width dark menu panel
+* Include the Request a Quote CTA inside the menu
+* Ensure the menu is keyboard accessible
+
+## HERO LAYOUT
+
+Create a two-column hero layout.
+
+Desktop proportions:
+
+* Left content: approximately 42%
+* Right mockup area: approximately 58%
+
+The hero should have enough height to feel substantial but should not force all content far below the fold.
+
+Suggested minimum hero height:
+
+* Approximately 760px to 850px on large desktop
+* Use content-driven height on smaller devices
+
+Align the left and right areas vertically around the centre.
+
+## LEFT HERO CONTENT
+
+### Small strapline
+
+Add a small rounded label above the main heading.
+
+Text:
+
+“BOUTIQUE WEB DESIGN · WHITSUNDAYS”
+
+Styling:
+
+* Uppercase
+* Small letter spacing
+* Orange text
+* Thin orange border
+* Very subtle dark-orange background
+* Rounded pill shape
+* Do not make it excessively large
+
+### Main heading
+
+Use this exact wording:
+
+“Websites crafted to grow your business.”
+
+Use intentional line breaks on desktop:
+
+Websites
+crafted to grow
+your business.
+
+Style:
+
+* “Websites” in bold white sans-serif
+* “crafted” in orange Cormorant Garamond italic
+* “to grow” in bold white sans-serif
+* “your business.” in bold white sans-serif
+* Make the final full stop orange
+
+Keep “crafted to grow” together on one line when the desktop width permits.
+
+Do not create an isolated line containing only the word “your”.
+
+The heading should feel large, but it should not overpower the website mockup.
+
+### Background lettering
+
+Add an extremely subtle oversized word behind the left-side content.
+
+Suggested word:
+
+“CRAFT”
+
+Styling:
+
+* Very low opacity
+* Large bold letters
+* Dark charcoal only
+* Partially cropped
+* Pointer events disabled
+* Decorative only
+* Hidden or heavily reduced on mobile
+
+It must not interfere with readability.
+
+### Supporting paragraph
+
+Use:
+
+“Premium, custom websites for Whitsundays businesses that want to look professional, build trust and generate more enquiries.”
+
+Styling:
+
+* Maximum width approximately 540px
+* Muted off-white or light grey
+* Comfortable line height around 1.7
+* Approximately 18px on desktop
+* Do not make the paragraph too wide
+
+### CTA buttons
+
+Add two buttons on one row.
+
+Primary:
+
+“Start Your Website”
+
+Secondary:
+
+“View Our Work”
+
+Primary button styling:
+
+* Orange background
+* Dark text
+* Rounded pill shape
+* Subtle shadow rather than a strong neon glow
+* Small circular arrow area or right-arrow icon
+* Smooth hover lift of 2px
+* Slightly brighter orange on hover
+
+Secondary button styling:
+
+* Transparent dark background
+* Thin grey border
+* White text
+* Right-arrow icon
+* Border changes towards orange on hover
+* Smooth hover transition
+
+Both buttons must:
+
+* Use the same height
+* Be approximately 54px to 58px high
+* Have clear keyboard focus states
+* Use proper button or anchor elements
+* Stack neatly on smaller mobile screens
+
+### Benefit list
+
+Under the buttons, include these three items:
+
+1. Custom-designed for your business
+   Unique designs tailored to your brand and goals.
+
+2. Mobile-friendly and easy to use
+   A seamless experience across every screen size.
+
+3. Personal, local support
+   Direct help from design through to launch.
+
+Use a small premium outlined icon box for each item.
+
+Suggested icons:
+
+* Star or sparkle
+* Mobile phone
+* Headset or message bubble
+
+Styling:
+
+* Thin orange outline
+* Rounded corners
+* Consistent icon size
+* White benefit title
+* Muted smaller description
+* Comfortable spacing between each item
+
+Use Lucide icons or the icon library already installed in the project.
+
+Do not use emojis.
+
+## RIGHT-SIDE WEBSITE SHOWCASE
+
+Replace the current NQBG Sheds preview in the main hero with an original fictional Whitsundays website concept.
+
+This is intended to help potential clients imagine their own website in the showcase.
+
+The mockup must not look like a real existing Whitsundays business.
+
+Use a fictional brand such as:
+
+“Whitsundays Escapes”
+
+The main desktop preview should show:
+
+* A beautiful Whitsundays aerial or coastal image
+* Turquoise water
+* Green islands
+* White sand
+* Refined typography
+* A premium navigation bar
+* A clear placeholder message
+
+Suggested fictional website navigation:
+
+* Home
+* Experiences
+* Stay
+* Plan Your Trip
+* About
+* Book Now
+
+Main preview wording:
+
+Small text:
+
+“IMAGINE YOUR BUSINESS HERE”
+
+Large heading:
+
+“Your Website Here”
+
+Supporting line:
+
+“Showcase what makes your business special in the Whitsundays.”
+
+Button:
+
+“Explore More”
+
+The main goal is for visitors to immediately understand:
+
+“This screen could display my business website.”
+
+Do not use the fictional tourism brand as though it is a real Crafted Designs client.
+
+## WHITSUNDAYS IMAGE
+
+Use a high-quality licensed, royalty-free or supplied Whitsundays image.
+
+The image should:
+
+* Look professional
+* Have enough negative space for text
+* Show tropical water, islands or coastline
+* Work well inside both desktop and mobile crops
+* Avoid visible stock-photo watermarks
+* Be optimised for web performance
+
+Add a dark blue/teal overlay when required to keep text readable.
+
+Use responsive image handling and lazy loading where appropriate, but ensure the main hero preview image appears quickly.
+
+## DESKTOP MOCKUP FRAME
+
+Place the fictional website inside a custom browser-style frame.
+
+The browser frame should include:
+
+* Large rounded corners around 22px to 28px
+* Dark charcoal top bar
+* Three small browser dots
+* Thin warm-orange edge highlight
+* Very soft outer shadow
+* Subtle orange glow behind it
+* Overflow hidden
+
+Do not make it look like an image pasted onto the background.
+
+The mockup should have realistic depth but remain elegant.
+
+Optional internal bottom section:
+
+Add a dark teal strip containing three small fictional feature columns:
+
+* Local Expertise
+* Memorable Experiences
+* Built for the Whitsundays
+
+Keep these elements small and secondary.
+
+## MOBILE MOCKUP
+
+Add a mobile phone mockup overlapping the lower-right edge of the desktop mockup.
+
+It should show a responsive version of the same fictional Whitsundays website.
+
+Include:
+
+* Rounded phone frame
+* Thin orange edge highlight
+* Dark device border
+* Matching hero image
+* “Your Website Here” heading
+* Mobile navigation icon
+* A lower content section to show that the page continues
+
+The mobile preview should demonstrate responsive design rather than merely cropping the desktop layout.
+
+It should overlap the desktop mockup without covering the main placeholder message.
+
+## LIGHTING AND DEPTH
+
+Behind the mockup area, use:
+
+* One restrained orange radial glow
+* A very subtle secondary glow near the bottom
+* Soft shadows below the devices
+* Optional subtle dotted texture near the lower part of the mockup
+
+Do not use:
+
+* Strong lens flares
+* Heavy neon outlines
+* Continuous flashing animation
+* Excessive glassmorphism
+* Bright orange across the entire page
+
+## ANIMATION
+
+Use restrained animations only.
+
+On initial load:
+
+* Strapline fades upward slightly
+* Heading fades upward
+* Paragraph and buttons fade upward with a small delay
+* Desktop mockup fades and scales from approximately 0.98 to 1
+* Mobile device enters with a small delayed upward movement
+
+While idle:
+
+* Very slow device float of approximately 4px to 6px
+* Extremely subtle glow movement
+
+On hover:
+
+* CTA arrows move a few pixels right
+* Buttons lift approximately 2px
+* Mockup may scale no more than 1.01
+
+Animation requirements:
+
+* Use CSS transitions or the animation library already installed
+* Do not add a large dependency solely for simple movement
+* Respect prefers-reduced-motion
+* Keep all animations smooth on mobile
+* Do not delay access to text or navigation
+
+## RESPONSIVE BEHAVIOUR
+
+### Tablet
+
+At tablet widths:
+
+* Reduce headline size
+* Keep the two-column layout while practical
+* Reduce the overlap of the phone mockup
+* Maintain comfortable space between text and mockups
+
+### Mobile
+
+On mobile:
+
+1. Stack the hero content vertically.
+2. Show the left content first.
+3. Place the device mockups below the buttons and benefit list.
+4. Use a smaller headline with clean wrapping.
+5. Keep the word “crafted” readable and prominent.
+6. Make CTA buttons full width or near full width.
+7. Reduce the mockup overlap so neither screen is hidden.
+8. Keep the benefit list readable.
+9. Hide the oversized decorative background lettering if it creates clutter.
+10. Prevent all horizontal overflow.
+
+Suggested mobile heading arrangement:
+
+Websites
+crafted to grow
+your business.
+
+Ensure:
+
+* Tap targets are at least 44px high
+* Text never touches the screen edges
+* Phone mockup remains large enough to understand
+* Browser preview is not too tiny
+* No content is clipped
+
+## ACCESSIBILITY
+
+Please include:
+
+* Proper semantic heading structure
+* Alt text for meaningful images
+* Decorative images marked appropriately
+* Visible keyboard focus states
+* Sufficient text contrast
+* Buttons and links that work without a mouse
+* Reduced-motion support
+* Properly labelled mobile navigation
+* No text embedded into important images where it can instead be HTML
+
+The words “Your Website Here” should preferably be HTML text layered inside the mockup so it remains crisp and editable.
+
+## PERFORMANCE
+
+Optimise the new hero for performance.
+
+Please:
+
+* Compress large imagery
+* Use WebP or AVIF where supported
+* Avoid unnecessarily large image files
+* Avoid excessive JavaScript
+* Prevent cumulative layout shift by setting image dimensions
+* Ensure the page still loads well on mobile connections
+* Reuse existing project dependencies where possible
+
+## LINKS AND BUTTON ACTIONS
+
+Set the buttons to the appropriate existing page sections:
+
+* Start Your Website → contact or project enquiry section
+* View Our Work → portfolio/work section
+* Request a Quote → contact or quote form
+* Navigation links → matching homepage sections or pages
+
+Use smooth scrolling for same-page section links.
+
+## FINAL RESULT
+
+The finished hero should closely capture the attached concept:
+
+* Strong black and orange Crafted Designs branding
+* Refined boutique-agency presentation
+* Large elegant headline
+* Premium fictional Whitsundays website showcase
+* Clear “Your Website Here” placeholder message
+* Desktop and mobile responsiveness demonstrated
+* More space, restraint and polish than the current design
+
+Before finishing:
+
+1. Check the hero at desktop, tablet and mobile sizes.
+2. Confirm there is no horizontal overflow.
+3. Confirm all buttons and navigation links work.
+4. Confirm the existing sections below the hero remain intact.
+5. Confirm the fictional Whitsundays website is clearly presented as an example, not a genuine client project.
+6. Confirm all text remains editable in the code.
+7. Show me the completed result before making unrelated changes elsewhere on the website.

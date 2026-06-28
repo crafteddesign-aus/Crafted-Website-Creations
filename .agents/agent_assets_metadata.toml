@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "JSH2Xe9KzU2G3oyNso_ro"
+uri = "file://artifacts/crafted-designs/public/whitsundays-hero.png"
+type = "image"
+title = "Whitsundays aerial coastal hero"
