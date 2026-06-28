@@ -1,0 +1,76 @@
+Please improve the **phone mock-up design** in the homepage hero section.
+
+The current phone preview still looks like a scaled-down desktop website instead of a real mobile website.
+
+I do **not** just want the desktop preview resized to fit the phone frame.
+I want the phone screen content itself to look like a proper mobile version of the sample website.
+
+## What to change
+
+### 1. Create a true mobile mock-up layout
+
+Redesign the content inside the phone frame so it looks like a real mobile homepage.
+
+The mobile mock-up should include:
+
+* a compact top header
+* small logo or business name at the top
+* a hamburger menu icon on the right
+* a vertically stacked layout
+* larger mobile-friendly text
+* a simple hero section
+* one main CTA button
+* proper spacing between elements
+
+### 2. Do not use the desktop layout inside the phone
+
+Avoid showing the desktop navigation or wide desktop composition inside the mobile preview.
+
+The current phone preview should not look like a cropped desktop screenshot.
+
+Instead, make it look like a genuine mobile homepage for the same example business.
+
+### 3. Suggested mobile screen structure
+
+Inside the phone mock-up, use this type of structure:
+
+* small top bar / browser bar
+* logo/business name
+* hamburger menu icon
+* hero image background
+* small heading such as:
+  **Your Website Here**
+* short supporting text
+* one mobile CTA button such as:
+  **Book Now** or **Explore More**
+* optional small secondary content below
+
+### 4. Typography and scale
+
+Make the mobile text feel realistic for a phone:
+
+* larger heading relative to the screen
+* shorter lines of text
+* less crowded content
+* buttons sized for touch
+* comfortable padding around all elements
+
+### 5. Keep the desktop and mobile mock-ups visually related
+
+The desktop mock-up and phone mock-up should clearly look like the same brand and same website, but adapted properly for different devices.
+
+Use the same colours, imagery and overall style, but change the layout inside the phone to be mobile-first.
+
+### 6. Make the phone mock-up more premium
+
+If needed:
+
+* make the phone frame slightly larger
+* improve the inner screen proportions
+* reduce clutter
+* keep the composition clean and believable
+
+The phone mock-up should immediately read as:
+**“This is what the website would look like on mobile.”**
+
+Right now it still reads too much like a desktop layout placed inside a phone.
