@@ -1,0 +1,292 @@
+Redesign the Crafted Designs website with inspiration from the bold,
+premium and results-focused presentation used by leading Australian
+digital agencies.
+
+Do not directly copy another website's layout, graphics, text or branding.
+Use the inspiration only to improve hierarchy, confidence, movement,
+project presentation and conversion.
+
+BRAND DIRECTION
+
+Keep the existing Crafted Designs black, charcoal and orange identity.
+
+Use:
+- Main background: #0D0D0D
+- Card background: #151515
+- Warm light background: #F2EFE9
+- White text: #FAFAFA
+- Dark text: #161616
+- Orange accent: #FF8C00
+- Muted text: #A6A6A6
+- Subtle borders: rgba(255,255,255,0.12)
+
+The overall style should feel:
+- Premium
+- Bold
+- Modern
+- Confident
+- Approachable
+- Results-focused
+- Suitable for local Whitsundays businesses
+
+TYPOGRAPHY
+
+Use a bold modern sans-serif such as Manrope or Sora for the main
+headings.
+
+Use Cormorant Garamond sparingly for selected italic words such as
+"crafted", "better" or "growth".
+
+Use Nunito Sans or Inter for body copy.
+
+Use large typography:
+- Hero heading: clamp(3rem, 7vw, 6rem)
+- Section headings: clamp(2.4rem, 5vw, 4.5rem)
+- Body text: 18px to 20px
+- Generous line height and white space
+
+HEADER
+
+Create a clean sticky header.
+
+Left:
+Crafted Designs logo.
+
+Centre/right navigation:
+Work
+Services
+Process
+About
+Contact
+
+Add a highly visible orange "Start a Project" button.
+
+When the user scrolls, change the header to a slightly transparent
+blurred dark background with a subtle bottom border.
+
+HERO
+
+Create a full-width dark hero section with generous vertical spacing.
+
+Main heading:
+"Websites crafted to grow your business."
+
+Style the word "crafted" in Cormorant Garamond italic and orange.
+
+Supporting text:
+"Premium, easy-to-use websites for Whitsundays businesses that want to
+look professional, build trust and generate more enquiries."
+
+Buttons:
+- Start Your Website
+- View Our Work
+
+Under the buttons add:
+- Custom-designed for your business
+- Mobile-friendly and easy to use
+- Personal, local support
+
+On the right, create an overlapping desktop and mobile website mock-up
+using an actual Crafted Designs project such as NQBG Sheds.
+
+Add:
+- A soft orange radial glow
+- An abstract orange circle or curved shape
+- A very slow floating motion
+- A faint oversized CRAFTED word in the background
+
+Do not use excessive animations.
+
+SCROLLING STRIP
+
+Add a horizontal moving strip below the hero containing:
+
+WEB DESIGN — MOBILE DESIGN — DOMAIN SETUP — WEBSITE HOSTING —
+ENQUIRY FORMS — LOCAL SUPPORT —
+
+Use orange text on a black background.
+
+The marquee must move slowly and pause for users who prefer reduced
+motion.
+
+INTRODUCTION
+
+Add a two-column light-background section.
+
+Left heading:
+"More than a good-looking website."
+
+Body:
+"Your website should make your business look credible, explain what you
+do clearly and make it easy for customers to contact you. Crafted
+Designs builds professional websites with a clear purpose—not templates
+filled with unnecessary clutter."
+
+Right side:
+Display the large statement:
+"Built to turn visitors into enquiries."
+
+FEATURED WORK
+
+Create a premium featured-project section titled:
+
+"Recent websites, carefully crafted."
+
+Use large alternating case-study cards rather than a small grid.
+
+Project one:
+NQBG Sheds
+
+Description:
+"A bold, professional website created for a Whitsundays shed builder,
+designed to showcase their projects, services and service areas."
+
+Show a large desktop screenshot and overlapping mobile screenshot.
+
+Include:
+- Construction
+- Whitsundays
+- Website design
+- Domain connection
+- Hosting
+
+Add a View Project button.
+
+Create the same format for NQ Excavations.
+
+Use alternating layouts and substantial spacing between projects.
+
+SERVICES
+
+Add the heading:
+"Everything needed to build a stronger online presence."
+
+Create four large premium cards:
+
+1. Custom Website Design
+2. Website Refreshes
+3. Hosting & Ongoing Support
+4. Domain & Technical Setup
+
+Each card should include:
+- A simple number
+- Heading
+- Short explanation
+- Directional arrow
+- Optional website-related image
+
+Hover interaction:
+- Card moves upward by 5px
+- Border changes to orange
+- Arrow moves slightly right
+- Image scales no more than 1.03
+
+WHY CRAFTED DESIGNS
+
+Create a dark two-column section.
+
+Heading:
+"Agency-quality design. Personal local service."
+
+Body:
+"You will not be passed between salespeople, designers and account
+managers. You deal directly with the person designing and building your
+website—from the first conversation to launch and ongoing support."
+
+Add four numbered advantages:
+01 Direct communication
+02 Clear case-by-case pricing
+03 No confusing technical language
+04 Continued hosting and support
+
+PROCESS
+
+Create a four-stage process section:
+
+01 Tell me about your business
+02 Your first design is created
+03 We refine the website
+04 Your website goes live
+
+Use large numbers, thin dividing lines and concise descriptions.
+
+On desktop, show the stages horizontally.
+On mobile, stack them vertically.
+
+ABOUT
+
+Create a warm light-background section titled:
+
+"Web design without the agency runaround."
+
+Include a genuine image placeholder for the business owner rather than
+a generic stock office photo.
+
+Body copy:
+"Crafted Designs was created to help local businesses get professional
+websites without confusing processes, inflated agency costs or being
+left to work everything out themselves.
+
+I work directly with each client to understand the business, organise
+the content and create a website that feels right for the people it
+represents."
+
+CALL TO ACTION
+
+Create a large orange rounded section near the bottom.
+
+Heading:
+"Ready for a website that properly represents your business?"
+
+Supporting text:
+"Tell me about your business and what you would like your new website to
+achieve."
+
+Buttons:
+- Start a Project
+- Call 0421 448 692
+
+FOOTER
+
+Use a spacious black footer.
+
+Include:
+- Crafted Designs logo
+- Short brand statement
+- Navigation
+- Contact information
+- Service area
+- Privacy Policy
+- Terms
+- Copyright
+
+ANIMATION
+
+Use subtle GSAP, Motion or CSS animations only where appropriate:
+
+- Fade and rise sections as they enter the viewport
+- Slow floating website mock-ups
+- Very subtle image zoom on hover
+- Moving arrows inside buttons
+- Smooth marquee strip
+- Count-up animation only when genuine statistics are available
+
+Animations must:
+- Remain smooth on mobile
+- Respect prefers-reduced-motion
+- Never delay access to content
+- Avoid excessive spinning, bouncing or parallax
+
+MOBILE
+
+The mobile version is equally important.
+
+Ensure:
+- Hero remains easy to understand
+- Mock-ups stack underneath the text
+- Buttons are full-width where necessary
+- Text does not become oversized
+- Project screenshots remain readable
+- No horizontal overflow
+- Tap targets are at least 44px high
+- Navigation uses a polished full-screen menu
