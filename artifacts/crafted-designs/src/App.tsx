@@ -220,7 +220,7 @@ function DesktopMockup() {
           loading="eager"
           width={900}
           height={506}
-          style={{ width: "100%", display: "block", objectFit: "cover", objectPosition: "center", maxHeight: 280, minHeight: 200 }}
+          style={{ width: "100%", display: "block", objectFit: "cover", objectPosition: "center 42%", maxHeight: 280, minHeight: 200 }}
         />
 
         {/* Dark overlay for text legibility */}
@@ -373,33 +373,29 @@ function PhoneMockup() {
       className="phone-rise"
       style={{
         position: "absolute",
-        bottom: "-2rem",
-        right: "-1.5rem",
-        width: "32%",
-        zIndex: 2,
-        background: "#0e1a1f",
-        borderRadius: 20,
+        bottom: "-1rem",
+        right: "-1rem",
+        width: "40%",
+        zIndex: 3,
+        background: "#0a1318",
+        borderRadius: 22,
         overflow: "hidden",
-        border: "1.5px solid rgba(255,138,0,0.38)",
-        boxShadow: "0 20px 50px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.05)",
+        border: "1.5px solid rgba(255,138,0,0.45)",
+        boxShadow: "0 28px 64px rgba(0,0,0,0.75), 0 0 0 1px rgba(255,255,255,0.07)",
       }}
     >
-      {/* Phone notch strip */}
+      {/* Phone top bar */}
       <div
         style={{
-          height: 10,
-          background: "#0b1318",
-          borderBottom: "1px solid rgba(255,255,255,0.07)",
+          height: 12,
+          background: "#080f14",
+          borderBottom: "1px solid rgba(255,255,255,0.08)",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "center",
           alignItems: "center",
-          padding: "0 0.5rem",
         }}
       >
-        <div style={{ width: 20, height: 3, borderRadius: 999, background: "rgba(255,255,255,0.1)" }} />
-        <div style={{ display: "flex", alignItems: "center", gap: "0.2rem" }}>
-          <span style={{ fontSize: "0.36rem", color: "rgba(255,255,255,0.5)", fontFamily: "'Manrope', sans-serif" }}>☰</span>
-        </div>
+        <div style={{ width: 28, height: 3, borderRadius: 999, background: "rgba(255,255,255,0.15)" }} />
       </div>
       {/* Shared image */}
       <div style={{ position: "relative" }}>
@@ -409,33 +405,33 @@ function PhoneMockup() {
           aria-hidden="true"
           loading="lazy"
           width={300}
-          height={200}
-          style={{ width: "100%", display: "block", objectFit: "cover", objectPosition: "center top", maxHeight: 160 }}
+          height={220}
+          style={{ width: "100%", display: "block", objectFit: "cover", objectPosition: "center 42%", maxHeight: 220 }}
         />
         <div style={{
           position: "absolute",
           inset: 0,
-          background: "linear-gradient(to bottom, rgba(8,20,28,0.6) 0%, rgba(8,20,28,0.3) 50%, rgba(8,20,28,0.75) 100%)",
+          background: "linear-gradient(to bottom, rgba(8,20,28,0.55) 0%, rgba(8,20,28,0.2) 40%, rgba(8,20,28,0.78) 100%)",
         }} />
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "0.5rem 0.6rem" }}>
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "0.65rem 0.75rem" }}>
           <p style={{
             fontFamily: "'Manrope', sans-serif",
             fontWeight: 800,
-            fontSize: "0.7rem",
+            fontSize: "0.85rem",
             color: "#fff",
             lineHeight: 1.1,
-            marginBottom: "0.25rem",
+            marginBottom: "0.3rem",
           }}>
             Your Website Here
           </p>
-          <p style={{ fontSize: "0.4rem", color: "rgba(255,255,255,0.65)", fontFamily: "'Nunito Sans', sans-serif" }}>
+          <p style={{ fontSize: "0.5rem", color: "rgba(255,255,255,0.65)", fontFamily: "'Nunito Sans', sans-serif" }}>
             Experience the Whitsundays
           </p>
           <p style={{
-            fontSize: "0.38rem",
+            fontSize: "0.45rem",
             color: "rgba(255,255,255,0.5)",
             fontFamily: "'Nunito Sans', sans-serif",
-            marginTop: "0.15rem",
+            marginTop: "0.2rem",
             lineHeight: 1.4,
           }}>
             Turquoise waters, white sand and unforgettable island adventures.
@@ -684,48 +680,48 @@ export default function App() {
         <section
           style={{
             position: "relative",
-            overflow: "hidden",
             minHeight: "clamp(760px, 90vh, 900px)",
             display: "flex",
             alignItems: "center",
             paddingTop: "clamp(7rem, 12vw, 10rem)",
-            paddingBottom: "clamp(4rem, 8vw, 6rem)",
+            paddingBottom: "clamp(5rem, 9vw, 7rem)",
           }}
         >
-          {/* Background orange glow — restrained */}
+          {/* Decorative layer — clipped independently so mockups can overflow */}
           <div
             aria-hidden="true"
-            style={{
-              position: "absolute",
-              inset: 0,
-              pointerEvents: "none",
-              background:
-                "radial-gradient(ellipse 48% 55% at 72% 38%, rgba(255,138,0,0.13), transparent 70%)," +
-                "radial-gradient(ellipse 30% 40% at 65% 80%, rgba(255,138,0,0.06), transparent 70%)",
-            }}
-          />
-
-          {/* Decorative "CRAFT" background text — left side only */}
-          <div
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              left: "-2%",
-              top: "50%",
-              transform: "translateY(-50%)",
-              fontFamily: "'Manrope', sans-serif",
-              fontSize: "clamp(10rem, 24vw, 22rem)",
-              fontWeight: 800,
-              color: "rgba(255,255,255,0.016)",
-              userSelect: "none",
-              pointerEvents: "none",
-              whiteSpace: "nowrap",
-              letterSpacing: "-0.04em",
-              lineHeight: 1,
-            }}
-            className="hidden md:block"
+            style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}
           >
-            CRAFT
+            {/* Background orange glow */}
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "radial-gradient(ellipse 48% 55% at 72% 38%, rgba(255,138,0,0.13), transparent 70%)," +
+                  "radial-gradient(ellipse 30% 40% at 65% 80%, rgba(255,138,0,0.06), transparent 70%)",
+              }}
+            />
+            {/* Decorative "CRAFT" background text */}
+            <div
+              style={{
+                position: "absolute",
+                left: "-2%",
+                top: "50%",
+                transform: "translateY(-50%)",
+                fontFamily: "'Manrope', sans-serif",
+                fontSize: "clamp(10rem, 24vw, 22rem)",
+                fontWeight: 800,
+                color: "rgba(255,255,255,0.016)",
+                userSelect: "none",
+                whiteSpace: "nowrap",
+                letterSpacing: "-0.04em",
+                lineHeight: 1,
+              }}
+              className="hidden md:block"
+            >
+              CRAFT
+            </div>
           </div>
 
           <div className="container-custom" style={{ position: "relative", width: "100%" }}>
@@ -933,7 +929,7 @@ export default function App() {
                 {/* Floating wrapper */}
                 <div
                   className="float-gentle"
-                  style={{ position: "relative", paddingBottom: "2.5rem", paddingRight: "2rem" }}
+                  style={{ position: "relative", paddingBottom: "4rem", paddingRight: "3.5rem" }}
                 >
                   <DesktopMockup />
                   <PhoneMockup />
