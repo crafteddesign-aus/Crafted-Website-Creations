@@ -747,6 +747,7 @@ export default function App() {
   const [activeSection, setActiveSection] = useState("top");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   useEffect(() => {
     const onScroll = () => {
@@ -1921,7 +1922,27 @@ export default function App() {
 
               <FadeUp delay={0.15}>
                 <form
-                  onSubmit={(e) => e.preventDefault()}
+                  onSubmit={async (e) => {
+                    e.preventDefault();
+                    setFormStatus("submitting");
+                    const form = e.currentTarget;
+                    const data = new FormData(form);
+                    try {
+                      const res = await fetch("https://formspree.io/f/xaqgkjpr", {
+                        method: "POST",
+                        body: data,
+                        headers: { Accept: "application/json" },
+                      });
+                      if (res.ok) {
+                        setFormStatus("success");
+                        form.reset();
+                      } else {
+                        setFormStatus("error");
+                      }
+                    } catch {
+                      setFormStatus("error");
+                    }
+                  }}
                   style={{
                     background: "var(--elevated)",
                     border: "1px solid var(--border-color)",
@@ -2004,9 +2025,30 @@ export default function App() {
                       onBlur={(e) => (e.currentTarget.style.borderColor = "var(--border-color)")}
                     />
                   </label>
-                  <button type="submit" className="btn-primary" style={{ justifyContent: "center", width: "100%", marginTop: "0.5rem" }}>
-                    Send Message
+                  <button
+                    type="submit"
+                    className="btn-primary"
+                    disabled={formStatus === "submitting"}
+                    style={{
+                      justifyContent: "center",
+                      width: "100%",
+                      marginTop: "0.5rem",
+                      opacity: formStatus === "submitting" ? 0.7 : 1,
+                      cursor: formStatus === "submitting" ? "not-allowed" : "pointer",
+                    }}
+                  >
+                    {formStatus === "submitting" ? "Sending..." : "Send Message"}
                   </button>
+                  {formStatus === "success" && (
+                    <p style={{ color: "var(--primary)", fontSize: "0.9rem", fontWeight: 600, textAlign: "center", margin: 0 }}>
+                      Thanks — your message has been sent. I'll be in touch soon.
+                    </p>
+                  )}
+                  {formStatus === "error" && (
+                    <p style={{ color: "#e05c4a", fontSize: "0.9rem", fontWeight: 600, textAlign: "center", margin: 0 }}>
+                      Something went wrong sending your message. Please try again or email hello@crafteddesigns.com.au directly.
+                    </p>
+                  )}
                 </form>
               </FadeUp>
             </div>

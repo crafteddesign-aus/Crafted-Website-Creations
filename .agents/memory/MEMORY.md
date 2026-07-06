@@ -1,3 +1,4 @@
 - [Below-fold SPA verification](screenshot-belowfold-spa.md) — app_preview screenshot can't scroll & hash anchors don't jump in an SPA; use the Playwright testing subagent for lower sections & overflow audits.
 - [Light hero mobile crop fix](light-hero-mobile-crop.md) — flex hero with tall mobile content + fixed header must use alignItems:flex-start, not center.
 - [Crafted Designs colour scheme](crafted-designs-colours.md) — hero warm ivory #F3F0E9; credibility/services/WHY light; dark nav/marquee/work/process/CTA/footer.
+- [Crafted Designs contact form](crafted-designs-contact-form.md) — form submits client-side via fetch to a Formspree endpoint, no backend.
