@@ -978,6 +978,16 @@ export default function App() {
             aria-hidden="true"
             style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}
           >
+            {/* Hero background image — desktop / mobile */}
+            <picture style={{ position: "absolute", inset: 0 }}>
+              <source media="(max-width: 767px)" srcSet="/images/hero/crafted-designs-hero-mobile.webp" />
+              <img
+                src="/images/hero/crafted-designs-hero-desktop.webp"
+                alt=""
+                aria-hidden="true"
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }}
+              />
+            </picture>
             {/* Subtle warm accent */}
             <div
               style={{
