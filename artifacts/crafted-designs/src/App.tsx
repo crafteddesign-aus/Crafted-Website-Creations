@@ -211,7 +211,7 @@ function BrowserDots() {
 /* ─────────────────────────────────────────
    Whitsundays Escapes desktop mockup
 ───────────────────────────────────────── */
-function DesktopMockup() {
+function _DesktopMockup_removed() {
   return (
     <div
       style={{
@@ -412,7 +412,7 @@ function DesktopMockup() {
 /* ─────────────────────────────────────────
    Mobile mockup — true portrait smartphone
 ───────────────────────────────────────── */
-function PhoneMockup() {
+function _PhoneMockup_removed() {
   return (
     <div
       className="phone-rise"
@@ -820,6 +820,7 @@ export default function App() {
           HEADER
       ══════════════════════════════════════ */}
       <header
+        className="site-header"
         style={{
           position: "fixed",
           top: 0,
@@ -1013,6 +1014,18 @@ export default function App() {
             aria-hidden="true"
             style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}
           >
+            {/* Hero background image — desktop / mobile */}
+            <picture className="hero-bg-picture">
+              <source media="(max-width: 767px)" srcSet="/images/hero/crafted-designs-hero-mobile.webp" />
+              <img
+                src="/images/hero/crafted-designs-hero-desktop.webp"
+                alt=""
+                aria-hidden="true"
+                className="hero-bg-img"
+              />
+            </picture>
+            {/* Responsive overlay — protects text on mobile/tablet */}
+            <div className="hero-img-overlay" />
             {/* Subtle warm accent */}
             <div
               style={{
@@ -1062,6 +1075,7 @@ export default function App() {
               <div className="hero-copy-column">
                 {/* Strapline */}
                 <motion.div
+                  className="hero-strapline"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -1095,8 +1109,9 @@ export default function App() {
                   </div>
                 </motion.div>
 
-                {/* Heading */}
+                {/* 2 — Heading (CSS order 2) */}
                 <motion.h1
+                  className="hero-h1"
                   initial={{ opacity: 0, y: 22 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.65, delay: 0.08, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -1122,13 +1137,15 @@ export default function App() {
                     }}
                   >
                     crafted
-                  </em>{" "}
-                  for your business
+                  </em>{" "}for
+                  <br className="block sm:hidden" />
+                  {" "}your business
                   <span style={{ color: "var(--primary)" }}>.</span>
                 </motion.h1>
 
-                {/* Supporting paragraph */}
+                {/* 3 — Supporting paragraph (CSS order 3) */}
                 <motion.p
+                  className="hero-para"
                   initial={{ opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.16, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -1143,8 +1160,33 @@ export default function App() {
                   Premium, custom websites designed to help your business look professional, build trust and generate more enquiries.
                 </motion.p>
 
-                {/* Location line */}
+                {/* 4 — Mobile-only: primary button solo (CSS order 4, hidden md+) */}
+                <motion.div
+                  className="hero-primary-solo"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.22, ease: [0.21, 0.47, 0.32, 0.98] }}
+                >
+                  <button onClick={() => scrollTo("contact")} className="btn-primary">
+                    Start Your Website
+                    <span className="btn-arrow">
+                      <IconArrowRight />
+                    </span>
+                  </button>
+                </motion.div>
+
+                {/* 5 — Mobile artwork wrapper (CSS order 5, hidden md+) */}
+                <div className="hero-mobile-art-wrap">
+                  <img
+                    src="/images/hero/crafted-designs-hero-mobile.webp"
+                    alt="Custom websites for Australian businesses — laptop and phone preview"
+                    className="hero-mobile-art"
+                  />
+                </div>
+
+                {/* 6 — Location line (CSS order 6 mobile → order 4 desktop) */}
                 <motion.p
+                  className="hero-location"
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -1152,7 +1194,7 @@ export default function App() {
                     display: "flex",
                     alignItems: "center",
                     gap: "0.45rem",
-                    fontSize: "0.85rem",
+                    fontSize: "0.82rem",
                     color: "#7A7470",
                     marginBottom: "2.15rem",
                     lineHeight: 1.5,
@@ -1162,8 +1204,24 @@ export default function App() {
                   Based in the Whitsundays, creating websites for businesses across Australia.
                 </motion.p>
 
-                {/* CTA buttons */}
+                {/* 7 — Mobile-only: secondary text link (CSS order 7, hidden md+) */}
                 <motion.div
+                  className="hero-secondary-mobile"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.24, ease: [0.21, 0.47, 0.32, 0.98] }}
+                >
+                  <button onClick={() => scrollTo("work")} className="hero-view-work-link">
+                    View Our Work
+                    <span className="btn-arrow" style={{ display: "flex", alignItems: "center" }}>
+                      <IconArrowRight />
+                    </span>
+                  </button>
+                </motion.div>
+
+                {/* 5d — Desktop-only: both buttons side by side (CSS order 5 desktop, hidden mobile) */}
+                <motion.div
+                  className="hero-btns"
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.26, ease: [0.21, 0.47, 0.32, 0.98] }}

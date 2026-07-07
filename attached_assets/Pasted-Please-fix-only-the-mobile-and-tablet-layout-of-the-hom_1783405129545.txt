@@ -1,0 +1,157 @@
+Please fix only the mobile and tablet layout of the homepage hero.
+
+Do not redesign the desktop version and do not change any unrelated website sections, forms, routes, backend functionality or wording.
+
+The current mobile hero has several problems:
+
+1. The desktop navigation links are still faintly visible behind the hero heading.
+2. The main heading is too wide and is being cropped on the right.
+3. The laptop and phone artwork is showing as a washed-out background behind the text.
+4. The supplied mobile artwork should appear as a clear image underneath the text and buttons.
+5. The header and logo spacing is too cramped.
+6. The buttons are too large and take up too much vertical space.
+7. The feature list begins before the hero has a clean visual ending.
+
+Please make these exact changes.
+
+MOBILE HEADER
+
+At widths below the existing mobile breakpoint:
+
+- Completely hide the desktop navigation links and desktop call-to-action button.
+- Show only:
+  - the existing logo on the left;
+  - the existing hamburger menu on the right.
+- Keep the header approximately 64px to 72px high.
+- Add comfortable left and right padding of approximately 18px to 20px.
+- Vertically centre the logo and hamburger.
+- Ensure the logo is readable but not oversized.
+- Ensure no desktop navigation text remains visible behind the page content.
+- Keep the existing mobile menu functionality working.
+
+MOBILE HERO STRUCTURE
+
+Change the mobile hero to a proper stacked layout in this order:
+
+1. Eyebrow label
+2. Main heading
+3. Supporting paragraph
+4. Whitsundays location paragraph
+5. Primary button
+6. Secondary button
+7. Mobile laptop and phone artwork
+8. Feature list below the artwork
+
+Do not use the laptop and phone artwork as a full-section background on mobile.
+
+Use this image as a normal responsive image underneath the buttons:
+
+/public/images/hero/crafted-designs-hero-mobile.webp
+
+The artwork should:
+
+- be clearly visible;
+- retain its normal colours and contrast;
+- not have a white opacity layer over it;
+- not sit behind any text;
+- fit fully inside the screen;
+- have width: 100%;
+- have height: auto;
+- use object-fit: contain;
+- not cause horizontal scrolling;
+- have reasonable spacing above and below it.
+
+MOBILE HEADING
+
+Make the heading fit properly at both 430px and 375px widths.
+
+Use responsive sizing similar to:
+
+- font-size using clamp between approximately 42px and 58px;
+- line-height around 0.98 to 1.05;
+- letter spacing kept natural;
+- width: 100%;
+- max-width: 100%;
+- overflow-wrap where needed.
+
+Keep this wording:
+
+Websites crafted for
+your business.
+
+Keep “crafted” orange and styled with the existing feature font.
+
+Do not allow the heading to crop or extend outside the viewport.
+
+On narrow screens, use controlled line breaks so it reads cleanly.
+
+MOBILE CONTENT WIDTH
+
+- Use approximately 20px horizontal padding.
+- Keep all text inside the viewport.
+- Remove any fixed desktop widths from the mobile layout.
+- Remove any negative positioning that pushes content outside the screen.
+- Prevent horizontal overflow on the page.
+
+BUTTONS
+
+On mobile:
+
+- Stack the buttons vertically.
+- Keep both buttons the same width.
+- Use width: 100% with a sensible maximum width.
+- Reduce their height to approximately 52px to 56px.
+- Keep readable text and icons.
+- Use moderate rounded corners.
+- Keep approximately 12px spacing between the buttons.
+- Preserve the current links and functionality.
+
+FEATURE LIST
+
+Move the three feature items so they appear after the mobile artwork.
+
+Give the feature section clear separation from the hero artwork.
+
+Ensure:
+
+- icons do not overlap text;
+- headings and descriptions fit inside the screen;
+- spacing is consistent;
+- there is no text cut off on the right.
+
+TABLET
+
+At tablet widths:
+
+- prevent the image from appearing behind the text;
+- use either a clean stacked layout or a two-column layout only where there is enough room;
+- ensure the heading and buttons remain readable;
+- prevent overlap and horizontal scrolling.
+
+DESKTOP
+
+Do not noticeably change the current approved desktop composition unless a shared CSS rule must be adjusted to fix mobile.
+
+TESTING
+
+After making the changes, preview and check at:
+
+- 430px wide;
+- 390px wide;
+- 375px wide;
+- tablet width;
+- standard desktop width.
+
+Confirm:
+
+- no horizontal scrolling;
+- no cropped heading;
+- no desktop navigation visible on mobile;
+- no artwork behind the text;
+- the mobile artwork appears below the buttons;
+- buttons still work;
+- hamburger menu still works;
+- feature items fit correctly;
+- desktop layout remains intact.
+
+Please tell me exactly which files you changed and what responsive checks you completed.
