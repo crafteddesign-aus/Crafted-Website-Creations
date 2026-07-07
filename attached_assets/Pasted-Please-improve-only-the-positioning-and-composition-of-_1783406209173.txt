@@ -1,0 +1,171 @@
+Please improve only the positioning and composition of the homepage hero on mobile and tablet.
+
+The desktop hero currently looks excellent. Do not change the desktop layout, image positioning, wording, navigation or visual styling.
+
+The mobile version currently feels clunky because it is arranged as a long vertical stack:
+
+- heading;
+- multiple paragraphs;
+- location text;
+- two large buttons;
+- device artwork.
+
+The device artwork appears too late and feels disconnected from the hero.
+
+Please adjust only the mobile and tablet layout.
+
+MOBILE CONTENT ORDER
+
+At mobile widths, change the hero order to:
+
+1. Eyebrow label
+2. Main heading
+3. Main supporting paragraph
+4. Primary “Start Your Website” button
+5. Laptop and phone artwork
+6. Whitsundays location paragraph
+7. Secondary “View Our Work” action
+8. Benefits section
+
+Do not change the wording or links.
+
+MAIN HERO SPACING
+
+- Keep approximately 20px horizontal padding.
+- Reduce excessive vertical gaps between the heading, paragraph and primary button.
+- Keep the design spacious, but avoid a long empty text column.
+- The main content should feel connected to the device artwork.
+
+PRIMARY BUTTON
+
+- Keep the primary orange button full width.
+- Keep its existing destination.
+- Place it approximately 22px to 26px below the main paragraph.
+- Keep the height approximately 52px to 56px.
+- Do not make it taller or wider than the mobile content container.
+
+DEVICE ARTWORK POSITION
+
+Move the device artwork directly below the primary button.
+
+Use:
+
+/public/images/hero/crafted-designs-hero-mobile.webp
+
+Improve its positioning:
+
+- place it approximately 18px to 26px below the primary button;
+- make it wider and more prominent;
+- allow it to extend visually close to the left and right screen edges while preventing horizontal scrolling;
+- use width approximately calc(100% + 24px) if safe;
+- centre it using a small negative left margin;
+- keep height auto;
+- use object-fit: contain;
+- do not place it behind text;
+- do not lower its opacity;
+- do not crop the phone or laptop;
+- remove excessive empty space inside the image container;
+- use a subtle negative bottom margin only if it improves the visual transition.
+
+The devices should feel like part of the hero, not a separate rectangular section.
+
+If the current mobile image contains excessive empty cream space, crop its display using an image wrapper with overflow hidden and object-position, rather than editing the source file.
+
+Do not distort the image.
+
+LOCATION PARAGRAPH
+
+Move the Whitsundays location paragraph underneath the artwork.
+
+- Give it approximately 18px to 24px top spacing.
+- Keep the small orange bullet or icon.
+- Align the bullet with the first line of text.
+- Use slightly smaller and lighter text than the main paragraph.
+- Keep it inside the normal content padding.
+
+SECONDARY ACTION
+
+The second full-width button currently makes the hero feel heavy.
+
+On mobile, change “View Our Work” into either:
+
+Preferred option:
+- a compact text link with an arrow;
+- dark charcoal text;
+- orange or charcoal arrow;
+- underline or subtle hover treatment;
+- centred or left-aligned consistently with the content.
+
+Alternative:
+- a compact outlined button;
+- not full width;
+- approximately 46px to 50px high;
+- visually quieter than the primary action.
+
+Preserve its existing link.
+
+Do not alter its desktop appearance.
+
+HERO IMAGE BACKGROUND
+
+The mobile artwork area should blend naturally into the cream hero background.
+
+- Remove any obvious rectangular image-container border.
+- Match the image-wrapper background to the surrounding cream colour.
+- Add a very soft glow or shadow behind the devices.
+- Avoid a visible hard edge above or below the image.
+- Do not add glassmorphism.
+
+MOBILE HEADING
+
+Keep the current heading wording and styling:
+
+Websites crafted for
+your business.
+
+- Keep “crafted” orange.
+- Keep the heading inside the viewport.
+- Use responsive font sizing.
+- Preserve approximately 20px side padding.
+- Do not reduce it so much that it loses impact.
+
+TABLET
+
+At tablet widths:
+
+- use the same improved flow if a two-column layout becomes cramped;
+- keep the device artwork visually connected to the content;
+- do not allow overlap or horizontal scrolling.
+
+DESKTOP PROTECTION
+
+At desktop widths:
+
+- preserve the approved side-by-side composition;
+- preserve the device placement;
+- preserve both existing desktop buttons;
+- preserve all desktop spacing and typography.
+
+TESTING
+
+Check the result at:
+
+- 430px;
+- 390px;
+- 375px;
+- tablet;
+- standard desktop.
+
+Confirm:
+
+- the artwork appears directly after the primary CTA;
+- the artwork feels connected to the hero;
+- the secondary action is visually quieter;
+- the location line appears beneath the artwork;
+- there is no horizontal scrolling;
+- no text is cropped;
+- the laptop and phone remain fully visible;
+- the desktop hero remains unchanged;
+- all links and the mobile menu still work.
+
+Tell me exactly which files were changed and which viewport sizes were actually checked.

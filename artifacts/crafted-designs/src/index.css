@@ -527,46 +527,103 @@
 .hero-para { max-width: 100% !important; }
 @media (min-width: 1024px) { .hero-para { max-width: 500px !important; } }
 
-/* CTA buttons: stacked full-width on mobile, row on larger phones */
-.hero-btns {
-  flex-direction: column !important;
-  align-items: stretch !important;
-  gap: 0.75rem !important;
-}
-.hero-btns > button {
-  width: 100% !important;
-  max-width: 360px !important;
-  min-height: 52px !important;
-  justify-content: center !important;
-}
-@media (min-width: 480px) {
-  .hero-btns {
-    flex-direction: row !important;
-    align-items: flex-start !important;
-  }
-  .hero-btns > button {
-    width: auto !important;
-    max-width: none !important;
-    min-height: auto !important;
-  }
+/* ── Hero column: flex so CSS order can resequence items per breakpoint ── */
+.hero-content-col {
+  display: flex;
+  flex-direction: column;
 }
 
-/* Mobile foreground artwork: shown below buttons on mobile, hidden on desktop */
+/* Mobile visual order (default) */
+.hero-strapline       { order: 1; }
+.hero-h1              { order: 2; }
+.hero-para            { order: 3; }
+.hero-primary-solo    { order: 4; }
+.hero-mobile-art-wrap { order: 5; }
+.hero-location        { order: 6; }
+.hero-secondary-mobile{ order: 7; }
+.hero-benefits        { order: 8; padding: 0 0 2rem; }
+/* desktop buttons hidden on mobile */
+.hero-btns            { display: none !important; order: 9; }
+
+/* Desktop: show both-buttons, hide mobile-only elements, restore order */
+@media (min-width: 768px) {
+  .hero-strapline        { order: 1; }
+  .hero-h1               { order: 2; }
+  .hero-para             { order: 3; }
+  .hero-location         { order: 4; margin-top: 0    !important; margin-bottom: 2rem !important; }
+  .hero-btns             { display: flex !important; order: 5; gap: 0.875rem; }
+  .hero-benefits         { order: 6; padding: 0; }
+  .hero-primary-solo     { display: none !important; }
+  .hero-mobile-art-wrap  { display: none !important; }
+  .hero-secondary-mobile { display: none !important; }
+}
+
+/* Primary button solo — mobile only */
+.hero-primary-solo { margin-bottom: 1.375rem; }
+.hero-primary-solo button {
+  width: 100%;
+  min-height: 54px;
+  justify-content: center !important;
+}
+
+/* Mobile artwork wrapper — bleeds slightly past container edges, glow behind devices */
+.hero-mobile-art-wrap {
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  background: #F3F0E9;
+  position: relative;
+  overflow: hidden;
+}
+.hero-mobile-art-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 8%;
+  left: 10%;
+  right: 10%;
+  height: 38%;
+  background: radial-gradient(ellipse at center, rgba(255,138,0,0.11) 0%, transparent 68%);
+  pointer-events: none;
+}
 .hero-mobile-art {
   display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
-  margin-top: 1.75rem;
-  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
 }
-@media (min-width: 768px) { .hero-mobile-art { display: none; } }
 
-/* Feature list: spacing when it follows the mobile artwork */
-.hero-benefits {
-  padding: 1.5rem 0 2rem;
+/* Location line on mobile: tight spacing after artwork */
+.hero-location {
+  margin-top: 1.125rem !important;
+  margin-bottom: 0.875rem !important;
 }
-@media (min-width: 768px) { .hero-benefits { padding: 0; } }
+
+/* Secondary "View Our Work" text link — mobile only */
+.hero-secondary-mobile {
+  margin-bottom: 1.75rem;
+}
+.hero-view-work-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 0.93rem;
+  color: #2B2826;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: rgba(43,40,38,0.28);
+  text-underline-offset: 3px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+.hero-view-work-link:hover {
+  color: var(--primary);
+  text-decoration-color: var(--primary);
+}
 
 /* Prevent horizontal overflow globally on mobile */
 @media (max-width: 767px) {
