@@ -985,9 +985,11 @@ export default function App() {
                 src="/images/hero/crafted-designs-hero-desktop.webp"
                 alt=""
                 aria-hidden="true"
-                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }}
+                className="hero-bg-img"
               />
             </picture>
+            {/* Responsive overlay — protects text on mobile/tablet */}
+            <div className="hero-img-overlay" />
             {/* Subtle warm accent */}
             <div
               style={{

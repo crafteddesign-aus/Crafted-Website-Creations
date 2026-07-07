@@ -429,6 +429,56 @@
   flex-shrink: 0;
 }
 
+/* ── Hero background image + responsive overlay ── */
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Mobile: keep image anchored right so device mockup stays out of text area */
+  object-position: 80% center;
+}
+@media (min-width: 768px) {
+  .hero-bg-img { object-position: 65% center; }
+}
+@media (min-width: 1024px) {
+  .hero-bg-img { object-position: center center; }
+}
+
+/* Fades the image out behind text on small screens */
+.hero-img-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Mobile: near-opaque warm ivory so text is always legible */
+  background: rgba(243,240,233,0.90);
+}
+@media (min-width: 640px) {
+  .hero-img-overlay {
+    background: rgba(243,240,233,0.82);
+  }
+}
+@media (min-width: 768px) {
+  .hero-img-overlay {
+    /* Tablet: gradient — strong on left (text), fades right */
+    background: linear-gradient(to right,
+      rgba(243,240,233,0.90) 0%,
+      rgba(243,240,233,0.70) 45%,
+      rgba(243,240,233,0.20) 75%,
+      transparent 100%);
+  }
+}
+@media (min-width: 1024px) {
+  .hero-img-overlay {
+    /* Desktop: lighter fade, image shows through nicely on right */
+    background: linear-gradient(to right,
+      rgba(243,240,233,0.80) 0%,
+      rgba(243,240,233,0.45) 38%,
+      rgba(243,240,233,0.10) 62%,
+      transparent 80%);
+  }
+}
+
 /* ── Back to top ── */
 .back-to-top {
   position: fixed;
