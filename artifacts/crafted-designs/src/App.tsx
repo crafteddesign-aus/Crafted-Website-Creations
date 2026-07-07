@@ -786,6 +786,7 @@ export default function App() {
           HEADER
       ══════════════════════════════════════ */}
       <header
+        className="site-header"
         style={{
           position: "fixed",
           top: 0,
@@ -963,6 +964,7 @@ export default function App() {
             HERO
         ══════════════════════════════════════ */}
         <section
+          className="hero-section"
           style={{
             position: "relative",
             minHeight: "clamp(760px, 90vh, 900px)",
@@ -979,7 +981,7 @@ export default function App() {
             style={{ position: "absolute", inset: 0, overflow: "hidden", pointerEvents: "none" }}
           >
             {/* Hero background image — desktop / mobile */}
-            <picture style={{ position: "absolute", inset: 0 }}>
+            <picture className="hero-bg-picture">
               <source media="(max-width: 767px)" srcSet="/images/hero/crafted-designs-hero-mobile.webp" />
               <img
                 src="/images/hero/crafted-designs-hero-desktop.webp"
@@ -1068,6 +1070,7 @@ export default function App() {
 
                 {/* Heading */}
                 <motion.h1
+                  className="hero-h1"
                   initial={{ opacity: 0, y: 22 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.65, delay: 0.08, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -1092,13 +1095,15 @@ export default function App() {
                     }}
                   >
                     crafted
-                  </em>{" "}
-                  for your business
+                  </em>{" "}for
+                  <br className="block sm:hidden" />
+                  {" "}your business
                   <span style={{ color: "var(--primary)" }}>.</span>
                 </motion.h1>
 
                 {/* Supporting paragraph */}
                 <motion.p
+                  className="hero-para"
                   initial={{ opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.16, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -1134,6 +1139,7 @@ export default function App() {
 
                 {/* CTA buttons */}
                 <motion.div
+                  className="hero-btns"
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.26, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -1153,8 +1159,16 @@ export default function App() {
                   </button>
                 </motion.div>
 
+                {/* Mobile foreground artwork — visible on mobile only, sits below buttons */}
+                <img
+                  src="/images/hero/crafted-designs-hero-mobile.webp"
+                  alt="Custom websites for Australian businesses — laptop and phone preview"
+                  className="hero-mobile-art"
+                />
+
                 {/* Benefit list */}
                 <motion.div
+                  className="hero-benefits"
                   initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.28, ease: [0.21, 0.47, 0.32, 0.98] }}

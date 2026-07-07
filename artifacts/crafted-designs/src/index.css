@@ -445,22 +445,16 @@
   .hero-bg-img { object-position: center center; }
 }
 
-/* Fades the image out behind text on small screens */
+/* Overlay — desktop only; hidden on mobile where image is foreground */
 .hero-img-overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  /* Mobile: near-opaque warm ivory so text is always legible */
-  background: rgba(243,240,233,0.90);
-}
-@media (min-width: 640px) {
-  .hero-img-overlay {
-    background: rgba(243,240,233,0.82);
-  }
+  display: none;
 }
 @media (min-width: 768px) {
   .hero-img-overlay {
-    /* Tablet: gradient — strong on left (text), fades right */
+    display: block;
     background: linear-gradient(to right,
       rgba(243,240,233,0.90) 0%,
       rgba(243,240,233,0.70) 45%,
@@ -470,13 +464,113 @@
 }
 @media (min-width: 1024px) {
   .hero-img-overlay {
-    /* Desktop: lighter fade, image shows through nicely on right */
     background: linear-gradient(to right,
       rgba(243,240,233,0.80) 0%,
       rgba(243,240,233,0.45) 38%,
       rgba(243,240,233,0.10) 62%,
       transparent 80%);
   }
+}
+
+/* ═══════════════════════════════════════════════
+   MOBILE / TABLET HERO FIXES
+═══════════════════════════════════════════════ */
+
+/* Header: fixed 64px on mobile so content isn't cramped */
+.site-header { height: 64px !important; }
+@media (min-width: 768px) { .site-header { height: auto !important; } }
+
+/* Hero section: auto-height on mobile; restore clamped height on tablet+ */
+.hero-section {
+  min-height: 0 !important;
+  padding-top: clamp(4.5rem, 18vw, 6.5rem) !important;
+  padding-bottom: 0 !important;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .hero-section {
+    min-height: clamp(760px, 90vh, 900px) !important;
+    padding-top: clamp(6rem, 14vw, 11rem) !important;
+    padding-bottom: clamp(5rem, 9vw, 8rem) !important;
+    overflow: visible;
+  }
+}
+
+/* Background picture element: hidden on mobile, positioned on desktop */
+.hero-bg-picture {
+  display: none !important;
+}
+@media (min-width: 768px) {
+  .hero-bg-picture {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+  }
+}
+
+/* Heading: fluid sizing that fits within a 375px viewport */
+.hero-h1 {
+  font-size: clamp(2.1rem, 9vw, 3.25rem) !important;
+  line-height: 1.02 !important;
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+@media (min-width: 1024px) {
+  .hero-h1 {
+    font-size: clamp(3.5rem, 6.5vw, 6rem) !important;
+    line-height: 0.98 !important;
+  }
+}
+
+/* Supporting paragraph: full width on mobile */
+.hero-para { max-width: 100% !important; }
+@media (min-width: 1024px) { .hero-para { max-width: 500px !important; } }
+
+/* CTA buttons: stacked full-width on mobile, row on larger phones */
+.hero-btns {
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 0.75rem !important;
+}
+.hero-btns > button {
+  width: 100% !important;
+  max-width: 360px !important;
+  min-height: 52px !important;
+  justify-content: center !important;
+}
+@media (min-width: 480px) {
+  .hero-btns {
+    flex-direction: row !important;
+    align-items: flex-start !important;
+  }
+  .hero-btns > button {
+    width: auto !important;
+    max-width: none !important;
+    min-height: auto !important;
+  }
+}
+
+/* Mobile foreground artwork: shown below buttons on mobile, hidden on desktop */
+.hero-mobile-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-top: 1.75rem;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) { .hero-mobile-art { display: none; } }
+
+/* Feature list: spacing when it follows the mobile artwork */
+.hero-benefits {
+  padding: 1.5rem 0 2rem;
+}
+@media (min-width: 768px) { .hero-benefits { padding: 0; } }
+
+/* Prevent horizontal overflow globally on mobile */
+@media (max-width: 767px) {
+  body { overflow-x: hidden; }
 }
 
 /* ── Back to top ── */
