@@ -211,7 +211,7 @@ function BrowserDots() {
 /* ─────────────────────────────────────────
    Whitsundays Escapes desktop mockup
 ───────────────────────────────────────── */
-function DesktopMockup() {
+function _DesktopMockup_removed() {
   return (
     <div
       style={{
@@ -412,7 +412,7 @@ function DesktopMockup() {
 /* ─────────────────────────────────────────
    Mobile mockup — true portrait smartphone
 ───────────────────────────────────────── */
-function PhoneMockup() {
+function _PhoneMockup_removed() {
   return (
     <div
       className="phone-rise"
@@ -1026,7 +1026,7 @@ export default function App() {
                 gap: "3rem",
                 alignItems: "center",
               }}
-              className="lg:grid-cols-[42%_1fr]"
+              className="lg:grid-cols-1"
             >
 
               {/* ── LEFT COLUMN ── */}
@@ -1228,22 +1228,6 @@ export default function App() {
                 </motion.div>
               </div>
 
-              {/* ── RIGHT COLUMN — Device mockups ── */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.97, y: 12 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.75, delay: 0.14, ease: [0.21, 0.47, 0.32, 0.98] }}
-                style={{ position: "relative" }}
-              >
-                {/* Floating wrapper */}
-                <div
-                  className="float-gentle"
-                  style={{ position: "relative", paddingBottom: "4rem", paddingRight: "3.5rem" }}
-                >
-                  <DesktopMockup />
-                  <PhoneMockup />
-                </div>
-              </motion.div>
 
             </div>
           </div>
