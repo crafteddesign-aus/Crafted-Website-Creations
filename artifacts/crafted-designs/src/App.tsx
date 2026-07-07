@@ -742,6 +742,40 @@ function PhoneMockup() {
 /* ─────────────────────────────────────────
    Main App
 ───────────────────────────────────────── */
+function HeroDeviceShowcase() {
+  return (
+    <div className="hero-device-stage" aria-hidden="true">
+      <div className="hero-device-shadow" />
+      <img
+        src="/website-hero-devices.png"
+        alt=""
+        loading="eager"
+        width={1456}
+        height={1104}
+        className="hero-device-image"
+      />
+    </div>
+  );
+}
+
+const HERO_BENEFITS = [
+  {
+    icon: <IconStar />,
+    title: "Designed around your business",
+    desc: "A tailored website that reflects your brand, services and customers.",
+  },
+  {
+    icon: <IconMobile />,
+    title: "Polished on every screen",
+    desc: "A clear, easy-to-use experience across mobile, tablet and desktop.",
+  },
+  {
+    icon: <IconHeadset />,
+    title: "Personal support",
+    desc: "Direct help from the first conversation through to launch and beyond.",
+  },
+];
+
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("top");
@@ -963,14 +997,15 @@ export default function App() {
             HERO
         ══════════════════════════════════════ */}
         <section
+          className="hero-section"
           style={{
             position: "relative",
-            minHeight: "clamp(760px, 90vh, 900px)",
+            minHeight: "clamp(720px, 88vh, 880px)",
             display: "flex",
             alignItems: "flex-start",
-            paddingTop: "clamp(6rem, 14vw, 11rem)",
-            paddingBottom: "clamp(5rem, 9vw, 8rem)",
-            background: "#F3F0E9",
+            paddingTop: "clamp(6.5rem, 12vw, 10rem)",
+            paddingBottom: "clamp(9rem, 13vw, 11.5rem)",
+            background: "linear-gradient(135deg, #F8F4EA 0%, #F1EADF 54%, #F8F4EC 100%)",
           }}
         >
           {/* Decorative layer — clipped independently so mockups can overflow */}
@@ -984,9 +1019,13 @@ export default function App() {
                 position: "absolute",
                 inset: 0,
                 background:
-                  "radial-gradient(ellipse 55% 45% at 70% 40%, rgba(255,138,0,0.05), transparent 65%)",
+                  "radial-gradient(ellipse 35% 32% at 5% 96%, rgba(216,128,46,0.52), transparent 70%), radial-gradient(ellipse 44% 38% at 76% 34%, rgba(255,138,0,0.08), transparent 68%), radial-gradient(ellipse 36% 28% at 12% 18%, rgba(255,255,255,0.72), transparent 72%)",
               }}
             />
+            <div className="hero-background-grid" />
+            <div className="hero-curve-line" />
+            <div className="hero-abstract hero-abstract--large" />
+            <div className="hero-abstract hero-abstract--small" />
             {/* Decorative "CRAFT" background text */}
             <div
               style={{
@@ -995,12 +1034,12 @@ export default function App() {
                 top: "50%",
                 transform: "translateY(-50%)",
                 fontFamily: "'Manrope', sans-serif",
-                fontSize: "clamp(10rem, 24vw, 22rem)",
+                fontSize: "clamp(10rem, 24vw, 21rem)",
                 fontWeight: 800,
-                color: "rgba(23,23,23,0.022)",
+                color: "rgba(23,23,23,0.024)",
                 userSelect: "none",
                 whiteSpace: "nowrap",
-                letterSpacing: "-0.04em",
+                letterSpacing: "0",
                 lineHeight: 1,
               }}
               className="hidden md:block"
@@ -1013,14 +1052,14 @@ export default function App() {
             <div
               style={{
                 display: "grid",
-                gap: "3rem",
+                gap: "clamp(2.5rem, 5vw, 4.5rem)",
                 alignItems: "center",
               }}
-              className="lg:grid-cols-[42%_1fr]"
+              className="hero-grid lg:grid-cols-[43%_1fr]"
             >
 
               {/* ── LEFT COLUMN ── */}
-              <div>
+              <div className="hero-copy-column">
                 {/* Strapline */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -1028,15 +1067,17 @@ export default function App() {
                   transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
                 >
                   <div
+                    className="hero-strapline"
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
                       gap: "0.4rem",
-                      padding: "0.35rem 0.9rem",
+                      padding: "0.42rem 0.95rem",
                       borderRadius: 999,
-                      border: "1px solid rgba(255,138,0,0.45)",
-                      background: "rgba(255,138,0,0.07)",
+                      border: "1px solid rgba(255,138,0,0.38)",
+                      background: "rgba(255,255,255,0.62)",
                       marginBottom: "1.75rem",
+                      boxShadow: "0 10px 30px rgba(73,47,12,0.06)",
                     }}
                   >
                     <span
@@ -1061,12 +1102,13 @@ export default function App() {
                   transition={{ duration: 0.65, delay: 0.08, ease: [0.21, 0.47, 0.32, 0.98] }}
                   style={{
                     fontFamily: "'Manrope', sans-serif",
-                    fontSize: "clamp(2.9rem, 8vw, 6rem)",
+                    fontSize: "clamp(3.35rem, 7.4vw, 6.35rem)",
                     fontWeight: 800,
-                    lineHeight: 0.98,
-                    letterSpacing: "-0.03em",
+                    lineHeight: 0.92,
+                    letterSpacing: "0",
                     color: "#171717",
-                    marginBottom: "1.4rem",
+                    marginBottom: "1.25rem",
+                    maxWidth: 650,
                   }}
                 >
                   Websites{" "}
@@ -1076,7 +1118,7 @@ export default function App() {
                       fontFamily: "'Cormorant Garamond', serif",
                       fontStyle: "italic",
                       fontWeight: 600,
-                      color: "var(--primary)",
+                      color: "#C9863C",
                     }}
                   >
                     crafted
@@ -1091,11 +1133,11 @@ export default function App() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.16, ease: [0.21, 0.47, 0.32, 0.98] }}
                   style={{
-                    fontSize: "1.08rem",
+                    fontSize: "clamp(1.02rem, 1.25vw, 1.14rem)",
                     lineHeight: 1.72,
                     color: "#4A4641",
-                    maxWidth: 500,
-                    marginBottom: "1.1rem",
+                    maxWidth: 520,
+                    marginBottom: "1rem",
                   }}
                 >
                   Premium, custom websites designed to help your business look professional, build trust and generate more enquiries.
@@ -1112,7 +1154,7 @@ export default function App() {
                     gap: "0.45rem",
                     fontSize: "0.85rem",
                     color: "#7A7470",
-                    marginBottom: "2rem",
+                    marginBottom: "2.15rem",
                     lineHeight: 1.5,
                   }}
                 >
@@ -1125,7 +1167,7 @@ export default function App() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.26, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  style={{ display: "flex", flexWrap: "wrap", gap: "0.875rem", marginBottom: "2.5rem" }}
+                  style={{ display: "flex", flexWrap: "wrap", gap: "0.875rem", marginBottom: "2.35rem" }}
                 >
                   <button onClick={() => scrollTo("contact")} className="btn-primary">
                     Start Your Website
@@ -1141,81 +1183,6 @@ export default function App() {
                   </button>
                 </motion.div>
 
-                {/* Benefit list */}
-                <motion.div
-                  initial={{ opacity: 0, y: 14 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.28, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  style={{ display: "flex", flexDirection: "column", gap: "0.875rem" }}
-                >
-                  {[
-                    {
-                      icon: <IconStar />,
-                      title: "Designed around your business",
-                      desc: "A tailored website that reflects your brand, services and customers.",
-                    },
-                    {
-                      icon: <IconMobile />,
-                      title: "Polished on every screen",
-                      desc: "A clear, easy-to-use experience across mobile, tablet and desktop.",
-                    },
-                    {
-                      icon: <IconHeadset />,
-                      title: "Personal support",
-                      desc: "Direct help from the first conversation through to launch and beyond.",
-                    },
-                  ].map((item, i) => (
-                    <div
-                      key={i}
-                      style={{
-                        display: "flex",
-                        alignItems: "flex-start",
-                        gap: "0.875rem",
-                      }}
-                    >
-                      <div
-                        style={{
-                          width: 36,
-                          height: 36,
-                          borderRadius: 10,
-                          border: "1px solid rgba(255,138,0,0.45)",
-                          background: "rgba(255,138,0,0.09)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexShrink: 0,
-                          color: "var(--primary)",
-                        }}
-                      >
-                        {item.icon}
-                      </div>
-                      <div>
-                        <p
-                          style={{
-                            fontFamily: "'Manrope', sans-serif",
-                            fontWeight: 700,
-                            fontSize: "0.9rem",
-                            color: "#171717",
-                            margin: 0,
-                            marginBottom: "0.15rem",
-                          }}
-                        >
-                          {item.title}
-                        </p>
-                        <p
-                          style={{
-                            fontSize: "0.82rem",
-                            color: "#68645E",
-                            margin: 0,
-                            lineHeight: 1.5,
-                          }}
-                        >
-                          {item.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </motion.div>
               </div>
 
               {/* ── RIGHT COLUMN — Device mockups ── */}
@@ -1223,19 +1190,31 @@ export default function App() {
                 initial={{ opacity: 0, scale: 0.97, y: 12 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.75, delay: 0.14, ease: [0.21, 0.47, 0.32, 0.98] }}
+                className="hero-visual-column"
                 style={{ position: "relative" }}
               >
-                {/* Floating wrapper */}
-                <div
-                  className="float-gentle"
-                  style={{ position: "relative", paddingBottom: "4rem", paddingRight: "3.5rem" }}
-                >
-                  <DesktopMockup />
-                  <PhoneMockup />
-                </div>
+                <HeroDeviceShowcase />
               </motion.div>
 
             </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, delay: 0.34, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="hero-benefit-panel"
+            >
+              {HERO_BENEFITS.map((item, i) => (
+                <div className="hero-benefit-item" key={item.title}>
+                  <div className="hero-benefit-icon">{item.icon}</div>
+                  <div>
+                    <p className="hero-benefit-title">{item.title}</p>
+                    <p className="hero-benefit-desc">{item.desc}</p>
+                  </div>
+                  {i < HERO_BENEFITS.length - 1 && <span className="hero-benefit-divider" />}
+                </div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
