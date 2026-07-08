@@ -297,7 +297,7 @@ export default function App() {
             }}
           >
             <img
-              src="/logo-mark.png"
+              src="/assets/logos/crafted-design-co-logo-v2-cropped.png"
               alt="Crafted Design Co. logo"
               style={{
                 height: "clamp(40px, 5vw, 58px)",
@@ -1530,7 +1530,7 @@ export default function App() {
                 aria-label="Crafted Design Co. — scroll to top"
               >
                 <img
-                  src="/logo-mark.png"
+                  src="/assets/logos/crafted-design-co-logo-v2-cropped.png"
                   alt="Crafted Design Co. logo"
                   style={{ height: 46, width: "auto", display: "block", objectFit: "contain" }}
                 />
