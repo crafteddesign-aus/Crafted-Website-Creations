@@ -406,12 +406,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
-  padding: clamp(1.5rem, 2.5vw, 2.25rem) clamp(1rem, 2vw, 1.75rem);
-  border-radius: 22px;
-  background: rgba(255,255,255,0.9);
-  border: 1px solid rgba(82,54,21,0.08);
-  box-shadow: 0 24px 70px rgba(68,46,18,0.14), inset 0 1px 0 rgba(255,255,255,0.82);
-  backdrop-filter: blur(18px);
+  padding: clamp(2.5rem, 4vw, 3.75rem) 0;
 }
 
 .hero-benefit-item {
@@ -539,8 +534,7 @@
 
   .hero-benefit-panel {
     grid-template-columns: 1fr;
-    padding: 1rem;
-    border-radius: 16px;
+    padding: 1.75rem 0;
   }
 
   .hero-benefit-item {
