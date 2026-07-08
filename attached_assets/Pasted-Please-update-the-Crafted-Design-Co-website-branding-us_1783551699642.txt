@@ -1,0 +1,51 @@
+Please update the Crafted Design Co. website branding using the new logo assets I will upload.
+
+Important:
+Do not recreate, trace, stretch, distort, or redesign the logo.
+Use the logo images exactly as provided.
+
+Brand name:
+Crafted Design Co.
+
+Logo usage:
+1. Use the transparent horizontal logo as the main website logo in the header/navigation.
+2. Use the dark-background version only where a black hero/header section needs a stronger contrast version.
+3. Use the cream-background version only for presentation-style sections, not inside the sticky header.
+4. Use a simplified icon/favicon if available. If not, crop/create a small favicon from the large scripted “C” only.
+
+Header instructions:
+- Replace the current logo in the navbar with the transparent horizontal Crafted Design Co. logo.
+- Logo should not be too tall.
+- Desktop logo height: around 52–64px.
+- Mobile logo height: around 40–46px.
+- Keep the logo sharp and readable.
+- Use object-fit: contain.
+- Do not squash or stretch the logo.
+- Add enough padding around it so it feels premium.
+
+Responsive instructions:
+- On desktop, use the horizontal logo.
+- On mobile, keep the logo slightly smaller so it does not crowd the menu button.
+- If the full logo becomes too wide on mobile, use the scripted “Crafted” version only or scale it down cleanly.
+
+Footer:
+- Add the logo to the footer as well.
+- Use a slightly smaller version than the header.
+- Keep footer spacing clean and premium.
+
+SEO/accessibility:
+- Add alt text: “Crafted Design Co. logo”
+- Make the header logo clickable and link it to the homepage.
+
+File structure:
+Please place logo files in:
+public/assets/logos/
+
+Suggested names:
+crafted-design-co-logo-transparent.png
+crafted-design-co-logo-dark.png
+crafted-design-co-logo-cream.png
+crafted-design-co-favicon.png
+
+Design note:
+The logo colours are black/deep charcoal and orange. Please make the surrounding website styling feel consistent with this — premium, light, clean, modern, and not overly dark or heavy.

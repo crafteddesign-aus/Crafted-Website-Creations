@@ -287,22 +287,23 @@ export default function App() {
           {/* Logo */}
           <button
             onClick={() => scrollTo("top")}
-            aria-label="Crafted Designs — scroll to top"
+            aria-label="Crafted Design Co. — scroll to top"
             style={{
               flexShrink: 0,
               background: "none",
               border: "none",
               cursor: "pointer",
-              padding: 0,
+              padding: "0.25rem 0",
             }}
           >
             <img
-              src="/logo-mark.png"
-              alt="Crafted Designs"
+              src="/assets/logos/crafted-design-co-logo-transparent.png"
+              alt="Crafted Design Co. logo"
               style={{
-                height: 34,
+                height: "clamp(40px, 5vw, 58px)",
                 width: "auto",
                 display: "block",
+                objectFit: "contain",
               }}
             />
           </button>
@@ -1523,15 +1524,15 @@ export default function App() {
                   border: "none",
                   cursor: "pointer",
                   padding: 0,
-                  marginBottom: "1rem",
+                  marginBottom: "1.25rem",
                   display: "block",
                 }}
-                aria-label="Crafted Designs — scroll to top"
+                aria-label="Crafted Design Co. — scroll to top"
               >
                 <img
-                  src="/logo-mark.png"
-                  alt="Crafted Designs"
-                  style={{ height: 40, width: "auto", display: "block" }}
+                  src="/assets/logos/crafted-design-co-logo-transparent.png"
+                  alt="Crafted Design Co. logo"
+                  style={{ height: 46, width: "auto", display: "block", objectFit: "contain" }}
                 />
               </button>
               <p
