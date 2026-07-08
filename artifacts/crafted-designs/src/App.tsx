@@ -1256,23 +1256,6 @@ export default function App() {
 
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.34, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="hero-benefit-panel"
-            >
-              {HERO_BENEFITS.map((item, i) => (
-                <div className="hero-benefit-item" key={item.title}>
-                  <div className="hero-benefit-icon">{item.icon}</div>
-                  <div>
-                    <p className="hero-benefit-title">{item.title}</p>
-                    <p className="hero-benefit-desc">{item.desc}</p>
-                  </div>
-                  {i < HERO_BENEFITS.length - 1 && <span className="hero-benefit-divider" />}
-                </div>
-              ))}
-            </motion.div>
           </div>
         </section>
 
