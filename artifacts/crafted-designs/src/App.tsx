@@ -202,556 +202,6 @@ function BrowserDots() {
   );
 }
 
-/* ─────────────────────────────────────────
-   Whitsundays Escapes desktop mockup
-───────────────────────────────────────── */
-function _DesktopMockup_removed() {
-  return (
-    <div
-      style={{
-        background: "#0e1a1f",
-        borderRadius: 24,
-        overflow: "hidden",
-        border: "1.5px solid rgba(255,138,0,0.35)",
-        boxShadow: "0 36px 80px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.06)",
-        position: "relative",
-        zIndex: 1,
-      }}
-    >
-      {/* Browser top bar */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "0.75rem",
-          padding: "0.6rem 1rem",
-          background: "#121c21",
-          borderBottom: "1px solid rgba(255,255,255,0.07)",
-        }}
-      >
-        <BrowserDots />
-        <div
-          style={{
-            flex: 1,
-            background: "#0a1317",
-            border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: 999,
-            padding: "0.22rem 0.75rem",
-            fontSize: "0.65rem",
-            color: "rgba(255,255,255,0.4)",
-            fontFamily: "'Nunito Sans', sans-serif",
-            display: "flex",
-            alignItems: "center",
-            gap: "0.3rem",
-          }}
-        >
-          <svg width="9" height="9" viewBox="0 0 12 12" fill="none" aria-hidden="true"><circle cx="6" cy="6" r="5" stroke="rgba(255,255,255,0.3)" strokeWidth="1.2"/><path d="M6 3v3l2 1" stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" strokeLinecap="round"/></svg>
-          coralandshore.com.au
-        </div>
-      </div>
-
-      {/* Fictional website body */}
-      <div style={{ position: "relative", overflow: "hidden" }}>
-        {/* Hero image */}
-        <img
-          src="/whitsundays-hero.jpg"
-          alt="Aerial view of Whitehaven Beach and Hill Inlet, Whitsundays"
-          loading="eager"
-          width={900}
-          height={506}
-          style={{ width: "100%", display: "block", objectFit: "cover", objectPosition: "center 42%", maxHeight: 280, minHeight: 200 }}
-        />
-
-        {/* Dark overlay for text legibility */}
-        <div style={{
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(to bottom, rgba(8,20,28,0.62) 0%, rgba(8,20,28,0.35) 50%, rgba(8,20,28,0.72) 100%)",
-          pointerEvents: "none",
-        }} />
-
-        {/* Fictional nav */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: "0.55rem 0.85rem",
-            background: "rgba(8,20,28,0.55)",
-            backdropFilter: "blur(8px)",
-          }}
-        >
-          <span style={{
-            fontFamily: "'Manrope', sans-serif",
-            fontWeight: 800,
-            fontSize: "0.6rem",
-            letterSpacing: "0.1em",
-            color: "#fff",
-            textTransform: "uppercase",
-          }}>
-            🌊 Coral & Shore Co.
-          </span>
-          <div style={{ display: "flex", gap: "0.5rem" }}>
-            {["Home", "Experiences", "Stay", "Plan Your Trip", "About"].map((t) => (
-              <span key={t} style={{ fontSize: "0.48rem", color: "rgba(255,255,255,0.7)", fontFamily: "'Nunito Sans', sans-serif" }}>{t}</span>
-            ))}
-          </div>
-          <span style={{
-            fontSize: "0.48rem",
-            background: "#FF8A00",
-            color: "#090909",
-            fontWeight: 700,
-            padding: "0.2rem 0.5rem",
-            borderRadius: 999,
-            fontFamily: "'Manrope', sans-serif",
-          }}>
-            Book Now
-          </span>
-        </div>
-
-        {/* Hero text overlay */}
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: 0,
-            right: 0,
-            transform: "translateY(-48%)",
-            padding: "0 1rem",
-          }}
-        >
-          <p style={{
-            fontFamily: "'Manrope', sans-serif",
-            fontWeight: 700,
-            fontSize: "0.5rem",
-            letterSpacing: "0.14em",
-            textTransform: "uppercase",
-            color: "var(--primary)",
-            marginBottom: "0.35rem",
-          }}>
-            IMAGINE YOUR BUSINESS HERE
-          </p>
-          <p style={{
-            fontFamily: "'Manrope', sans-serif",
-            fontWeight: 800,
-            fontSize: "clamp(1.1rem, 3vw, 1.55rem)",
-            lineHeight: 1.1,
-            color: "#fff",
-            marginBottom: "0.4rem",
-            letterSpacing: "-0.01em",
-          }}>
-            Your Website Here
-          </p>
-          <p style={{
-            fontSize: "0.54rem",
-            color: "rgba(255,255,255,0.75)",
-            marginBottom: "0.55rem",
-            maxWidth: "55%",
-            fontFamily: "'Nunito Sans', sans-serif",
-            lineHeight: 1.5,
-          }}>
-            Showcase what makes your business special in the Whitsundays.
-          </p>
-          <button
-            style={{
-              fontSize: "0.52rem",
-              background: "rgba(255,255,255,0.12)",
-              border: "1px solid rgba(255,255,255,0.3)",
-              color: "#fff",
-              borderRadius: 999,
-              padding: "0.25rem 0.65rem",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.25rem",
-              fontFamily: "'Manrope', sans-serif",
-              fontWeight: 600,
-              cursor: "default",
-            }}
-          >
-            Explore More →
-          </button>
-        </div>
-      </div>
-
-      {/* Bottom strip */}
-      <div
-        style={{
-          background: "#0b1a20",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
-          display: "flex",
-          padding: "0.55rem 0.85rem",
-          gap: "1rem",
-        }}
-      >
-        {[
-          { icon: "🌊", title: "Local Expertise", sub: "We know the islands." },
-          { icon: "✨", title: "Unforgettable Experiences", sub: "Create lasting memories." },
-          { icon: "🌿", title: "Sustainable Tourism", sub: "Caring for our paradise." },
-        ].map((item) => (
-          <div key={item.title} style={{ flex: 1, textAlign: "center" }}>
-            <div style={{ fontSize: "0.65rem", marginBottom: "0.15rem" }}>{item.icon}</div>
-            <div style={{ fontFamily: "'Manrope', sans-serif", fontWeight: 700, fontSize: "0.46rem", color: "rgba(255,255,255,0.85)", marginBottom: "0.1rem" }}>{item.title}</div>
-            <div style={{ fontSize: "0.42rem", color: "rgba(255,255,255,0.45)", fontFamily: "'Nunito Sans', sans-serif" }}>{item.sub}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/* ─────────────────────────────────────────
-   Mobile mockup — true portrait smartphone
-───────────────────────────────────────── */
-function _PhoneMockup_removed() {
-  return (
-    <div
-      className="phone-rise"
-      style={{
-        /* Outer device shell */
-        position: "absolute",
-        bottom: "-2rem",
-        right: "2rem",
-        width: "clamp(185px, 15vw, 215px)",
-        aspectRatio: "9 / 19.5",
-        zIndex: 3,
-        /* Physical frame */
-        background: "#0d0d0d",
-        borderRadius: 40,
-        border: "1.5px solid rgba(255,138,0,0.3)",
-        boxShadow: [
-          "0 0 55px rgba(255,138,0,0.10)",
-          "0 44px 110px rgba(0,0,0,0.94)",
-          "inset 0 1px 0 rgba(255,255,255,0.08)",
-        ].join(", "),
-        overflow: "hidden",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-
-      {/* ── Top bezel — camera pill ──────────────────────── */}
-      <div style={{
-        flexShrink: 0,
-        height: 24,
-        background: "#0d0d0d",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}>
-        <div style={{
-          width: 60,
-          height: 13,
-          borderRadius: 999,
-          background: "#1a1a1a",
-          border: "1px solid rgba(255,255,255,0.06)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          paddingRight: 4,
-        }}>
-          <div style={{
-            width: 8,
-            height: 8,
-            borderRadius: "50%",
-            background: "#222",
-            border: "1px solid rgba(255,255,255,0.06)",
-            boxShadow: "inset 0 0 3px rgba(0,0,0,0.9)",
-          }} />
-        </div>
-      </div>
-
-      {/* ── Screen — inset 9px left/right ────────────────── */}
-      <div style={{
-        flex: 1,
-        marginLeft: 9,
-        marginRight: 9,
-        borderRadius: 31,
-        overflow: "hidden",
-        background: "#060d14",
-        display: "flex",
-        flexDirection: "column",
-        minHeight: 0,
-      }}>
-
-        {/* Status bar */}
-        <div style={{
-          flexShrink: 0,
-          background: "#060d14",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "5px 12px 3px",
-        }}>
-          <span style={{
-            fontFamily: "'Manrope', sans-serif",
-            fontWeight: 700,
-            fontSize: 9,
-            color: "rgba(255,255,255,0.85)",
-            letterSpacing: "-0.01em",
-          }}>9:41</span>
-          <div style={{ display: "flex", alignItems: "flex-end", gap: 2.5 }}>
-            {/* Signal bars */}
-            {[3, 5, 7, 9].map((h, i) => (
-              <div key={i} style={{
-                width: 2.5,
-                height: h,
-                borderRadius: 1,
-                background: i < 3 ? "rgba(255,255,255,0.82)" : "rgba(255,255,255,0.28)",
-              }} />
-            ))}
-            {/* WiFi arcs */}
-            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" aria-hidden="true" style={{ marginLeft: 3, marginBottom: 1 }}>
-              <circle cx="6" cy="9" r="1.4" fill="rgba(255,255,255,0.85)"/>
-              <path d="M3 6.5A4.2 4.2 0 0 1 9 6.5" stroke="rgba(255,255,255,0.85)" strokeWidth="1.3" strokeLinecap="round" fill="none"/>
-              <path d="M.5 4A7.5 7.5 0 0 1 11.5 4" stroke="rgba(255,255,255,0.38)" strokeWidth="1.3" strokeLinecap="round" fill="none"/>
-            </svg>
-            {/* Battery */}
-            <div style={{
-              marginLeft: 2,
-              width: 17,
-              height: 8,
-              border: "1px solid rgba(255,255,255,0.52)",
-              borderRadius: 2.5,
-              padding: "1.5px",
-              display: "flex",
-              position: "relative",
-            }}>
-              <div style={{ width: "76%", height: "100%", background: "rgba(255,255,255,0.78)", borderRadius: 1 }} />
-              <div style={{
-                position: "absolute",
-                right: -4,
-                top: "50%",
-                transform: "translateY(-50%)",
-                width: 3,
-                height: 5,
-                background: "rgba(255,255,255,0.38)",
-                borderRadius: "0 2px 2px 0",
-              }} />
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile nav bar */}
-        <div style={{
-          flexShrink: 0,
-          background: "rgba(4,10,16,0.98)",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "9px 13px",
-          borderBottom: "1px solid rgba(255,255,255,0.07)",
-        }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <div style={{
-              width: 19,
-              height: 19,
-              borderRadius: 6,
-              background: "rgba(255,138,0,0.14)",
-              border: "1px solid rgba(255,138,0,0.52)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexShrink: 0,
-            }}>
-              <div style={{ width: 8, height: 8, borderRadius: "50%", border: "1.5px solid #FF8A00" }} />
-            </div>
-            <span style={{
-              fontFamily: "'Manrope', sans-serif",
-              fontWeight: 800,
-              fontSize: 8.5,
-              color: "var(--text)",
-              letterSpacing: "0.04em",
-              whiteSpace: "nowrap",
-            }}>
-              CORAL & SHORE CO.
-            </span>
-          </div>
-          {/* Hamburger */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 3.5, cursor: "default" }}>
-            <div style={{ width: 17, height: 2, background: "rgba(255,255,255,0.8)", borderRadius: 1 }} />
-            <div style={{ width: 12, height: 2, background: "rgba(255,255,255,0.8)", borderRadius: 1 }} />
-            <div style={{ width: 17, height: 2, background: "rgba(255,255,255,0.8)", borderRadius: 1 }} />
-          </div>
-        </div>
-
-        {/* Hero image with text overlay */}
-        <div style={{ flexShrink: 0, position: "relative" }}>
-          <img
-            src="/whitsundays-hero.jpg"
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
-            style={{
-              width: "100%",
-              display: "block",
-              objectFit: "cover",
-              objectPosition: "center 35%",
-              height: 175,
-            }}
-          />
-          {/* Gradient overlay */}
-          <div style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(to bottom, rgba(4,10,16,0.5) 0%, rgba(4,10,16,0.04) 28%, rgba(4,10,16,0.93) 100%)",
-          }} />
-          {/* Text content */}
-          <div style={{
-            position: "absolute",
-            inset: 0,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-end",
-            padding: "0 13px 13px",
-          }}>
-            <p style={{
-              fontFamily: "'Manrope', sans-serif",
-              fontWeight: 700,
-              fontSize: 7.5,
-              letterSpacing: "0.13em",
-              textTransform: "uppercase",
-              color: "#FF8A00",
-              marginBottom: 5,
-            }}>
-              IMAGINE YOUR BUSINESS HERE
-            </p>
-            <p style={{
-              fontFamily: "'Manrope', sans-serif",
-              fontWeight: 800,
-              fontSize: 27,
-              lineHeight: 1.08,
-              color: "#fff",
-              marginBottom: 7,
-              letterSpacing: "-0.025em",
-            }}>
-              Your Website<br />Here
-            </p>
-            <p style={{
-              fontFamily: "'Nunito Sans', sans-serif",
-              fontSize: 10,
-              color: "rgba(255,255,255,0.7)",
-              lineHeight: 1.45,
-              marginBottom: 12,
-            }}>
-              Showcase what makes your business<br />special in the Whitsundays.
-            </p>
-            <button style={{
-              alignSelf: "flex-start",
-              background: "#FF8A00",
-              border: "none",
-              borderRadius: 999,
-              padding: "7px 17px",
-              fontFamily: "'Manrope', sans-serif",
-              fontWeight: 700,
-              fontSize: 10,
-              color: "#090909",
-              cursor: "default",
-              letterSpacing: "0.06em",
-            }}>
-              BOOK NOW
-            </button>
-          </div>
-        </div>
-
-        {/* Feature strip — fills remaining screen height */}
-        <div style={{
-          flex: 1,
-          background: "#06101a",
-          display: "flex",
-          borderTop: "1px solid rgba(255,255,255,0.07)",
-          alignItems: "center",
-          padding: "10px 4px",
-        }}>
-          {[
-            { label: "Local Expertise",  sub: "We know the islands" },
-            { label: "Island Tours",     sub: "Unforgettable trips"  },
-            { label: "Eco Travel",       sub: "Caring for paradise"  },
-          ].map((item, i) => (
-            <div key={i} style={{
-              flex: 1,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              textAlign: "center",
-              padding: "0 4px",
-              borderRight: i < 2 ? "1px solid rgba(255,255,255,0.07)" : "none",
-            }}>
-              <div style={{
-                width: 24,
-                height: 24,
-                borderRadius: "50%",
-                background: "rgba(255,138,0,0.1)",
-                border: "1px solid rgba(255,138,0,0.32)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                marginBottom: 5,
-              }}>
-                <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#FF8A00", opacity: 0.72 }} />
-              </div>
-              <p style={{
-                fontFamily: "'Manrope', sans-serif",
-                fontWeight: 700,
-                fontSize: 8,
-                color: "rgba(255,255,255,0.88)",
-                lineHeight: 1.2,
-                marginBottom: 2,
-              }}>{item.label}</p>
-              <p style={{
-                fontFamily: "'Nunito Sans', sans-serif",
-                fontSize: 7,
-                color: "rgba(255,255,255,0.4)",
-                lineHeight: 1.3,
-              }}>{item.sub}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ── Bottom bezel — home indicator ───────────────── */}
-      <div style={{
-        flexShrink: 0,
-        height: 26,
-        background: "#0d0d0d",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}>
-        <div style={{
-          width: 82,
-          height: 4,
-          borderRadius: 999,
-          background: "rgba(255,255,255,0.22)",
-        }} />
-      </div>
-    </div>
-  );
-}
-
-/* ─────────────────────────────────────────
-   Main App
-───────────────────────────────────────── */
-function HeroDeviceShowcase() {
-  return (
-    <div className="hero-device-stage" aria-hidden="true">
-      <div className="hero-device-shadow" />
-      <img
-        src="/website-hero-devices.png"
-        alt=""
-        loading="eager"
-        width={1456}
-        height={1104}
-        className="hero-device-image"
-      />
-    </div>
-  );
-}
-
 const HERO_BENEFITS = [
   {
     icon: <IconStar />,
@@ -1069,7 +519,6 @@ export default function App() {
               <div className="hero-copy-column">
                 {/* Strapline */}
                 <motion.div
-                  className="hero-strapline"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
@@ -1236,17 +685,6 @@ export default function App() {
                 </motion.div>
 
               </div>
-
-              {/* ── RIGHT COLUMN — Device mockups ── */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.97, y: 12 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.75, delay: 0.14, ease: [0.21, 0.47, 0.32, 0.98] }}
-                className="hero-visual-column"
-                style={{ position: "relative" }}
-              >
-                <HeroDeviceShowcase />
-              </motion.div>
 
             </div>
 
@@ -1837,7 +1275,7 @@ export default function App() {
                       Call 0421 448 692
                     </a>
                   </div>
-                  <p style={{ fontSize: "0.83rem", color: "rgba(9,9,9,0.48)", marginTop: "1.5rem" }}>
+                  <p style={{ fontSize: "0.83rem", color: "rgba(9,9,9,0.62)", marginTop: "1.5rem" }}>
                     Based in the Whitsundays. Available to businesses across Australia.
                   </p>
                 </div>
@@ -1959,8 +1397,8 @@ export default function App() {
                   }}
                 >
                   {[
-                    { id: "name", label: "Name", type: "text", placeholder: "Your name", autoComplete: "name" },
-                    { id: "email", label: "Email", type: "email", placeholder: "Your email address", autoComplete: "email" },
+                    { id: "name", label: "Name", type: "text", placeholder: "Your name", autoComplete: "name", required: true },
+                    { id: "email", label: "Email", type: "email", placeholder: "Your email address", autoComplete: "email", required: true },
                     { id: "phone", label: "Phone", type: "tel", placeholder: "Your phone number", autoComplete: "tel" },
                   ].map((f) => (
                     <label key={f.id} htmlFor={f.id} style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -1980,6 +1418,7 @@ export default function App() {
                         type={f.type}
                         placeholder={f.placeholder}
                         autoComplete={f.autoComplete}
+                        required={f.required}
                         style={{
                           background: "var(--panel-alt)",
                           border: "1px solid var(--border-color)",
@@ -2013,6 +1452,7 @@ export default function App() {
                       name="message"
                       placeholder="Tell me about your business and what you need..."
                       rows={4}
+                      required
                       style={{
                         background: "var(--panel-alt)",
                         border: "1px solid var(--border-color)",
@@ -2044,16 +1484,18 @@ export default function App() {
                   >
                     {formStatus === "submitting" ? "Sending..." : "Send Message"}
                   </button>
-                  {formStatus === "success" && (
-                    <p style={{ color: "var(--primary)", fontSize: "0.9rem", fontWeight: 600, textAlign: "center", margin: 0 }}>
-                      Thanks — your message has been sent. I'll be in touch soon.
-                    </p>
-                  )}
-                  {formStatus === "error" && (
-                    <p style={{ color: "#e05c4a", fontSize: "0.9rem", fontWeight: 600, textAlign: "center", margin: 0 }}>
-                      Something went wrong sending your message. Please try again or email info@crafteddesign.au directly.
-                    </p>
-                  )}
+                  <div aria-live="polite" aria-atomic="true">
+                    {formStatus === "success" && (
+                      <p style={{ color: "var(--primary)", fontSize: "0.9rem", fontWeight: 600, textAlign: "center", margin: 0 }}>
+                        Thanks — your message has been sent. I'll be in touch soon.
+                      </p>
+                    )}
+                    {formStatus === "error" && (
+                      <p style={{ color: "#e05c4a", fontSize: "0.9rem", fontWeight: 600, textAlign: "center", margin: 0 }}>
+                        Something went wrong sending your message. Please try again or email info@crafteddesign.au directly.
+                      </p>
+                    )}
+                  </div>
                 </form>
               </FadeUp>
             </div>
@@ -2195,28 +1637,9 @@ export default function App() {
               gap: "1rem",
             }}
           >
-            <p style={{ fontSize: "0.82rem", color: "rgba(169,169,164,0.5)", margin: 0 }}>
+            <p style={{ fontSize: "0.82rem", color: "rgba(200,200,196,0.85)", margin: 0 }}>
               © {new Date().getFullYear()} Crafted Designs. All rights reserved.
             </p>
-            <div style={{ display: "flex", gap: "1.5rem" }}>
-              {["Privacy Policy", "Terms"].map((item) => (
-                <button
-                  key={item}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                    fontSize: "0.82rem",
-                    color: "rgba(169,169,164,0.5)",
-                    transition: "color 0.2s",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--muted)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(169,169,164,0.5)")}
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
           </div>
         </div>
       </footer>

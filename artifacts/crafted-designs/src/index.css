@@ -237,33 +237,9 @@
   animation: marquee 28s linear infinite;
 }
 
-/* ── Float (hero mockup) ── */
-@keyframes float-gentle {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-}
-
-.float-gentle {
-  animation: float-gentle 7s ease-in-out infinite;
-}
-
-/* ── Mobile phone rise ── */
-@keyframes rise-in {
-  0% { opacity: 0; transform: translateY(16px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-.phone-rise {
-  animation: rise-in 0.8s ease forwards;
-  animation-delay: 0.6s;
-  opacity: 0;
-}
-
 /* ── Reduced motion overrides ── */
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track,
-  .float-gentle,
-  .phone-rise {
+  .marquee-track {
     animation: none;
     opacity: 1;
     transform: none;
@@ -284,14 +260,6 @@
 }
 .card-base:hover .img-zoom {
   transform: scale(1.03);
-}
-
-/* ── Mockup glow ── */
-.mockup-glow {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(ellipse 60% 60% at 65% 40%, rgba(255,138,0,0.16), transparent 70%);
 }
 
 /* ── Homepage hero ── */
@@ -358,47 +326,6 @@
   z-index: 2;
 }
 
-.hero-visual-column {
-  min-width: 0;
-  z-index: 1;
-  /* Old JSX device mockup replaced by the hero background image */
-  display: none !important;
-}
-
-.hero-device-stage {
-  position: relative;
-  width: min(106%, 830px);
-  margin-left: auto;
-  transform: translate(2%, 2%);
-  min-height: clamp(390px, 41vw, 560px);
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.hero-device-shadow {
-  position: absolute;
-  right: 2%;
-  bottom: 10%;
-  width: 76%;
-  height: 13%;
-  background: radial-gradient(ellipse at center, rgba(36,30,23,0.34), transparent 68%);
-  filter: blur(10px);
-  transform: rotate(-1deg);
-}
-
-.hero-device-image {
-  position: relative;
-  width: min(112%, 880px);
-  height: auto;
-  display: block;
-  margin-right: -10%;
-  clip-path: inset(5% 0 9% 37%);
-  transform: scale(1.22);
-  transform-origin: 72% 51%;
-  filter: saturate(1.02) contrast(1.03);
-}
-
 .hero-benefit-panel {
   position: relative;
   margin: 0 auto;
@@ -463,17 +390,6 @@
 }
 
 @media (max-width: 1160px) {
-  .hero-device-stage {
-    width: min(103%, 700px);
-    transform: translate(1%, 1%);
-    min-height: clamp(340px, 41vw, 500px);
-  }
-
-  .hero-device-image {
-    margin-right: -14%;
-    transform: scale(1.19);
-  }
-
   .hero-benefit-panel {
     width: 100%;
   }
@@ -493,21 +409,6 @@
     max-width: 720px;
   }
 
-  .hero-device-stage {
-    width: min(100%, 760px);
-    margin: 0 auto;
-    min-height: auto;
-    transform: none;
-  }
-
-  .hero-device-image {
-    width: 100%;
-    margin: 0;
-    clip-path: inset(4% 0 5% 29%);
-    transform: scale(1.08);
-    transform-origin: 68% 50%;
-  }
-
   .hero-benefit-panel {
     width: 100%;
   }
@@ -524,12 +425,6 @@
     width: 128%;
     height: 58%;
     top: 14%;
-  }
-
-  .hero-device-image {
-    clip-path: inset(5% 0 5% 24%);
-    transform: scale(1.08);
-    transform-origin: 64% 50%;
   }
 
   .hero-benefit-panel {
@@ -556,10 +451,6 @@
     margin-bottom: 1.35rem !important;
   }
 
-  .hero-device-image {
-    clip-path: inset(5% 0 5% 18%);
-    transform: scale(1.04);
-  }
 }
 
 /* ── Editorial statement ── */
@@ -838,9 +729,6 @@
   }
 }
 
-/* Benefits: bottom padding on mobile */
-.hero-benefits { padding-bottom: 2rem; }
-@media (min-width: 768px) { .hero-benefits { padding-bottom: 0; } }
 
 /* "View Our Work" text link */
 .hero-view-work-link {
