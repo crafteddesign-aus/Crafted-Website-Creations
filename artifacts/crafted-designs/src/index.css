@@ -801,46 +801,30 @@
 .hero-para { max-width: 100% !important; }
 @media (min-width: 1024px) { .hero-para { max-width: 500px !important; } }
 
-/* ── Hero column: flex so CSS order can resequence items per breakpoint ── */
-.hero-content-col {
-  display: flex;
-  flex-direction: column;
-}
+/* ── Hero column: plain block — DOM order is already correct for both breakpoints ── */
 
-/* Mobile visual order (default) */
-.hero-strapline       { order: 1; }
-.hero-h1              { order: 2; }
-.hero-para            { order: 3; }
-.hero-primary-solo    { order: 4; }
-.hero-mobile-art-wrap { order: 5; }
-.hero-location        { order: 6; }
-.hero-secondary-mobile{ order: 7; }
-.hero-benefits        { order: 8; padding: 0 0 2rem; }
-/* desktop buttons hidden on mobile */
-.hero-btns            { display: none !important; order: 9; }
-
-/* Desktop: show both-buttons, hide mobile-only elements, restore order */
-@media (min-width: 768px) {
-  .hero-strapline        { order: 1; }
-  .hero-h1               { order: 2; }
-  .hero-para             { order: 3; }
-  .hero-location         { order: 4; margin-top: 0    !important; margin-bottom: 2rem !important; }
-  .hero-btns             { display: flex !important; order: 5; gap: 0.875rem; }
-  .hero-benefits         { order: 6; padding: 0; }
-  .hero-primary-solo     { display: none !important; }
-  .hero-mobile-art-wrap  { display: none !important; }
-  .hero-secondary-mobile { display: none !important; }
-}
-
-/* Primary button solo — mobile only */
-.hero-primary-solo { margin-bottom: 1.375rem; }
+/* Mobile-only elements: visible by default, hidden on desktop */
+.hero-primary-solo    { display: block; margin-bottom: 1.375rem; }
 .hero-primary-solo button {
   width: 100%;
   min-height: 54px;
   justify-content: center !important;
 }
+.hero-mobile-art-wrap { display: block; }
+.hero-secondary-mobile { display: block; margin-bottom: 1.75rem; }
 
-/* Mobile artwork wrapper — bleeds slightly past container edges, glow behind devices */
+/* Desktop-only: both-buttons hidden on mobile, shown on desktop */
+.hero-btns { display: none !important; }
+
+/* Hide mobile-only elements + restore desktop-buttons at tablet+ */
+@media (min-width: 768px) {
+  .hero-primary-solo     { display: none !important; }
+  .hero-mobile-art-wrap  { display: none !important; }
+  .hero-secondary-mobile { display: none !important; }
+  .hero-btns             { display: flex !important; gap: 0.875rem; margin-bottom: 2.5rem; }
+}
+
+/* Mobile artwork wrapper — bleeds slightly past container edges, warm glow */
 .hero-mobile-art-wrap {
   width: calc(100% + 32px);
   margin-left: -16px;
@@ -867,16 +851,23 @@
   z-index: 1;
 }
 
-/* Location line on mobile: tight spacing after artwork */
+/* Location line: tight spacing on mobile (after artwork), restored on desktop */
 .hero-location {
   margin-top: 1.125rem !important;
   margin-bottom: 0.875rem !important;
 }
-
-/* Secondary "View Our Work" text link — mobile only */
-.hero-secondary-mobile {
-  margin-bottom: 1.75rem;
+@media (min-width: 768px) {
+  .hero-location {
+    margin-top: 0 !important;
+    margin-bottom: 2rem !important;
+  }
 }
+
+/* Benefits: bottom padding on mobile */
+.hero-benefits { padding-bottom: 2rem; }
+@media (min-width: 768px) { .hero-benefits { padding-bottom: 0; } }
+
+/* "View Our Work" text link */
 .hero-view-work-link {
   background: none;
   border: none;
