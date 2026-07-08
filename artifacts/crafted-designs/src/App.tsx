@@ -1291,7 +1291,7 @@ export default function App() {
             CREDIBILITY STRIP — hero benefits
         ══════════════════════════════════════ */}
         <section style={{ borderBottom: "1px solid rgba(23,23,23,0.10)", background: "var(--light-bg)" }}>
-          <div className="container-custom" style={{ padding: "2.5rem 1.25rem" }}>
+          <div className="container-custom" style={{ padding: "3.25rem 1.25rem" }}>
             <FadeUp className="hero-benefit-panel">
               {HERO_BENEFITS.map((item, i) => (
                 <div className="hero-benefit-item" key={item.title}>
