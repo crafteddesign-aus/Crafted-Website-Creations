@@ -362,6 +362,14 @@
   z-index: 2;
 }
 
+/* Reserve room at the bottom of the hero for the absolutely-positioned
+   benefits panel so it never overlaps the CTA buttons */
+@media (min-width: 1024px) {
+  .hero-grid {
+    padding-bottom: clamp(8.5rem, 12vw, 10.5rem);
+  }
+}
+
 .hero-visual-column {
   min-width: 0;
   z-index: 1;
@@ -405,11 +413,12 @@
 
 .hero-benefit-panel {
   position: absolute;
-  left: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   bottom: clamp(2rem, 4vw, 3.25rem);
   z-index: 3;
   width: min(calc(100% - 5rem), 900px);
-  transform: translateX(-50%);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
@@ -769,6 +778,9 @@
     padding-top: clamp(6rem, 14vw, 11rem) !important;
     padding-bottom: clamp(5rem, 9vw, 8rem) !important;
     overflow: visible;
+    /* Let the content container fill the hero height so the benefits
+       panel anchors to the bottom of the hero, not the text block */
+    align-items: stretch !important;
   }
 }
 
