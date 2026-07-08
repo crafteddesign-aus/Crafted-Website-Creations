@@ -547,7 +547,7 @@ export default function App() {
                         color: "var(--primary)",
                       }}
                     >
-                      CUSTOM WEBSITE DESIGN
+                      PREMIUM WEBSITE DESIGN
                     </span>
                   </div>
                 </motion.div>
@@ -569,7 +569,7 @@ export default function App() {
                     maxWidth: 650,
                   }}
                 >
-                  Websites{" "}
+                  Websites that{" "}
                   <br className="hidden sm:block" />
                   <em
                     style={{
@@ -579,10 +579,8 @@ export default function App() {
                       color: "#C9863C",
                     }}
                   >
-                    crafted
-                  </em>{" "}for
-                  <br className="block sm:hidden" />
-                  {" "}your business
+                    grow
+                  </em>{" "}your business
                   <span style={{ color: "var(--primary)" }}>.</span>
                 </motion.h1>
 
@@ -600,7 +598,7 @@ export default function App() {
                     marginBottom: "1rem",
                   }}
                 >
-                  Premium, custom websites designed to help your business look professional, build trust and generate more enquiries.
+                  Premium custom websites designed to build trust, generate more enquiries and turn visitors into customers.
                 </motion.p>
 
                 {/* 4 — Mobile-only: primary button solo (CSS order 4, hidden md+) */}
