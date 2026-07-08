@@ -297,7 +297,7 @@ export default function App() {
             }}
           >
             <img
-              src="/assets/logos/crafted-design-co-logo-v2-cropped.png"
+              src={isScrolled ? "/assets/logos/crafted-design-co-logo-white-cropped.png" : "/assets/logos/crafted-design-co-logo-v2-cropped.png"}
               alt="Crafted Design Co. logo"
               style={{
                 height: "clamp(40px, 5vw, 58px)",
