@@ -304,7 +304,6 @@ export default function App() {
                 width: "auto",
                 display: "block",
                 objectFit: "contain",
-                mixBlendMode: isScrolled ? "screen" : "normal",
               }}
             />
           </button>
