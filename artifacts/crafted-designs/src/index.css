@@ -365,6 +365,8 @@
 .hero-visual-column {
   min-width: 0;
   z-index: 1;
+  /* Old JSX device mockup replaced by the hero background image */
+  display: none !important;
 }
 
 .hero-device-stage {
