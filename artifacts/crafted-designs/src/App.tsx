@@ -1917,7 +1917,7 @@ export default function App() {
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                   {[
-                    { label: "Email", val: "hello@crafteddesigns.com.au", href: "mailto:hello@crafteddesigns.com.au" },
+                    { label: "Email", val: "info@crafteddesign.au", href: "mailto:info@crafteddesign.au" },
                     { label: "Phone", val: "0421 448 692", href: "tel:0421448692" },
                     { label: "Location", val: "Whitsundays based, Australia-wide.", href: null },
                   ].map((item) => (
@@ -2083,7 +2083,7 @@ export default function App() {
                   )}
                   {formStatus === "error" && (
                     <p style={{ color: "#e05c4a", fontSize: "0.9rem", fontWeight: 600, textAlign: "center", margin: 0 }}>
-                      Something went wrong sending your message. Please try again or email hello@crafteddesigns.com.au directly.
+                      Something went wrong sending your message. Please try again or email info@crafteddesign.au directly.
                     </p>
                   )}
                 </form>
@@ -2205,7 +2205,7 @@ export default function App() {
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.65rem" }}>
                 {[
-                  "hello@crafteddesigns.com.au",
+                  "info@crafteddesign.au",
                   "0421 448 692",
                   "Whitsundays based, Australia-wide",
                 ].map((item) => (
