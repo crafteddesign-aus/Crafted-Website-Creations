@@ -296,16 +296,31 @@ export default function App() {
               padding: "0.25rem 0",
             }}
           >
-            <img
-              src={isScrolled ? "/assets/logos/crafted-design-co-logo-white-cropped.png" : "/assets/logos/crafted-design-co-logo-v2-cropped.png"}
-              alt="Crafted Design Co. logo"
-              style={{
-                height: "clamp(40px, 5vw, 58px)",
-                width: "auto",
-                display: "block",
-                objectFit: "contain",
-              }}
-            />
+            <div style={{ position: "relative", height: "clamp(40px, 5vw, 58px)", width: "clamp(120px, 15vw, 174px)" }}>
+              <img
+                src="/assets/logos/crafted-design-co-logo-v2-cropped.png"
+                alt="Crafted Design Co. logo"
+                style={{
+                  position: "absolute", top: 0, left: 0,
+                  height: "100%", width: "100%",
+                  objectFit: "contain",
+                  opacity: isScrolled ? 0 : 1,
+                  transition: "opacity 0.3s ease",
+                }}
+              />
+              <img
+                src="/assets/logos/crafted-design-co-logo-white-cropped.png"
+                alt=""
+                aria-hidden="true"
+                style={{
+                  position: "absolute", top: 0, left: 0,
+                  height: "100%", width: "100%",
+                  objectFit: "contain",
+                  opacity: isScrolled ? 1 : 0,
+                  transition: "opacity 0.3s ease",
+                }}
+              />
+            </div>
           </button>
 
           {/* Desktop nav */}
