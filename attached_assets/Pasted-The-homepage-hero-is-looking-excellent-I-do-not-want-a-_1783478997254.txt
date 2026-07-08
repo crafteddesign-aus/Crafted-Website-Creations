@@ -1,0 +1,123 @@
+The homepage hero is looking excellent. I do not want a redesign.
+
+I only want to refine the visual hierarchy to make it feel more premium and easier to scan.
+
+IMPORTANT
+
+- Do NOT redesign the hero.
+- Do NOT change the layout.
+- Do NOT change the laptop or phone mockups.
+- Do NOT move sections.
+- Do NOT alter the navigation, buttons, colours or branding.
+- Only make the refinements below.
+
+--------------------------------------------------
+
+1. HERO HEADLINE
+
+Change the headline to:
+
+Beautiful websites.
+Better business.
+
+Keep "Beautiful websites." as the dominant line.
+
+"Better business." should sit directly underneath.
+
+Maintain the existing typography hierarchy and premium spacing.
+
+--------------------------------------------------
+
+2. SUPPORTING COPY
+
+Replace the paragraph with:
+
+Premium custom websites that build trust, generate enquiries and help your business grow.
+
+Keep the same styling and maximum text width.
+
+--------------------------------------------------
+
+3. LOCATION TEXT
+
+Replace:
+
+Based in the Whitsundays, creating websites for businesses across Australia.
+
+With:
+
+📍 Proudly based in the Whitsundays, working with businesses across Australia.
+
+Use the existing styling.
+
+--------------------------------------------------
+
+4. BACKGROUND "CRAFT"
+
+Reduce the opacity of the large background "CRAFT" watermark by approximately 50%.
+
+It should become a subtle branding element rather than competing with the headline.
+
+Do NOT remove it.
+
+--------------------------------------------------
+
+5. ORANGE CURVES
+
+Reduce the visibility of the decorative orange curves by approximately 15–20%.
+
+They should still be visible but sit further into the background.
+
+--------------------------------------------------
+
+6. TEXT SPACING
+
+Improve the vertical rhythm between:
+
+• eyebrow label
+• headline
+• paragraph
+• location line
+• buttons
+
+Aim for slightly more breathing room without making the hero taller.
+
+--------------------------------------------------
+
+7. BUTTONS
+
+Leave exactly as they are.
+
+--------------------------------------------------
+
+8. DEVICE MOCKUPS
+
+Leave exactly as they are.
+
+--------------------------------------------------
+
+9. RESPONSIVE
+
+Check:
+
+Desktop
+Laptop
+Tablet
+430px mobile
+390px mobile
+375px mobile
+
+Ensure:
+
+• no cropped headings
+• no horizontal scrolling
+• spacing remains consistent
+• hero still feels balanced
+
+--------------------------------------------------
+
+After finishing:
+
+Tell me exactly which files were modified.
+
+Do not modify any other section of the website.

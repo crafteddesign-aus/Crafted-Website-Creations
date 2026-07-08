@@ -493,7 +493,7 @@ export default function App() {
                 fontFamily: "'Manrope', sans-serif",
                 fontSize: "clamp(10rem, 24vw, 21rem)",
                 fontWeight: 800,
-                color: "rgba(23,23,23,0.024)",
+                color: "rgba(23,23,23,0.012)",
                 userSelect: "none",
                 whiteSpace: "nowrap",
                 letterSpacing: "0",
@@ -533,7 +533,7 @@ export default function App() {
                       borderRadius: 999,
                       border: "1px solid rgba(255,138,0,0.38)",
                       background: "rgba(255,255,255,0.62)",
-                      marginBottom: "1.75rem",
+                      marginBottom: "2.1rem",
                       boxShadow: "0 10px 30px rgba(73,47,12,0.06)",
                     }}
                   >
@@ -562,15 +562,13 @@ export default function App() {
                     fontFamily: "'Manrope', sans-serif",
                     fontSize: "clamp(3.35rem, 7.4vw, 6.35rem)",
                     fontWeight: 800,
-                    lineHeight: 0.92,
+                    lineHeight: 0.94,
                     letterSpacing: "0",
                     color: "#171717",
-                    marginBottom: "1.25rem",
+                    marginBottom: "1.6rem",
                     maxWidth: 650,
                   }}
                 >
-                  Websites that{" "}
-                  <br className="hidden sm:block" />
                   <em
                     style={{
                       fontFamily: "'Cormorant Garamond', serif",
@@ -579,9 +577,10 @@ export default function App() {
                       color: "#C9863C",
                     }}
                   >
-                    grow
-                  </em>{" "}your business
-                  <span style={{ color: "var(--primary)" }}>.</span>
+                    Beautiful
+                  </em>{" "}websites<span style={{ color: "var(--primary)" }}>.</span>
+                  <br />
+                  Better business<span style={{ color: "var(--primary)" }}>.</span>
                 </motion.h1>
 
                 {/* 3 — Supporting paragraph (CSS order 3) */}
@@ -595,10 +594,10 @@ export default function App() {
                     lineHeight: 1.72,
                     color: "#4A4641",
                     maxWidth: 520,
-                    marginBottom: "1rem",
+                    marginBottom: "1.5rem",
                   }}
                 >
-                  Premium custom websites designed to build trust, generate more enquiries and turn visitors into customers.
+                  Premium custom websites that build trust, generate enquiries and help your business grow.
                 </motion.p>
 
                 {/* 4 — Mobile-only: primary button solo (CSS order 4, hidden md+) */}
@@ -641,8 +640,7 @@ export default function App() {
                     lineHeight: 1.5,
                   }}
                 >
-                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--primary)", flexShrink: 0, display: "inline-block" }} />
-                  Based in the Whitsundays, creating websites for businesses across Australia.
+                  📍 Proudly based in the Whitsundays, working with businesses across Australia.
                 </motion.p>
 
                 {/* 7 — Mobile-only: secondary text link (CSS order 7, hidden md+) */}

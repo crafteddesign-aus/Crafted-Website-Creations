@@ -284,9 +284,9 @@
   top: 8%;
   width: 84%;
   height: 86%;
-  border: 1px solid rgba(201,134,60,0.23);
+  border: 1px solid rgba(201,134,60,0.19);
   border-right-color: transparent;
-  border-bottom-color: rgba(201,134,60,0.12);
+  border-bottom-color: rgba(201,134,60,0.09);
   border-radius: 58% 42% 52% 48%;
   transform: rotate(-12deg);
 }
@@ -294,7 +294,7 @@
 .hero-abstract {
   position: absolute;
   pointer-events: none;
-  background: rgba(132,122,99,0.16);
+  background: rgba(132,122,99,0.13);
   mix-blend-mode: multiply;
 }
 
