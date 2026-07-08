@@ -96,12 +96,6 @@ const PROCESS_STEPS = [
   },
 ];
 
-const CREDIBILITY = [
-  { title: "Tailored", sub: "Designed around your business" },
-  { title: "Local", sub: "Based in the Whitsundays" },
-  { title: "Direct", sub: "One person from start to finish" },
-];
-
 const WHY_FEATURES = [
   { title: "Direct communication", desc: "Work with one person from the first conversation through to launch." },
   { title: "Case-by-case pricing", desc: "Your website is quoted around its actual scope, without confusing packages or unnecessary extras." },
@@ -1294,31 +1288,22 @@ export default function App() {
         </div>
 
         {/* ══════════════════════════════════════
-            CREDIBILITY STRIP
+            CREDIBILITY STRIP — hero benefits
         ══════════════════════════════════════ */}
         <section style={{ borderBottom: "1px solid rgba(23,23,23,0.10)", background: "var(--light-bg)" }}>
-          <div className="container-custom">
-            <div className="cred-strip cred-light" style={{ padding: "2.5rem 0" }}>
-              {CREDIBILITY.map((item, i) => (
-                <FadeUp key={item.title} delay={i * 0.08} className="cred-item">
-                  <h3
-                    style={{
-                      fontFamily: "'Manrope', sans-serif",
-                      fontWeight: 800,
-                      fontSize: "1.3rem",
-                      color: "var(--light-text)",
-                      letterSpacing: "-0.01em",
-                      marginBottom: "0.35rem",
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p style={{ fontSize: "0.95rem", color: "var(--light-muted)", margin: 0, lineHeight: 1.5 }}>
-                    {item.sub}
-                  </p>
-                </FadeUp>
+          <div className="container-custom" style={{ padding: "2.5rem 1.25rem" }}>
+            <FadeUp className="hero-benefit-panel">
+              {HERO_BENEFITS.map((item, i) => (
+                <div className="hero-benefit-item" key={item.title}>
+                  <div className="hero-benefit-icon">{item.icon}</div>
+                  <div>
+                    <p className="hero-benefit-title">{item.title}</p>
+                    <p className="hero-benefit-desc">{item.desc}</p>
+                  </div>
+                  {i < HERO_BENEFITS.length - 1 && <span className="hero-benefit-divider" />}
+                </div>
               ))}
-            </div>
+            </FadeUp>
           </div>
         </section>
 
