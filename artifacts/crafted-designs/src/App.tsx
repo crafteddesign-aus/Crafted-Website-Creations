@@ -1650,7 +1650,7 @@ export default function App() {
             }}
           >
             <p style={{ fontSize: "0.82rem", color: "rgba(200,200,196,0.85)", margin: 0 }}>
-              © {new Date().getFullYear()} Crafted Design Co. All rights reserved.
+              © {new Date().getFullYear()} Crafted Design Co. All rights reserved. &nbsp;|&nbsp; ABN 36 143 139 147
             </p>
           </div>
         </div>
